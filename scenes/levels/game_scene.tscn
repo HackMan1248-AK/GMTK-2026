@@ -50,7 +50,6 @@ scale = Vector2(1.154571, 15.452568)
 [node name="Light" type="Node" parent="." unique_id=969600844]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
-visible = false
 blend_mode = 1
 
 [node name="Stations" type="Node" parent="." unique_id=1256472941]
@@ -65,6 +64,7 @@ station = 3
 [node name="Slicing" parent="Stations" unique_id=657921884 instance=ExtResource("11_dsjjn")]
 position = Vector2(1417, 665)
 station = 5
+should_lock = true
 
 [node name="Pantry" parent="Stations" unique_id=2131174890 instance=ExtResource("11_dsjjn")]
 position = Vector2(1144, 726)
@@ -73,10 +73,12 @@ station = 1
 [node name="Assembly" parent="Stations" unique_id=479210845 instance=ExtResource("11_dsjjn")]
 position = Vector2(890, 726)
 station = 2
+should_lock = true
 
 [node name="Grilling" parent="Stations" unique_id=1684871248 instance=ExtResource("11_dsjjn")]
 position = Vector2(677, 737)
 station = 4
+should_lock = true
 
 [node name="Ingredient" parent="." unique_id=350272053 instance=ExtResource("10_301yp")]
 position = Vector2(1211, 406)
