@@ -42,11 +42,22 @@ position = Vector2(0, 72)
 [node name="Timers" type="Node" parent="." unique_id=218039179]
 
 [node name="SlicingTimer" type="Timer" parent="Timers" unique_id=1967370289]
+wait_time = 5.0
 
 [node name="AssemblingTimer" type="Timer" parent="Timers" unique_id=1865626093]
+wait_time = 5.0
 
 [node name="BakingTimer" type="Timer" parent="Timers" unique_id=2132357118]
+wait_time = 5.0
 
 [node name="GrillingTimer" type="Timer" parent="Timers" unique_id=1970836970]
+wait_time = 5.0
 
 [node name="FreezingTimer" type="Timer" parent="Timers" unique_id=1521918042]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timers/SlicingTimer" to="." method="_on_slicing_timer_timeout"]
+[connection signal="timeout" from="Timers/AssemblingTimer" to="." method="_on_assembling_timer_timeout"]
+[connection signal="timeout" from="Timers/BakingTimer" to="." method="_on_baking_timer_timeout"]
+[connection signal="timeout" from="Timers/GrillingTimer" to="." method="_on_grilling_timer_timeout"]
+[connection signal="timeout" from="Timers/FreezingTimer" to="." method="_on_freezing_timer_timeout"]

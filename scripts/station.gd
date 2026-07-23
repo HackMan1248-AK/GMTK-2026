@@ -25,6 +25,7 @@ enum Station {
 
 func interact() -> void:
 	if player.held_item != null:
+		print(player.held_item)
 		held_item = player.held_item
 		held_item.reparent(self)
 		
@@ -52,9 +53,36 @@ func interact() -> void:
 				active_timer = slicing_timer
 				
 		if should_lock:
-			print(active_timer.time_left)
 			player.lock_movement(active_timer.time_left)
+			
+		can_pickup = false
 	else:
-		if held_item != null:
+		if held_item != null and can_pickup:
 			player.pickup(held_item)
 			held_item = null
+
+
+func _on_slicing_timer_timeout() -> void:
+	can_pickup = true
+	held_item.get_node("AnimatedSprite2D").frame = 1
+	print("SLICED")
+
+func _on_grilling_timer_timeout() -> void:
+	can_pickup = true
+	held_item.get_node("AnimatedSprite2D").frame = 2
+	print("GRILLED")
+
+func _on_baking_timer_timeout() -> void:
+	can_pickup = true
+	held_item.get_node("AnimatedSprite2D").frame = 3
+	print("BAKED")
+
+func _on_assembling_timer_timeout() -> void:
+	can_pickup = true
+	held_item.get_node("AnimatedSprite2D").frame = 4
+	print("ASSEMBLED")
+
+func _on_freezing_timer_timeout() -> void:
+	can_pickup = true
+	held_item.get_node("AnimatedSprite2D").frame = 5
+	print("FROZEN")

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2caqxib3w5yx" path="res://assets/sprites/grilled_prototype.png" id="4_md71h"]
 [ext_resource type="Texture2D" uid="uid://krba3ury1cpq" path="res://assets/sprites/baked_prototype.png" id="5_03ip7"]
 [ext_resource type="Texture2D" uid="uid://b4lj64ogffl8f" path="res://assets/sprites/assembled_prototype.png" id="6_ba33c"]
+[ext_resource type="Texture2D" uid="uid://dqdv511isjjo0" path="res://assets/sprites/frozen_prototype.png" id="7_md71h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
 animations = [{
@@ -24,6 +25,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_ba33c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_md71h")
 }],
 "loop": 1,
 "name": &"default",
@@ -37,7 +41,8 @@ size = Vector2(26, 26)
 script = ExtResource("1_ssx0k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1036197381]
-scale = Vector2(0.2, 0.2)
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(0.81249994, 0.81249994)
 sprite_frames = SubResource("SpriteFrames_jpyye")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1889460874]
