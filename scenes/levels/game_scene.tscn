@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b80ldc2720y5d"]
+
+[ext_resource type="PackedScene" uid="uid://b67qq8kbs6v6j" path="res://scenes/player.tscn" id="1_iuucx"]
+[ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
+
+[node name="GameScene" type="Node2D" unique_id=461632664]
+
+[node name="Player" parent="." unique_id=1494026896 instance=ExtResource("1_iuucx")]
+position = Vector2(544, 221)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1913881635]
+
+[node name="Walls" type="Node" parent="." unique_id=945550889]
+
+[node name="Wall1" parent="Walls" unique_id=204888445 instance=ExtResource("2_tcqdt")]
+position = Vector2(585, 587)
+scale = Vector2(9.399999, 1)
+
+[node name="Wall2" parent="Walls" unique_id=16656805 instance=ExtResource("2_tcqdt")]
+position = Vector2(1152, 319)
+scale = Vector2(1, 5.5600014)
+
+[node name="Wall3" parent="Walls" unique_id=1536169966 instance=ExtResource("2_tcqdt")]
+position = Vector2(579, 11)
+scale = Vector2(9.4, 1)
+
+[node name="Wall4" parent="Walls" unique_id=1678134774 instance=ExtResource("2_tcqdt")]
+position = Vector2(8, 318)
+scale = Vector2(1, 5.5)

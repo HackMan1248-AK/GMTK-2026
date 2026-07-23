@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cc2cbc1p0kktv"]
+
+[ext_resource type="Script" uid="uid://bbd0bovy5q8p2" path="res://scripts/main_menu.gd" id="1_fsby3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpyye"]
+bg_color = Color(1, 1, 1, 1)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="MainMenu" type="Control" unique_id=369186984]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsby3")
+
+[node name="Panel" type="Panel" parent="." unique_id=923341991]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=906524915]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -280.0
+offset_right = 102.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 21
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1103951969]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpyye")
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1144590427]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpyye")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=555165543]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpyye")
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=1756848364]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -430.0
+offset_top = -47.0
+offset_right = 430.0
+offset_bottom = 416.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "Count Down"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
