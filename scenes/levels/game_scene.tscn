@@ -77,7 +77,6 @@ blend_mode = 1
 
 [node name="Fridge" parent="Stations" unique_id=2131174890 instance=ExtResource("3_004os")]
 position = Vector2(2164, 1109)
-station = null
 
 [node name="Pantry" parent="Stations" unique_id=1323231066 instance=ExtResource("4_jstec")]
 position = Vector2(2164, 1279)

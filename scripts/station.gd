@@ -1,7 +1,7 @@
 extends Interactable
+@onready var player: CharacterBody2D = $"../../Player"
 
 var held_item = null
-var player = get_tree().get_first_node_in_group("player")
 
 enum Station {
 	FRIDGE,
