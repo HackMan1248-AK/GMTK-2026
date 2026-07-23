@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b67qq8kbs6v6j" path="res://scenes/player.tscn" id="1_iuucx"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
+[ext_resource type="PackedScene" uid="uid://cg6u605xxbesf" path="res://scenes/enemies/fly_swarm.tscn" id="6_004os"]
+[ext_resource type="PackedScene" uid="uid://dwuu51onydw6h" path="res://scenes/enemies/mutated_rats.tscn" id="7_jstec"]
+[ext_resource type="PackedScene" uid="uid://cicnjem8k77g6" path="res://scenes/enemies/spider_web.tscn" id="8_301yp"]
 [ext_resource type="Texture2D" uid="uid://bv6su4klu7odh" path="res://assets/sprites/floor game.png" id="9_jstec"]
 [ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/ingredient.tscn" id="10_301yp"]
 [ext_resource type="PackedScene" uid="uid://bs6xgblmybm0t" path="res://scenes/environment/station.tscn" id="11_dsjjn"]
@@ -50,6 +53,7 @@ scale = Vector2(1.154571, 15.452568)
 [node name="Light" type="Node" parent="." unique_id=969600844]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
+visible = false
 blend_mode = 1
 
 [node name="Stations" type="Node" parent="." unique_id=1256472941]
@@ -82,3 +86,14 @@ should_lock = true
 
 [node name="Ingredient" parent="." unique_id=350272053 instance=ExtResource("10_301yp")]
 position = Vector2(1211, 406)
+
+[node name="Fly Swarm" parent="." unique_id=1049073685 node_paths=PackedStringArray("target") instance=ExtResource("6_004os")]
+position = Vector2(1681, 1328)
+target = NodePath("../Player")
+
+[node name="Mutated Rats" parent="." unique_id=476083360 node_paths=PackedStringArray("target") instance=ExtResource("7_jstec")]
+position = Vector2(1360, 1408)
+target = NodePath("../Player")
+
+[node name="SpiderWeb" parent="." unique_id=955119012 instance=ExtResource("8_301yp")]
+position = Vector2(1039, 1408)

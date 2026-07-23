@@ -8,7 +8,11 @@ var flashlight_on = false
 
 @export var speed : float = 300.0
 @export var movement_locked : float = false
+@export var knockback_force := 600.0
+@export var knockback_friction := 1800.0
 var interactable = null
+var current_speed : float
+var knockback_velocity: Vector2 = Vector2.ZERO
 
 @onready var ingredient_point: Marker2D = $Ingredient
 var interactable_ingredient: Interactable
@@ -17,6 +21,7 @@ var held_item: Node2D = null
 func _ready():
 	add_to_group("player")
 	flash_light.enabled = false
+	current_speed = speed
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Interact") and interactable:
@@ -47,7 +52,15 @@ func _physics_process(_delta: float):
 			flash_light.enabled = true
 
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = direction * speed
+	velocity = direction * current_speed
+
+	velocity += knockback_velocity
+
+	knockback_velocity = knockback_velocity.move_toward(
+		Vector2.ZERO,
+		knockback_friction * _delta
+	)
+
 	move_and_slide()
 
 func pickup(item: Node2D):
@@ -70,6 +83,16 @@ func lock_movement(duration: float):
 	movement_locked = true
 	await get_tree().create_timer(duration).timeout
 	movement_locked = false
+	
+func apply_slow(percent):
+	current_speed = speed * percent
+
+func remove_slow():
+	current_speed = speed
+	
+func take_knockback(kb_position: Vector2):
+	var dir = (global_position - kb_position).normalized()
+	knockback_velocity = dir * knockback_force
 
 func _on_active_timer_timeout() -> void:
 	flashlight_on = false
