@@ -4,17 +4,8 @@
 [ext_resource type="Script" uid="uid://bvsgwitvmw1p6" path="res://scripts/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://ba2dqdksabkd0" path="res://assets/sprites/torch_light.png" id="2_qhqgy"]
 
-[sub_resource type="Gradient" id="Gradient_orua6"]
-offsets = PackedFloat32Array(0, 0.728)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jpyye"]
-gradient = SubResource("Gradient_orua6")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyye"]
-size = Vector2(126, 84)
+size = Vector2(126, 124)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
 animations = [{
@@ -27,26 +18,51 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_orua6"]
+offsets = PackedFloat32Array(0, 0.728)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jpyye"]
+gradient = SubResource("Gradient_orua6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=1494026896]
 script = ExtResource("1_dovo2")
 speed = 600.0
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=292496060]
-scale = Vector2(9.38068, 9.38068)
-texture = SubResource("GradientTexture2D_jpyye")
-
-[node name="FlashLight" type="PointLight2D" parent="." unique_id=2096508176]
-energy = 3.5
-shadow_enabled = true
-texture = ExtResource("2_qhqgy")
-offset = Vector2(350, 0)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117492325]
-position = Vector2(0, -10)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_jpyye")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1106207261]
+z_index = 6
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_jpyye")
 animation = &"idle"
+
+[node name="FlashLight" type="PointLight2D" parent="." unique_id=2096508176]
+energy = 3.5
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_qhqgy")
+offset = Vector2(350, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=292496060]
+scale = Vector2(9.38068, 9.38068)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = SubResource("GradientTexture2D_jpyye")
+
+[node name="ActiveTimer" type="Timer" parent="." unique_id=1282594459]
+wait_time = 10.0
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=528472857]
+one_shot = true
+
+[node name="Ingredient" type="Marker2D" parent="." unique_id=1249634291]
+position = Vector2(0, -50)
+
+[connection signal="timeout" from="ActiveTimer" to="." method="_on_active_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

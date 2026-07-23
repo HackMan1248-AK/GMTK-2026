@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://jbkjx13ypy4s"]
+
+[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="1_rcex7"]
+[ext_resource type="Script" uid="uid://bdmte8g6bvrhw" path="res://scripts/ingredient.gd" id="1_ssx0k"]
+[ext_resource type="Texture2D" uid="uid://cy1xup0ntyrjt" path="res://assets/sprites/sliced_prototype.png" id="3_rskf0"]
+[ext_resource type="Texture2D" uid="uid://2caqxib3w5yx" path="res://assets/sprites/grilled_prototype.png" id="4_md71h"]
+[ext_resource type="Texture2D" uid="uid://krba3ury1cpq" path="res://assets/sprites/baked_prototype.png" id="5_03ip7"]
+[ext_resource type="Texture2D" uid="uid://b4lj64ogffl8f" path="res://assets/sprites/assembled_prototype.png" id="6_ba33c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rcex7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rskf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_md71h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_03ip7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ba33c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyye"]
+size = Vector2(26, 26)
+
+[node name="Ingredient" type="Node2D" unique_id=350272053]
+script = ExtResource("1_ssx0k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1036197381]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_jpyye")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1889460874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1764570019]
+shape = SubResource("RectangleShape2D_jpyye")

@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b1si7rg7nx5fi" path="res://scenes/environment/stations/assembly_station.tscn" id="5_301yp"]
 [ext_resource type="PackedScene" uid="uid://bcw8ptdw3wjpg" path="res://scenes/environment/stations/baking_station.tscn" id="6_dsjjn"]
 [ext_resource type="PackedScene" uid="uid://gu0arspsh2n4" path="res://scenes/environment/stations/grilling_station.tscn" id="7_euv8e"]
+[ext_resource type="Texture2D" uid="uid://bv6su4klu7odh" path="res://assets/sprites/floor game.png" id="9_jstec"]
+[ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/ingredient.tscn" id="10_301yp"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 
@@ -15,6 +17,38 @@
 position = Vector2(544, 221)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1913881635]
+
+[node name="Floor" type="Node" parent="." unique_id=2051741560]
+
+[node name="FloorGame" type="Sprite2D" parent="Floor" unique_id=1831236248]
+z_index = -1
+position = Vector2(566, 764)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame2" type="Sprite2D" parent="Floor" unique_id=837739138]
+z_index = -1
+position = Vector2(1560, 768)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame3" type="Sprite2D" parent="Floor" unique_id=375940302]
+z_index = -1
+position = Vector2(2554, 747)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame4" type="Sprite2D" parent="Floor" unique_id=333945257]
+z_index = -1
+position = Vector2(572, 2159)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame5" type="Sprite2D" parent="Floor" unique_id=1576188712]
+z_index = -1
+position = Vector2(1560, 2166)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame6" type="Sprite2D" parent="Floor" unique_id=945524235]
+z_index = -1
+position = Vector2(2558, 2145)
+texture = ExtResource("9_jstec")
 
 [node name="Walls" type="Node" parent="." unique_id=945550889]
 
@@ -43,6 +77,7 @@ blend_mode = 1
 
 [node name="Fridge" parent="Stations" unique_id=2131174890 instance=ExtResource("3_004os")]
 position = Vector2(2164, 1109)
+station = null
 
 [node name="Pantry" parent="Stations" unique_id=1323231066 instance=ExtResource("4_jstec")]
 position = Vector2(2164, 1279)
@@ -58,3 +93,6 @@ position = Vector2(1625, 1499)
 
 [node name="Slicing Station" parent="Stations" unique_id=1285239252 instance=ExtResource("3_gntax")]
 position = Vector2(1451, 1499)
+
+[node name="Ingredient" parent="." unique_id=350272053 instance=ExtResource("10_301yp")]
+position = Vector2(2134, 1006)
