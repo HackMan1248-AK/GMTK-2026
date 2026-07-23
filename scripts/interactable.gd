@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var area = $Area2D
+@export_enum("Fridge", "Pantry", "Assembly", "Baking", "Grilling", "Slicing") var stations: String
 
 func _ready():
 	area.body_entered.connect(_on_body_entered)
@@ -15,4 +16,16 @@ func _on_body_exited(body):
 		body.interactable = null
 
 func interact():
-	print("Chest opened!")
+	match stations:
+		"Fridge":
+			print("Freezing")
+		"Pantry":
+			print("Storing")
+		"Assembly":
+			print("Assmebling")
+		"Baking":
+			print("Baking")
+		"Grilling":
+			print("Grilling")
+		"Slicing":
+			print("Slicing")

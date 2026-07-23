@@ -2,6 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://b67qq8kbs6v6j" path="res://scenes/player.tscn" id="1_iuucx"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
+[ext_resource type="PackedScene" uid="uid://cfg1rupbdculi" path="res://scenes/environment/ingredient station/fridge.tscn" id="3_004os"]
+[ext_resource type="PackedScene" uid="uid://cl4ot4dnvptlg" path="res://scenes/environment/stations/slicing_station.tscn" id="3_gntax"]
+[ext_resource type="PackedScene" uid="uid://chdknhe8niwlh" path="res://scenes/environment/ingredient station/pantry.tscn" id="4_jstec"]
+[ext_resource type="PackedScene" uid="uid://b1si7rg7nx5fi" path="res://scenes/environment/stations/assembly_station.tscn" id="5_301yp"]
+[ext_resource type="PackedScene" uid="uid://bcw8ptdw3wjpg" path="res://scenes/environment/stations/baking_station.tscn" id="6_dsjjn"]
+[ext_resource type="PackedScene" uid="uid://gu0arspsh2n4" path="res://scenes/environment/stations/grilling_station.tscn" id="7_euv8e"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 
@@ -13,17 +19,42 @@ position = Vector2(544, 221)
 [node name="Walls" type="Node" parent="." unique_id=945550889]
 
 [node name="Wall1" parent="Walls" unique_id=204888445 instance=ExtResource("2_tcqdt")]
-position = Vector2(585, 587)
-scale = Vector2(9.399999, 1)
+position = Vector2(1168, 1964)
+scale = Vector2(19, 1)
 
 [node name="Wall2" parent="Walls" unique_id=16656805 instance=ExtResource("2_tcqdt")]
-position = Vector2(1152, 319)
-scale = Vector2(1, 5.5600014)
+position = Vector2(2321, 1000)
+scale = Vector2(1, 15.84)
 
 [node name="Wall3" parent="Walls" unique_id=1536169966 instance=ExtResource("2_tcqdt")]
-position = Vector2(579, 11)
-scale = Vector2(9.4, 1)
+position = Vector2(1162.0001, 7)
+scale = Vector2(19.166065, 0.967628)
 
 [node name="Wall4" parent="Walls" unique_id=1678134774 instance=ExtResource("2_tcqdt")]
-position = Vector2(8, 318)
-scale = Vector2(1, 5.5)
+position = Vector2(-1, 986.00006)
+scale = Vector2(1.154571, 15.452568)
+
+[node name="Light" type="Node" parent="." unique_id=969600844]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
+blend_mode = 1
+
+[node name="Stations" type="Node" parent="." unique_id=1256472941]
+
+[node name="Fridge" parent="Stations" unique_id=2131174890 instance=ExtResource("3_004os")]
+position = Vector2(2164, 1109)
+
+[node name="Pantry" parent="Stations" unique_id=1323231066 instance=ExtResource("4_jstec")]
+position = Vector2(2164, 1279)
+
+[node name="Assembly Station" parent="Stations" unique_id=1839002094 instance=ExtResource("5_301yp")]
+position = Vector2(1993, 1512)
+
+[node name="Baking Station" parent="Stations" unique_id=1637320448 instance=ExtResource("6_dsjjn")]
+position = Vector2(1805, 1512)
+
+[node name="Grilling Station" parent="Stations" unique_id=960349008 instance=ExtResource("7_euv8e")]
+position = Vector2(1625, 1499)
+
+[node name="Slicing Station" parent="Stations" unique_id=1285239252 instance=ExtResource("3_gntax")]
+position = Vector2(1451, 1499)
