@@ -64,25 +64,30 @@ func interact() -> void:
 
 func _on_slicing_timer_timeout() -> void:
 	can_pickup = true
-	held_item.get_node("AnimatedSprite2D").frame = 1
+	if held_item.get_node("AnimatedSprite2D"):
+		held_item.get_node("AnimatedSprite2D").frame = 1
 	print("SLICED")
 
 func _on_grilling_timer_timeout() -> void:
 	can_pickup = true
-	held_item.get_node("AnimatedSprite2D").frame = 2
+	if held_item.get_node("AnimatedSprite2D"):
+		held_item.get_node("AnimatedSprite2D").frame = 2
 	print("GRILLED")
 
 func _on_baking_timer_timeout() -> void:
 	can_pickup = true
-	held_item.get_node("AnimatedSprite2D").frame = 3
+	if held_item.get_node("AnimatedSprite2D"):
+		held_item.get_node("AnimatedSprite2D").frame = 3
 	print("BAKED")
 
 func _on_assembling_timer_timeout() -> void:
 	can_pickup = true
-	held_item.get_node("AnimatedSprite2D").frame = 4
+	if held_item.get_node("AnimatedSprite2D"):
+		held_item.get_node("AnimatedSprite2D").frame = 4
 	print("ASSEMBLED")
 
 func _on_freezing_timer_timeout() -> void:
 	can_pickup = true
-	held_item.get_node("AnimatedSprite2D").frame = 5
+	if held_item.get_node("AnimatedSprite2D"):
+		held_item.get_node("AnimatedSprite2D").frame = 5
 	print("FROZEN")
