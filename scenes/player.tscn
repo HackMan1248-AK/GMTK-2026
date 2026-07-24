@@ -12,7 +12,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuyoq"]
 radius = 38.0
-height = 336.0
+height = 236.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
 atlas = ExtResource("4_tuyoq")
@@ -162,7 +162,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack_down",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -176,7 +176,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack_left",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -190,7 +190,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack_right",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -204,7 +204,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack_up",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -336,7 +336,7 @@ script = ExtResource("1_dovo2")
 speed = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117492325]
-position = Vector2(-1, 1)
+position = Vector2(0, 24)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_tuyoq")
 
@@ -344,7 +344,7 @@ shape = SubResource("CapsuleShape2D_tuyoq")
 z_index = 6
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_jpyye")
-animation = &"idle_down"
+animation = &"attack_up"
 
 [node name="FlashLight" type="PointLight2D" parent="." unique_id=2096508176]
 energy = 3.5

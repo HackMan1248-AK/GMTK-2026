@@ -123,17 +123,17 @@ func attack():
 	last_direction = (get_global_mouse_position() - global_position).normalized()
 	play_attack_animation()
 
-	var knife = knife_scene.instantiate()
-	knife.global_position = global_position
-	#knife.direction = last_direction
-	knife.direction = (get_global_mouse_position() - global_position).normalized()
-	get_tree().current_scene.add_child(knife)
-
 func play_attack_animation():
 	var dir = get_direction_name(last_direction)
 	anim.play("attack_" + dir)
 
 	await anim.animation_finished
+
+	var knife = knife_scene.instantiate()
+	knife.global_position = global_position + Vector2(0, -20)
+	#knife.direction = last_direction
+	knife.direction = (get_global_mouse_position() - global_position).normalized()
+	get_tree().current_scene.add_child(knife)
 
 	is_attacking = false
 	

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://w3m4yq4ik88d"]
+
+[ext_resource type="Script" uid="uid://bp7gyq07wm82d" path="res://scripts/station.gd" id="1_hq5bx"]
+[ext_resource type="Texture2D" uid="uid://bb8x5lj3cb312" path="res://assets/sprites/chopping_counter.png" id="2_q1vqp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rg0rw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q1vqp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bjgw"]
+size = Vector2(441, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bysbb"]
+size = Vector2(441, 20)
+
+[node name="Slicing" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_hq5bx")
+timer = NodePath("Timer")
+station = 5
+should_lock = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
+sprite_frames = SubResource("SpriteFrames_rg0rw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20947008]
+position = Vector2(-1.5, -47.5)
+shape = SubResource("RectangleShape2D_2bjgw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=469228049]
+position = Vector2(1, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538359782]
+position = Vector2(-2.5, 5)
+shape = SubResource("RectangleShape2D_bysbb")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
+position = Vector2(0, 72)
+
+[node name="Timer" type="Timer" parent="." unique_id=1967370289]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,184 @@
+{
+  "Bread": {
+	"ingredients": [
+	  { "item": "Flour", "source": "Farmer" }
+	],
+	"steps": [
+	  {
+		"action": "Bake",
+		"inputs": ["Flour"],
+		"outputs": ["Bread"],
+		"station": "Baking Station"
+	  }
+	]
+  },
+
+  "Vegetable Soup": {
+	"ingredients": [
+	  { "item": "Vegetables", "source": "Farmer" },
+	  { "item": "Chicken", "source": "Butcher" }
+	],
+	"steps": [
+	  {
+		"action": "Slice",
+		"inputs": ["Vegetables", "Chicken"],
+		"outputs": ["Sliced Vegetables", "Sliced Chicken"],
+		"station": "Slicing Station"
+	  },
+	  {
+		"action": "Cook",
+		"inputs": ["Sliced Vegetables", "Sliced Chicken"],
+		"outputs": ["Cooked Vegetables", "Cooked Chicken"],
+		"station": "Grilling Station"
+	  },
+	  {
+		"action": "Assemble",
+		"inputs": ["Cooked Vegetables", "Cooked Chicken"],
+		"outputs": ["Vegetable Soup"],
+		"station": "Assembling Station"
+	  }
+	]
+  },
+
+  "Cream Soup": {
+	"ingredients": [
+	  { "item": "Spoiled Milk", "source": "Dairy Farmer" }
+	],
+	"steps": [
+	  {
+		"action": "Heat",
+		"inputs": ["Spoiled Milk"],
+		"outputs": ["Heated Spoiled Milk"],
+		"station": "Grilling Station"
+	  },
+	  {
+		"action": "Assemble",
+		"inputs": ["Heated Spoiled Milk"],
+		"outputs": ["Cream Soup"],
+		"station": "Assembling Station"
+	  }
+	]
+  },
+
+  "Meat Stew": {
+	"ingredients": [
+	  { "item": "Rotten Meat", "source": "Butcher" }
+	],
+	"steps": [
+	  {
+		"action": "Slice",
+		"inputs": ["Rotten Meat"],
+		"outputs": ["Sliced Rotten Meat"],
+		"station": "Slicing Station"
+	  },
+	  {
+		"action": "Cook",
+		"inputs": ["Sliced Rotten Meat"],
+		"outputs": ["Cooked Rotten Meat"],
+		"station": "Grilling Station"
+	  },
+	  {
+		"action": "Assemble",
+		"inputs": ["Cooked Rotten Meat"],
+		"outputs": ["Meat Stew"],
+		"station": "Assembly Station"
+	  }
+	]
+  },
+
+  "Meat Pie": {
+	"ingredients": [
+	  { "item": "Meat", "source": "Butcher" },
+	  { "item": "Flour", "source": "Farmer" }
+	],
+	"steps": [
+	  {
+		"action": "Slice",
+		"inputs": ["Meat"],
+		"outputs": ["Sliced Meat"],
+		"station": "Slicing Station"
+	  },
+	  {
+		"action": "Bake",
+		"inputs": ["Flour"],
+		"outputs": ["Bread"],
+		"station": "Baking Station"
+	  },
+	  {
+		"action": "Assemble",
+		"inputs": ["Sliced Meat", "Bread"],
+		"outputs": ["Meat Pie"],
+		"station": "Assembling Station"
+	  }
+	]
+  },
+
+  "Fish Pie": {
+	"ingredients": [
+	  { "item": "Fish", "source": "Fisherman" },
+	  { "item": "Flour", "source": "Farmer" }
+	],
+	"steps": [
+	  {
+		"action": "Slice",
+		"inputs": ["Fish"],
+		"outputs": ["Sliced Fish"],
+		"station": "Slicing Station"
+	  },
+	  {
+		"action": "Bake",
+		"inputs": ["Flour"],
+		"outputs": ["Bread"],
+		"station": "Baking Station"
+	  },
+	  {
+		"action": "Assemble",
+		"inputs": ["Sliced Fish", "Bread"],
+		"outputs": ["Fish Pie"],
+		"station": "Assembling Station"
+	  }
+	]
+  },
+
+  "Mold Toast": {
+	"ingredients": [
+	  { "item": "Flour", "source": "Farmer" },
+	  { "item": "Moldy Fish", "source": "Dairy Farmer" }
+	],
+	"steps": [
+	  {
+		"action": "Bake",
+		"inputs": ["Flour"],
+		"outputs": ["Bread"],
+		"station": "Baking Station"
+	  },
+	  {
+		"action": "Toast",
+		"inputs": ["Bread", "Moldy Fish"],
+		"outputs": ["Mold Toast"],
+		"station": "Grilling Station"
+	  }
+	]
+  },
+
+  "Flutter Chicken": {
+	"ingredients": [
+	  { "item": "Chicken", "source": "Butcher" },
+	  { "item": "Butterflies", "source": "Insect And Poultry Keeper" }
+	],
+	"steps": [
+	  {
+		"action": "Grill",
+		"inputs": ["Chicken"],
+		"outputs": ["Grilled Chicken"],
+		"station": "Grilling Station"
+	  },
+	  {
+		"action": "Assemble",
+		"inputs": ["Grilled Chicken", "Butterflies"],
+		"outputs": ["Flutter Chicken"],
+		"station": "Assembling Station"
+	  }
+	]
+  }
+}

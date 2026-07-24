@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dlkai4xebd50d"]
+
+[ext_resource type="Script" uid="uid://bp7gyq07wm82d" path="res://scripts/station.gd" id="1_bysbb"]
+[ext_resource type="Texture2D" uid="uid://d2pr487h5fhmx" path="res://assets/sprites/fridge.png" id="2_5a03r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plnv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5a03r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orua6"]
+size = Vector2(134, 229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o88mx"]
+size = Vector2(136, 21)
+
+[node name="Fridge" type="StaticBody2D" unique_id=2131174890]
+script = ExtResource("1_bysbb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
+sprite_frames = SubResource("SpriteFrames_plnv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20947008]
+position = Vector2(-3, -50.5)
+shape = SubResource("RectangleShape2D_orua6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=469228049]
+position = Vector2(1, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538359782]
+position = Vector2(-3, 53.5)
+shape = SubResource("RectangleShape2D_o88mx")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
+position = Vector2(0, 72)

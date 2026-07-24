@@ -4,18 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://caupeuy2cu45u" path="res://scenes/knife.tscn" id="2_jstec"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
 [ext_resource type="PackedScene" uid="uid://cg6u605xxbesf" path="res://scenes/enemies/fly_swarm.tscn" id="6_004os"]
+[ext_resource type="PackedScene" uid="uid://3vclq56rchn" path="res://scenes/stations/assmebly.tscn" id="6_64sd5"]
 [ext_resource type="PackedScene" uid="uid://dwuu51onydw6h" path="res://scenes/enemies/mutated_rats.tscn" id="7_jstec"]
+[ext_resource type="PackedScene" uid="uid://dkf0v3ll1xwcp" path="res://scenes/stations/baking.tscn" id="7_tuu3e"]
 [ext_resource type="PackedScene" uid="uid://cicnjem8k77g6" path="res://scenes/enemies/spider_web.tscn" id="8_301yp"]
 [ext_resource type="Texture2D" uid="uid://bv6su4klu7odh" path="res://assets/sprites/floor game.png" id="9_jstec"]
 [ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/ingredient.tscn" id="10_301yp"]
-[ext_resource type="PackedScene" uid="uid://bs6xgblmybm0t" path="res://scenes/environment/station.tscn" id="11_dsjjn"]
-[ext_resource type="PackedScene" path="res://scenes/npc/farmer.tscn" id="12_farmer"]
-[ext_resource type="PackedScene" path="res://scenes/npc/fisherman.tscn" id="13_fisherman"]
-[ext_resource type="PackedScene" path="res://scenes/npc/dairy_farmer.tscn" id="14_dairy_farmer"]
-[ext_resource type="PackedScene" path="res://scenes/npc/butcher.tscn" id="15_butcher"]
-[ext_resource type="PackedScene" path="res://scenes/npc/insect_keeper.tscn" id="16_insect_keeper"]
-[ext_resource type="PackedScene" path="res://scenes/npc/creature.tscn" id="17_creature"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
+[ext_resource type="PackedScene" uid="uid://w3m4yq4ik88d" path="res://scenes/stations/slicing.tscn" id="10_rjjgs"]
+[ext_resource type="PackedScene" uid="uid://cqrcx66xmgmle" path="res://scenes/stations/pantry.tscn" id="11_hynbt"]
+[ext_resource type="PackedScene" uid="uid://bn5mmaug7pbid" path="res://scenes/stations/grilling.tscn" id="12_71p02"]
+[ext_resource type="PackedScene" uid="uid://6cx0e1yr8eym" path="res://scenes/npc/farmer.tscn" id="12_farmer"]
+[ext_resource type="PackedScene" uid="uid://b70b4wplgftdk" path="res://scenes/npc/fisherman.tscn" id="13_fisherman"]
+[ext_resource type="PackedScene" uid="uid://ye534hr6bgdo" path="res://scenes/npc/dairy_farmer.tscn" id="14_dairy_farmer"]
+[ext_resource type="PackedScene" uid="uid://bvqjv57x8stii" path="res://scenes/npc/butcher.tscn" id="15_butcher"]
+[ext_resource type="PackedScene" uid="uid://dnjoxattsibkm" path="res://scenes/npc/insect_keeper.tscn" id="16_insect_keeper"]
+[ext_resource type="PackedScene" uid="uid://b5tmlthxrlyo7" path="res://scenes/npc/creature.tscn" id="17_creature"]
+[ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/stations/fridge.tscn" id="17_kg0xf"]
+[ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 
@@ -69,31 +74,29 @@ blend_mode = 1
 
 [node name="Stations" type="Node" parent="." unique_id=1256472941]
 
-[node name="Fridge" parent="Stations" unique_id=1459735875 instance=ExtResource("11_dsjjn")]
-position = Vector2(1508, 257)
+[node name="Assembly" parent="Stations" unique_id=2131174890 instance=ExtResource("6_64sd5")]
+position = Vector2(951, 1051)
+scale = Vector2(0.8, 0.8)
 
-[node name="Baking" parent="Stations" unique_id=558360909 instance=ExtResource("11_dsjjn")]
-position = Vector2(1634, 477)
-station = 3
+[node name="Baking" parent="Stations" unique_id=593331674 instance=ExtResource("7_tuu3e")]
+position = Vector2(257, 1036)
+scale = Vector2(0.8, 0.8)
 
-[node name="Slicing" parent="Stations" unique_id=657921884 instance=ExtResource("11_dsjjn")]
-position = Vector2(1417, 665)
-station = 5
-should_lock = true
+[node name="Fridge" parent="Stations" unique_id=826703763 instance=ExtResource("17_kg0xf")]
+position = Vector2(1891, 953)
+scale = Vector2(0.8, 0.8)
 
-[node name="Pantry" parent="Stations" unique_id=2131174890 instance=ExtResource("11_dsjjn")]
-position = Vector2(1144, 726)
-station = 1
+[node name="Slicing" parent="Stations" unique_id=2079055382 instance=ExtResource("10_rjjgs")]
+position = Vector2(587, 995)
+scale = Vector2(0.8, 0.8)
 
-[node name="Assembly" parent="Stations" unique_id=479210845 instance=ExtResource("11_dsjjn")]
-position = Vector2(890, 726)
-station = 2
-should_lock = true
+[node name="Pantry" parent="Stations" unique_id=359336463 instance=ExtResource("11_hynbt")]
+position = Vector2(2077, 1032)
+scale = Vector2(0.8, 0.8)
 
-[node name="Grilling" parent="Stations" unique_id=1684871248 instance=ExtResource("11_dsjjn")]
-position = Vector2(677, 737)
-station = 4
-should_lock = true
+[node name="Grilling" parent="Stations" unique_id=552771028 instance=ExtResource("12_71p02")]
+position = Vector2(1142, 1042)
+scale = Vector2(0.8, 0.8)
 
 [node name="Ingredient" parent="." unique_id=350272053 instance=ExtResource("10_301yp")]
 position = Vector2(1211, 406)
@@ -110,20 +113,22 @@ target = NodePath("../Player")
 position = Vector2(1039, 1408)
 target = NodePath("../Player")
 
-[node name="Farmer" parent="." instance=ExtResource("12_farmer")]
+[node name="NPCs" type="Node" parent="." unique_id=431019388]
+
+[node name="Farmer" parent="NPCs" unique_id=575870970 instance=ExtResource("12_farmer")]
 position = Vector2(760, 250)
 
-[node name="Fisherman" parent="." instance=ExtResource("13_fisherman")]
+[node name="Fisherman" parent="NPCs" unique_id=1962778921 instance=ExtResource("13_fisherman")]
 position = Vector2(760, 410)
 
-[node name="DairyFarmer" parent="." instance=ExtResource("14_dairy_farmer")]
+[node name="DairyFarmer" parent="NPCs" unique_id=725636154 instance=ExtResource("14_dairy_farmer")]
 position = Vector2(560, 410)
 
-[node name="Butcher" parent="." instance=ExtResource("15_butcher")]
+[node name="Butcher" parent="NPCs" unique_id=544472461 instance=ExtResource("15_butcher")]
 position = Vector2(360, 410)
 
-[node name="InsectKeeper" parent="." instance=ExtResource("16_insect_keeper")]
+[node name="InsectKeeper" parent="NPCs" unique_id=1584209599 instance=ExtResource("16_insect_keeper")]
 position = Vector2(360, 250)
 
-[node name="Creature" parent="." instance=ExtResource("17_creature")]
+[node name="Creature" parent="NPCs" unique_id=362074548 instance=ExtResource("17_creature")]
 position = Vector2(560, 80)

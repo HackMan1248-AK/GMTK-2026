@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyye"]
-size = Vector2(26, 26)
+size = Vector2(104, 104)
 
 [node name="Ingredient" type="Node2D" unique_id=350272053]
 script = ExtResource("1_ssx0k")
