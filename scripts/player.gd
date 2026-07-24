@@ -17,6 +17,12 @@ var knockback_velocity: Vector2 = Vector2.ZERO
 var interactable_ingredient: Interactable
 var held_item: Node2D = null
 
+@export var knife_scene: PackedScene
+var is_attacking = false
+var last_direction: Vector2 = Vector2.RIGHT
+
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
 func _ready():
 	add_to_group("player")
 	flash_light.enabled = false
@@ -26,7 +32,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("Interact") and interactable:
 		interactable.interact()
 	
-	if event.is_action_pressed("Left Click") and can_flash_light:
+	if event.is_action_pressed("Right Click") and can_flash_light:
 		flashlight_on = !flashlight_on
 		flash_light.enabled = flashlight_on
 
@@ -35,6 +41,9 @@ func _unhandled_input(event):
 		else:
 			cooldown_timer.start()
 			can_flash_light = false
+	
+	if event.is_action_pressed("Space"):
+		attack()
 
 func _physics_process(_delta: float):
 	if movement_locked:
@@ -51,6 +60,18 @@ func _physics_process(_delta: float):
 			flash_light.enabled = true
 
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
+	
+	if direction != Vector2.ZERO:
+		last_direction = direction.normalized()
+	
+	if !is_attacking:
+		var dir_name = get_direction_name(last_direction)
+
+		if direction == Vector2.ZERO:
+			anim.play("idle_" + dir_name)
+		else:
+			anim.play("walk_" + dir_name)
+	
 	velocity = direction * current_speed
 
 	velocity += knockback_velocity
@@ -92,6 +113,33 @@ func remove_slow():
 func take_knockback(kb_position: Vector2, kb_effect: float):
 	var dir = (global_position - kb_position).normalized()
 	knockback_velocity = dir * kb_effect
+
+func attack():
+	if is_attacking:
+		return
+
+	is_attacking = true
+
+	play_attack_animation()
+
+	var knife = knife_scene.instantiate()
+	knife.global_position = global_position
+	knife.direction = last_direction
+	get_tree().current_scene.add_child(knife)
+
+func play_attack_animation():
+	var dir = get_direction_name(last_direction)
+	anim.play("attack_" + dir)
+
+	await anim.animation_finished
+
+	is_attacking = false
+	
+func get_direction_name(dir: Vector2) -> String:
+	if abs(dir.x) > abs(dir.y):
+		return "right" if dir.x > 0 else "left"
+	else:
+		return "down" if dir.y > 0 else "up"
 
 func _on_active_timer_timeout() -> void:
 	flashlight_on = false

@@ -8,16 +8,26 @@ extends CharacterBody2D
 @export var target: Node2D
 @export var space_from_target: float
 
+var can_move := true
 var health := max_health
 
 func _ready():
 	health = max_health
 
-func take_damage(amount:int):
+func take_damage(amount: int):
 	health -= amount
 
+	can_move = false
+	#$AnimatedSprite2D.play("hit")
+
 	if health <= 0:
+		#$AnimatedSprite2D.play("die")
+		#await $AnimatedSprite2D.animation_finished
 		die()
+		return
+
+	#await $AnimatedSprite2D.animation_finished
+	can_move = true
 
 func die():
 	queue_free()

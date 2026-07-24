@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b80ldc2720y5d"]
 
 [ext_resource type="PackedScene" uid="uid://b67qq8kbs6v6j" path="res://scenes/player.tscn" id="1_iuucx"]
+[ext_resource type="PackedScene" uid="uid://caupeuy2cu45u" path="res://scenes/knife.tscn" id="2_jstec"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
 [ext_resource type="PackedScene" uid="uid://cg6u605xxbesf" path="res://scenes/enemies/fly_swarm.tscn" id="6_004os"]
 [ext_resource type="PackedScene" uid="uid://dwuu51onydw6h" path="res://scenes/enemies/mutated_rats.tscn" id="7_jstec"]
@@ -13,6 +14,7 @@
 
 [node name="Player" parent="." unique_id=1494026896 instance=ExtResource("1_iuucx")]
 position = Vector2(544, 221)
+knife_scene = ExtResource("2_jstec")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1913881635]
 

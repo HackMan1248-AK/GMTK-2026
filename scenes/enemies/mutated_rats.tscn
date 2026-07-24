@@ -17,6 +17,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyye"]
 size = Vector2(127, 127)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orua6"]
+size = Vector2(127, 127)
+
 [node name="Mutated Rats" type="CharacterBody2D" unique_id=476083360]
 script = ExtResource("1_dmqw1")
 
@@ -27,3 +30,9 @@ sprite_frames = SubResource("SpriteFrames_jpyye")
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_jpyye")
 disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=634969761]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=578658629]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_orua6")

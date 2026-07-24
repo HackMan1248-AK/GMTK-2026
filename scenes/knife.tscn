@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://caupeuy2cu45u"]
+
+[ext_resource type="Script" uid="uid://bmx7wv8okfki" path="res://scripts/knife.gd" id="1_syuqf"]
+[ext_resource type="Texture2D" uid="uid://j1r4ct85bj8o" path="res://assets/sprites/knife_prototype.webp" id="2_syuqf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_syuqf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syuqf"]
+size = Vector2(130, 126)
+
+[node name="Knife" type="Node2D" unique_id=1081167617]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_syuqf")
+speed = 1000.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=72261176]
+position = Vector2(-4.7683716e-07, -9.536743e-07)
+scale = Vector2(0.19642857, 0.19642857)
+sprite_frames = SubResource("SpriteFrames_jpyye")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2016669993]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1114927079]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_syuqf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1340326963]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
