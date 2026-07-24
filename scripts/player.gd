@@ -42,7 +42,7 @@ func _unhandled_input(event):
 			cooldown_timer.start()
 			can_flash_light = false
 	
-	if event.is_action_pressed("Space"):
+	if event.is_action_pressed("Left Click"):
 		attack()
 
 func _physics_process(_delta: float):
@@ -120,11 +120,13 @@ func attack():
 
 	is_attacking = true
 
+	last_direction = (get_global_mouse_position() - global_position).normalized()
 	play_attack_animation()
 
 	var knife = knife_scene.instantiate()
 	knife.global_position = global_position
-	knife.direction = last_direction
+	#knife.direction = last_direction
+	knife.direction = (get_global_mouse_position() - global_position).normalized()
 	get_tree().current_scene.add_child(knife)
 
 func play_attack_animation():
