@@ -1,0 +1,40 @@
+{
+  "lines": [
+    {
+      "speaker": "Farmer",
+      "text": "For decades, a pact was made. Feed the creature before the countdown ends, or else the creature kills you."
+    },
+    {
+      "speaker": "Fisherman",
+      "text": "It isn't so easy to make the dishes. You need to fetch ingredients and deal with different characters."
+    },
+    {
+      "speaker": "Dairy Farmer",
+      "text": "The villagers found a way to survive using magical ingredients."
+    },
+    {
+      "speaker": "Butcher",
+      "text": "Getting those ingredients wasn't easy."
+    },
+    {
+      "speaker": "Insect Keeper",
+      "text": "Until one day... there are no royal chefs. Just you."
+    },
+    {
+      "speaker": "Creature",
+      "text": "Cook for me."
+    },
+    {
+      "speaker": "Creature",
+      "text": "Every meal earns you more time."
+    },
+    {
+      "speaker": "Creature",
+      "text": "Fail... and you become the next meal."
+    },
+    {
+      "speaker": "Creature",
+      "text": "The countdown has started."
+    }
+  ]
+}

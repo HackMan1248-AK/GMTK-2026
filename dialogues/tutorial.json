@@ -1,0 +1,24 @@
+{
+  "lines": [
+    {
+      "speaker": "Controls",
+      "text": "Use WASD to move."
+    },
+    {
+      "speaker": "Controls",
+      "text": "Press E to interact with villagers, ingredients, and stations."
+    },
+    {
+      "speaker": "Controls",
+      "text": "Press Space to continue dialogue."
+    },
+    {
+      "speaker": "Objective",
+      "text": "Talk to villagers, collect ingredients, cook at stations, and serve the creature before the countdown ends."
+    },
+    {
+      "speaker": "Butcher",
+      "text": "If you freeze, the creature gets a chilled appetizer."
+    }
+  ]
+}

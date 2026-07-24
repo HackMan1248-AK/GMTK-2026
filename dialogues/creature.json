@@ -1,0 +1,24 @@
+{
+  "lines": [
+    {
+      "speaker": "Creature",
+      "text": "Cook for me."
+    },
+    {
+      "speaker": "Creature",
+      "text": "Every meal earns you more time."
+    },
+    {
+      "speaker": "Creature",
+      "text": "Fail... and you become the next meal."
+    },
+    {
+      "speaker": "Creature",
+      "text": "The countdown has started."
+    },
+    {
+      "speaker": "Objective",
+      "text": "Prepare the requested dish and serve it before the timer reaches zero."
+    }
+  ]
+}
