@@ -3,6 +3,7 @@ class_name MutatedRat
 extends Enemy
 
 @export var bite_range := 24
+@export var knockback_effect : float = 700
 
 func _physics_process(delta):
 	chase_target()
@@ -11,4 +12,4 @@ func _physics_process(delta):
 		attack()
 
 func attack():
-	target.take_knockback(global_position)
+	target.take_knockback(global_position, knockback_effect)

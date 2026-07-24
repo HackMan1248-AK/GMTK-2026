@@ -8,7 +8,6 @@ var flashlight_on = false
 
 @export var speed : float = 300.0
 @export var movement_locked : float = false
-@export var knockback_force := 600.0
 @export var knockback_friction := 1800.0
 var interactable = null
 var current_speed : float
@@ -90,9 +89,9 @@ func apply_slow(percent):
 func remove_slow():
 	current_speed = speed
 	
-func take_knockback(kb_position: Vector2):
+func take_knockback(kb_position: Vector2, kb_effect: float):
 	var dir = (global_position - kb_position).normalized()
-	knockback_velocity = dir * knockback_force
+	knockback_velocity = dir * kb_effect
 
 func _on_active_timer_timeout() -> void:
 	flashlight_on = false

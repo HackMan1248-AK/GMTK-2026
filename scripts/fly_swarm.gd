@@ -4,11 +4,15 @@ extends Enemy
 
 @export var wobble_strength := 50.0
 @export var range := 100.0
+@export var knockback_effect : float = 500
 
 var time := 0.0
 
 func _physics_process(delta):
 	time += delta
+	
+	if global_position.distance_to(target.global_position) < (range*0.8):
+		attack()
 
 	var to_target = target.global_position - global_position
 	var dir = to_target.normalized()
@@ -27,3 +31,6 @@ func _physics_process(delta):
 		velocity = tangent * speed
 
 	move_and_slide()
+
+func attack():
+	target.take_knockback(global_position, knockback_effect)

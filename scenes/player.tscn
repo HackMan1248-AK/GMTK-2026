@@ -30,6 +30,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Player" type="CharacterBody2D" unique_id=1494026896]
 script = ExtResource("1_dovo2")
 speed = 600.0
+knockback_force = 750.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117492325]
 scale = Vector2(0.5, 0.5)

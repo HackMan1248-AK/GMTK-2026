@@ -53,7 +53,6 @@ scale = Vector2(1.154571, 15.452568)
 [node name="Light" type="Node" parent="." unique_id=969600844]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
-visible = false
 blend_mode = 1
 
 [node name="Stations" type="Node" parent="." unique_id=1256472941]
@@ -95,5 +94,6 @@ target = NodePath("../Player")
 position = Vector2(1360, 1408)
 target = NodePath("../Player")
 
-[node name="SpiderWeb" parent="." unique_id=955119012 instance=ExtResource("8_301yp")]
+[node name="SpiderWeb" parent="." unique_id=955119012 node_paths=PackedStringArray("target") instance=ExtResource("8_301yp")]
 position = Vector2(1039, 1408)
+target = NodePath("../Player")
