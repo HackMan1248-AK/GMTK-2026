@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dialoguemanagerdropin"]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_manager.gd" id="1_dialogue_manager"]
+
+[node name="DialogueManager" type="CanvasLayer"]
+script = ExtResource("1_dialogue_manager")
+layer = 20
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -176.0
+offset_right = -32.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SpeakerName" type="Label" parent="Panel"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "Speaker"
+
+[node name="DialogueText" type="RichTextLabel" parent="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 48.0
+offset_right = -20.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = false
+scroll_active = false
+text = "Dialogue text"
+
+[node name="ContinueLabel" type="Label" parent="Panel"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -32.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
+text = "Space"

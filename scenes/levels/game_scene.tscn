@@ -9,8 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://bv6su4klu7odh" path="res://assets/sprites/floor game.png" id="9_jstec"]
 [ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/ingredient.tscn" id="10_301yp"]
 [ext_resource type="PackedScene" uid="uid://bs6xgblmybm0t" path="res://scenes/environment/station.tscn" id="11_dsjjn"]
+[ext_resource type="PackedScene" path="res://scenes/npc/farmer.tscn" id="12_farmer"]
+[ext_resource type="PackedScene" path="res://scenes/npc/fisherman.tscn" id="13_fisherman"]
+[ext_resource type="PackedScene" path="res://scenes/npc/dairy_farmer.tscn" id="14_dairy_farmer"]
+[ext_resource type="PackedScene" path="res://scenes/npc/butcher.tscn" id="15_butcher"]
+[ext_resource type="PackedScene" path="res://scenes/npc/insect_keeper.tscn" id="16_insect_keeper"]
+[ext_resource type="PackedScene" path="res://scenes/npc/creature.tscn" id="17_creature"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
+
+[node name="DialogueStartTrigger" type="Node" parent="." unique_id=1735063948]
+script = ExtResource("18_dialogue_event_trigger")
 
 [node name="Player" parent="." unique_id=1494026896 instance=ExtResource("1_iuucx")]
 position = Vector2(544, 221)
@@ -99,3 +109,21 @@ target = NodePath("../Player")
 [node name="SpiderWeb" parent="." unique_id=955119012 node_paths=PackedStringArray("target") instance=ExtResource("8_301yp")]
 position = Vector2(1039, 1408)
 target = NodePath("../Player")
+
+[node name="Farmer" parent="." instance=ExtResource("12_farmer")]
+position = Vector2(760, 250)
+
+[node name="Fisherman" parent="." instance=ExtResource("13_fisherman")]
+position = Vector2(760, 410)
+
+[node name="DairyFarmer" parent="." instance=ExtResource("14_dairy_farmer")]
+position = Vector2(560, 410)
+
+[node name="Butcher" parent="." instance=ExtResource("15_butcher")]
+position = Vector2(360, 410)
+
+[node name="InsectKeeper" parent="." instance=ExtResource("16_insect_keeper")]
+position = Vector2(360, 250)
+
+[node name="Creature" parent="." instance=ExtResource("17_creature")]
+position = Vector2(560, 80)
