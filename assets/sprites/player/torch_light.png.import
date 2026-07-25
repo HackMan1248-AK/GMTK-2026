@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1uqh03hm5dl"
-path="res://.godot/imported/attack_left.png-2e9b23d04c0b218ff3b00357d5d51bd7.ctex"
+uid="uid://ba2dqdksabkd0"
+path="res://.godot/imported/torch_light.png-43a6421441c4e7e152ea170ae89f5dc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/attack_left.png"
-dest_files=["res://.godot/imported/attack_left.png-2e9b23d04c0b218ff3b00357d5d51bd7.ctex"]
+source_file="res://assets/sprites/player/torch_light.png"
+dest_files=["res://.godot/imported/torch_light.png-43a6421441c4e7e152ea170ae89f5dc1.ctex"]
 
 [params]
 

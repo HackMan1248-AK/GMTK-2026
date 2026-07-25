@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://w3m4yq4ik88d"]
 
 [ext_resource type="Script" uid="uid://bp7gyq07wm82d" path="res://scripts/station.gd" id="1_hq5bx"]
-[ext_resource type="Texture2D" uid="uid://bb8x5lj3cb312" path="res://assets/sprites/chopping_counter.png" id="2_q1vqp"]
+[ext_resource type="Texture2D" uid="uid://bb8x5lj3cb312" path="res://assets/sprites/stations/chopping_counter.png" id="2_q1vqp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rg0rw"]
 animations = [{

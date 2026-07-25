@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b5tmlthxrlyo7" path="res://scenes/npc/creature.tscn" id="17_creature"]
 [ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/environment/stations/fridge.tscn" id="17_kg0xf"]
 [ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
-[ext_resource type="PackedScene" uid="uid://drrwsr0etcfqx" path="res://scenes/food/flour.tscn" id="20_r5ukb"]
+[ext_resource type="PackedScene" uid="uid://drrwsr0etcfqx" path="res://scenes/food/ingredients/flour.tscn" id="20_r5ukb"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 y_sort_enabled = true
@@ -36,11 +36,12 @@ position = Vector2(544, 221)
 knife_scene = ExtResource("2_jstec")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1913881635]
+offset = Vector2(0, -85)
 
 [node name="Floor" type="Node" parent="." unique_id=2051741560]
 
 [node name="FloorGame" type="Sprite2D" parent="Floor" unique_id=1831236248]
-z_index = -1
+z_index = -500
 position = Vector2(1166.5106, 981.5729)
 rotation = -1.5707964
 scale = Vector2(2.7391062, 2.9249516)
@@ -49,28 +50,35 @@ texture = ExtResource("9_jstec")
 [node name="Walls" type="Node" parent="." unique_id=945550889]
 
 [node name="Wall1" parent="Walls" unique_id=204888445 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
 position = Vector2(1168, 1964)
 scale = Vector2(19, 1)
 
 [node name="Wall2" parent="Walls" unique_id=16656805 instance=ExtResource("2_tcqdt")]
+z_index = -1
+y_sort_enabled = true
 position = Vector2(2321, 1000)
 scale = Vector2(1, 15.84)
 
 [node name="Wall3" parent="Walls" unique_id=1536169966 instance=ExtResource("2_tcqdt")]
+z_index = -1
+y_sort_enabled = true
 position = Vector2(1162.0001, 7)
 scale = Vector2(19.166065, 0.967628)
 
 [node name="Wall4" parent="Walls" unique_id=1678134774 instance=ExtResource("2_tcqdt")]
+z_index = -1
+y_sort_enabled = true
 position = Vector2(-1, 986.00006)
 scale = Vector2(1.154571, 15.452568)
 
 [node name="Light" type="Node" parent="." unique_id=969600844]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
-visible = false
 blend_mode = 1
 
 [node name="SpiderWeb" parent="." unique_id=955119012 node_paths=PackedStringArray("target") instance=ExtResource("8_301yp")]
+z_index = -3
 position = Vector2(1039, 1408)
 target = NodePath("../Player")
 

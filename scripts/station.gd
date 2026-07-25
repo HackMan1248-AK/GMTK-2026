@@ -45,6 +45,47 @@ func interact() -> void:
 		if should_lock:
 			player.lock_movement(timer.time_left)
 	else:
+		if station == Station.ASSEMBLY:
+			match held_item.name:
+				# VEGETABLE SOUP
+				"Cooked Vegetables":
+					if player.held_item.name == "Cooked Chicken":
+						pass
+				"Cooked Chicken":
+					if player.held_item.name == "Cooked Vegetables":
+						pass
+						
+				# MEAT PIE
+				"Sliced Meat":
+					if player.held_item.name == "Bread":
+						pass
+				"Bread":
+					if player.held_item.name == "Sliced Meat":
+						pass
+						
+				# FISH PIE
+				"Sliced Fish":
+					if player.held_item.name == "Bread":
+						pass
+				"Bread":
+					if player.held_item.name == "Sliced Fish":
+						pass
+						
+				# MOLD TOAST
+				"Moldy Fish":
+					if player.held_item.name == "Bread":
+						pass
+				"Bread":
+					if player.held_item.name == "Moldy Fish":
+						pass
+						
+				"Grilled Chicken":
+					if player.held_item.name == "Butterflies":
+						pass
+				"Butterflies":
+					if player.held_item.name == "Grilled Chicken":
+						pass
+		
 		if held_item != null and can_pickup:
 			player.pickup(held_item)
 			held_item = null

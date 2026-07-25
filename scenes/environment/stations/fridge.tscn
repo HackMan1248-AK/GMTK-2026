@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlkai4xebd50d"]
 
 [ext_resource type="Script" uid="uid://bp7gyq07wm82d" path="res://scripts/station.gd" id="1_bysbb"]
-[ext_resource type="Texture2D" uid="uid://d2pr487h5fhmx" path="res://assets/sprites/fridge.png" id="2_5a03r"]
+[ext_resource type="Texture2D" uid="uid://d2pr487h5fhmx" path="res://assets/sprites/stations/fridge.png" id="2_5a03r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_plnv5"]
 animations = [{

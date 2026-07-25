@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy1xup0ntyrjt"
-path="res://.godot/imported/sliced_prototype.png-d95feba23ab31b9f4523ec990fbc1306.ctex"
+uid="uid://b4lj64ogffl8f"
+path="res://.godot/imported/assembled_prototype.png-d5df96ef551ae21b9873a6e38524a1cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sliced_prototype.png"
-dest_files=["res://.godot/imported/sliced_prototype.png-d95feba23ab31b9f4523ec990fbc1306.ctex"]
+source_file="res://assets/sprites/food/assembled_prototype.png"
+dest_files=["res://.godot/imported/assembled_prototype.png-d5df96ef551ae21b9873a6e38524a1cf.ctex"]
 
 [params]
 

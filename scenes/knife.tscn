@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://caupeuy2cu45u"]
 
 [ext_resource type="Script" uid="uid://bmx7wv8okfki" path="res://scripts/knife.gd" id="1_syuqf"]
-[ext_resource type="Texture2D" uid="uid://j1r4ct85bj8o" path="res://assets/sprites/knife_prototype.webp" id="2_syuqf"]
+[ext_resource type="Texture2D" uid="uid://j1r4ct85bj8o" path="res://assets/sprites/player/knife_prototype.webp" id="2_syuqf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
 animations = [{

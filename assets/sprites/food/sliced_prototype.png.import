@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2caqxib3w5yx"
-path="res://.godot/imported/grilled_prototype.png-65b74fba30a1219b8234bc9aa7f814d5.ctex"
+uid="uid://cy1xup0ntyrjt"
+path="res://.godot/imported/sliced_prototype.png-61fb0381b2e2534511edf0f1ce6279cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/grilled_prototype.png"
-dest_files=["res://.godot/imported/grilled_prototype.png-65b74fba30a1219b8234bc9aa7f814d5.ctex"]
+source_file="res://assets/sprites/food/sliced_prototype.png"
+dest_files=["res://.godot/imported/sliced_prototype.png-61fb0381b2e2534511edf0f1ce6279cb.ctex"]
 
 [params]
 

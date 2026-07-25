@@ -156,7 +156,7 @@
 		"action": "Toast",
 		"inputs": ["Bread", "Moldy Fish"],
 		"outputs": ["Mold Toast"],
-		"station": "Grilling Station"
+		"station": "Assembling Station"
 	  }
 	]
   },

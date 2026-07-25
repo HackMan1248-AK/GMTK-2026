@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb8x5lj3cb312"
-path="res://.godot/imported/chopping_counter.png-cbcb74d7b5080cd08624c8dfa33eb08d.ctex"
+uid="uid://5csjf05gt7i"
+path="res://.godot/imported/attack_up.png-e6909d2b4acdd2b3113862cea525609b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chopping_counter.png"
-dest_files=["res://.godot/imported/chopping_counter.png-cbcb74d7b5080cd08624c8dfa33eb08d.ctex"]
+source_file="res://assets/sprites/player/attack_up.png"
+dest_files=["res://.godot/imported/attack_up.png-e6909d2b4acdd2b3113862cea525609b.ctex"]
 
 [params]
 

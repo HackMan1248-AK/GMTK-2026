@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck14y0m5txty"
-path="res://.godot/imported/walk_left.png-e9fb1fe225f9c14c6b3ed2810395e933.ctex"
+uid="uid://dqdv511isjjo0"
+path="res://.godot/imported/frozen_prototype.png-6a0016c2040cef0117dddefba3a6c5f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/walk_left.png"
-dest_files=["res://.godot/imported/walk_left.png-e9fb1fe225f9c14c6b3ed2810395e933.ctex"]
+source_file="res://assets/sprites/food/frozen_prototype.png"
+dest_files=["res://.godot/imported/frozen_prototype.png-6a0016c2040cef0117dddefba3a6c5f2.ctex"]
 
 [params]
 

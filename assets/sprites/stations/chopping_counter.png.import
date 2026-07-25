@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://krba3ury1cpq"
-path="res://.godot/imported/baked_prototype.png-48f4fea031677a1a8cdad14e10f10644.ctex"
+uid="uid://bb8x5lj3cb312"
+path="res://.godot/imported/chopping_counter.png-e4fce503649bc0311296842196abd391.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/baked_prototype.png"
-dest_files=["res://.godot/imported/baked_prototype.png-48f4fea031677a1a8cdad14e10f10644.ctex"]
+source_file="res://assets/sprites/stations/chopping_counter.png"
+dest_files=["res://.godot/imported/chopping_counter.png-e4fce503649bc0311296842196abd391.ctex"]
 
 [params]
 

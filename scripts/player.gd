@@ -18,6 +18,7 @@ var interactable_ingredient: Interactable
 var held_item: Node2D = null
 
 @export var knife_scene: PackedScene
+@onready var knife_position: Marker2D = $"Knife Position"
 var is_attacking = false
 var last_direction: Vector2 = Vector2.RIGHT
 
@@ -130,9 +131,9 @@ func play_attack_animation():
 	await anim.animation_finished
 
 	var knife = knife_scene.instantiate()
-	knife.global_position = global_position + Vector2(0, -20)
+	knife.global_position = knife_position.global_position
 	#knife.direction = last_direction
-	knife.direction = (get_global_mouse_position() - global_position).normalized()
+	knife.direction = (get_global_mouse_position() - global_position - Vector2(0, -110)).normalized()
 	get_tree().current_scene.add_child(knife)
 
 	is_attacking = false
