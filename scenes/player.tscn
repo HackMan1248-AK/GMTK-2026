@@ -12,7 +12,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuyoq"]
 radius = 38.0
-height = 236.0
+height = 180.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
 atlas = ExtResource("4_tuyoq")
@@ -336,17 +336,19 @@ script = ExtResource("1_dovo2")
 speed = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117492325]
-position = Vector2(0, 24)
+position = Vector2(1, -66.81824)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_tuyoq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1106207261]
-z_index = 6
+y_sort_enabled = true
+position = Vector2(0, -82.81824)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_jpyye")
 animation = &"attack_up"
 
 [node name="FlashLight" type="PointLight2D" parent="." unique_id=2096508176]
+position = Vector2(0, -82.81824)
 energy = 3.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
@@ -354,6 +356,7 @@ texture = ExtResource("2_qhqgy")
 offset = Vector2(350, 0)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=292496060]
+position = Vector2(0, -82.81823)
 scale = Vector2(9.38068, 9.38068)
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
@@ -367,7 +370,7 @@ one_shot = true
 one_shot = true
 
 [node name="Ingredient" type="Marker2D" parent="." unique_id=1249634291]
-position = Vector2(0, -50)
+position = Vector2(0, -132.81824)
 
 [connection signal="timeout" from="ActiveTimer" to="." method="_on_active_timer_timeout"]
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

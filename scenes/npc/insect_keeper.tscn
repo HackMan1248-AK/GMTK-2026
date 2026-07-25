@@ -1,30 +1,31 @@
 [gd_scene format=3 uid="uid://dnjoxattsibkm"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
-[ext_resource type="Texture2D" path="res://icon.svg" id="4_icon"]
+[ext_resource type="Script" uid="uid://dh4gty5j76wf3" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
+[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="4_icon"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
 radius = 72.0
 
-[node name="InsectKeeper" type="Node2D"]
+[node name="InsectKeeper" type="Node2D" unique_id=1259028097]
 script = ExtResource("1_npc_dialogue")
 first_dialogue_file = "res://dialogues/insect_keeper.json"
 repeat_dialogue_file = "res://dialogues/insect_keeper_repeat.json"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1433728469]
 modulate = Color(0.780392, 0.588235, 0.254902, 1)
+y_sort_enabled = true
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("4_icon")
 
-[node name="NameLabel" type="Label" parent="."]
+[node name="NameLabel" type="Label" parent="." unique_id=1889129924]
 offset_left = -96.0
 offset_top = -80.0
 offset_right = 96.0
 offset_bottom = -57.0
-horizontal_alignment = 1
 text = "Insect & Poultry Keeper"
+horizontal_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1099182230]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=229489986]
 shape = SubResource("CircleShape2D_interact")

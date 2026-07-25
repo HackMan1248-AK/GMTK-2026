@@ -24,18 +24,20 @@ size = Vector2(136, 21)
 script = ExtResource("1_bysbb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
+y_sort_enabled = true
+position = Vector2(0, -146.5)
 sprite_frames = SubResource("SpriteFrames_plnv5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20947008]
-position = Vector2(-3, -50.5)
+position = Vector2(-3, -197)
 shape = SubResource("RectangleShape2D_orua6")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=469228049]
-position = Vector2(1, 13)
+position = Vector2(1, -133.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538359782]
 position = Vector2(-3, 53.5)
 shape = SubResource("RectangleShape2D_o88mx")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
-position = Vector2(0, 72)
+position = Vector2(0, -74.5)

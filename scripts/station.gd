@@ -1,10 +1,9 @@
 extends Interactable
-@onready var player: CharacterBody2D = $"../../Player"
-
 @export var timer: Timer
 
 var held_item = null
 var can_pickup = false
+var player: CharacterBody2D
 
 enum Station {
 	FRIDGE,
@@ -12,11 +11,16 @@ enum Station {
 	ASSEMBLY,
 	BAKING,
 	GRILLING,
-	SLICING
+	SLICING,
+	SERVING
 }
 
 @export var station: Station
 @export var should_lock: bool
+
+func _ready() -> void:
+	super()
+	player = get_tree().get_first_node_in_group("player")
 
 func interact() -> void:
 	if player.held_item != null:
@@ -30,19 +34,54 @@ func interact() -> void:
 		
 		match station:
 			Station.FRIDGE, Station.PANTRY:
-				print("Storing")
+				can_pickup = true
 			Station.ASSEMBLY, Station.BAKING, Station.GRILLING, Station.SLICING:
 				timer.start()
+				can_pickup = false
+			Station.SERVING:
+				can_pickup = false
+				serve_func()
 				
 		if should_lock:
 			player.lock_movement(timer.time_left)
-			
-		can_pickup = false
 	else:
 		if held_item != null and can_pickup:
 			player.pickup(held_item)
 			held_item = null
 
+func serve_func() -> void:
+	match QuestManager.current_recipe_name:
+		"Bread":	
+			if held_item.name == "Flour" and held_item.get_node("AnimatedSprite2D").frame == 3:
+				QuestManager.complete_recipe()
+
+		"Vegetable Soup":
+			if held_item.name == "Vegetable Soup":
+				QuestManager.complete_recipe()
+
+		"Cream Soup":
+			if held_item.name == "Cream Soup":
+				QuestManager.complete_recipe()
+
+		"Meat Stew":
+			if held_item.name == "Meat Stew":
+				QuestManager.complete_recipe()
+
+		"Meat Pie":
+			if held_item.name == "Meat Pie":
+				QuestManager.complete_recipe()
+
+		"Fish Pie":
+			if held_item.name == "Fish Pie":
+				QuestManager.complete_recipe()
+
+		"Mold Toast":
+			if held_item.name == "Mold Toast":
+				QuestManager.complete_recipe()
+
+		"Flutter Chicken":
+			if held_item.name == "Flutter Chicken":
+				QuestManager.complete_recipe()
 
 func _on_timer_timeout() -> void:
 	can_pickup = true

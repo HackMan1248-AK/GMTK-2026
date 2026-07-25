@@ -42,7 +42,7 @@ script = ExtResource("1_ssx0k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1036197381]
 position = Vector2(-4.7683716e-07, -4.7683716e-07)
-scale = Vector2(0.81249994, 0.81249994)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_jpyye")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1889460874]

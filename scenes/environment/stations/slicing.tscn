@@ -27,6 +27,7 @@ station = 5
 should_lock = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_rg0rw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20947008]

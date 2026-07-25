@@ -1,30 +1,31 @@
 [gd_scene format=3 uid="uid://b70b4wplgftdk"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
-[ext_resource type="Texture2D" path="res://icon.svg" id="4_icon"]
+[ext_resource type="Script" uid="uid://dh4gty5j76wf3" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
+[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="4_icon"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
 radius = 72.0
 
-[node name="Fisherman" type="Node2D"]
+[node name="Fisherman" type="Node2D" unique_id=1494132670]
 script = ExtResource("1_npc_dialogue")
 first_dialogue_file = "res://dialogues/fisherman.json"
 repeat_dialogue_file = "res://dialogues/fisherman_repeat.json"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1513687913]
 modulate = Color(0.247059, 0.643137, 0.921569, 1)
+y_sort_enabled = true
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("4_icon")
 
-[node name="NameLabel" type="Label" parent="."]
+[node name="NameLabel" type="Label" parent="." unique_id=1137397098]
 offset_left = -64.0
 offset_top = -80.0
 offset_right = 64.0
 offset_bottom = -57.0
-horizontal_alignment = 1
 text = "Fisherman"
+horizontal_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1962887124]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1533138079]
 shape = SubResource("CircleShape2D_interact")
