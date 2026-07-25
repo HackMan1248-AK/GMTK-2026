@@ -42,9 +42,114 @@ offset = Vector2(0, -85)
 
 [node name="FloorGame" type="Sprite2D" parent="Floor" unique_id=1831236248]
 z_index = -500
-position = Vector2(1166.5106, 981.5729)
+position = Vector2(131.89926, 94.98541)
 rotation = -1.5707964
-scale = Vector2(2.7391062, 2.9249516)
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame2" type="Sprite2D" parent="Floor" unique_id=259726630]
+z_index = -500
+position = Vector2(822.95874, 94.98541)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame3" type="Sprite2D" parent="Floor" unique_id=1947301627]
+z_index = -500
+position = Vector2(1524.858, 94.49133)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame4" type="Sprite2D" parent="Floor" unique_id=1087407043]
+z_index = -500
+position = Vector2(2216.8582, 94.49133)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame5" type="Sprite2D" parent="Floor" unique_id=2076305531]
+z_index = -500
+position = Vector2(131.89926, 686.9854)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame6" type="Sprite2D" parent="Floor" unique_id=1526310991]
+z_index = -500
+position = Vector2(822.95874, 686.9854)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame7" type="Sprite2D" parent="Floor" unique_id=1342630433]
+z_index = -500
+position = Vector2(1524.858, 686.49133)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame8" type="Sprite2D" parent="Floor" unique_id=249675902]
+z_index = -500
+position = Vector2(2216.8582, 686.49133)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame9" type="Sprite2D" parent="Floor" unique_id=1079113454]
+z_index = -500
+position = Vector2(131.89926, 1280.9854)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame10" type="Sprite2D" parent="Floor" unique_id=495919171]
+z_index = -500
+position = Vector2(822.95874, 1280.9854)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame11" type="Sprite2D" parent="Floor" unique_id=1216119534]
+z_index = -500
+position = Vector2(1524.858, 1280.4913)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame12" type="Sprite2D" parent="Floor" unique_id=1081338846]
+z_index = -500
+position = Vector2(2216.8582, 1280.4913)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame13" type="Sprite2D" parent="Floor" unique_id=319254773]
+z_index = -500
+position = Vector2(131.89926, 1873.9854)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame14" type="Sprite2D" parent="Floor" unique_id=2008313851]
+z_index = -500
+position = Vector2(822.95874, 1873.9854)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame15" type="Sprite2D" parent="Floor" unique_id=1226056627]
+z_index = -500
+position = Vector2(1524.858, 1873.4912)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
+texture = ExtResource("9_jstec")
+
+[node name="FloorGame16" type="Sprite2D" parent="Floor" unique_id=1214120848]
+z_index = -500
+position = Vector2(2216.8582, 1873.4912)
+rotation = -1.5707964
+scale = Vector2(0.87979615, 0.9394893)
 texture = ExtResource("9_jstec")
 
 [node name="Walls" type="Node" parent="." unique_id=945550889]
@@ -146,4 +251,6 @@ y_sort_enabled = true
 position = Vector2(560, 80)
 
 [node name="Flour" parent="." unique_id=350272053 instance=ExtResource("20_r5ukb")]
+z_index = -4
 position = Vector2(1482, 863)
+item_id = "Flour"

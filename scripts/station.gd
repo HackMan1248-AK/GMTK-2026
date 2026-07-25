@@ -35,9 +35,11 @@ func interact() -> void:
 		match station:
 			Station.FRIDGE, Station.PANTRY:
 				can_pickup = true
-			Station.ASSEMBLY, Station.BAKING, Station.GRILLING, Station.SLICING:
-				timer.start()
-				can_pickup = false
+			Station.BAKING, Station.GRILLING, Station.SLICING:
+				get_cooking()
+			Station.ASSEMBLY:
+				if held_item.name == "Cooked Rotten Meat" or held_item.name == "Heated Spoiled Milk":
+					get_cooking()
 			Station.SERVING:
 				can_pickup = false
 				serve_func()
@@ -46,54 +48,19 @@ func interact() -> void:
 			player.lock_movement(timer.time_left)
 	else:
 		if station == Station.ASSEMBLY:
-			match held_item.name:
-				# VEGETABLE SOUP
-				"Cooked Vegetables":
-					if player.held_item.name == "Cooked Chicken":
-						pass
-				"Cooked Chicken":
-					if player.held_item.name == "Cooked Vegetables":
-						pass
-						
-				# MEAT PIE
-				"Sliced Meat":
-					if player.held_item.name == "Bread":
-						pass
-				"Bread":
-					if player.held_item.name == "Sliced Meat":
-						pass
-						
-				# FISH PIE
-				"Sliced Fish":
-					if player.held_item.name == "Bread":
-						pass
-				"Bread":
-					if player.held_item.name == "Sliced Fish":
-						pass
-						
-				# MOLD TOAST
-				"Moldy Fish":
-					if player.held_item.name == "Bread":
-						pass
-				"Bread":
-					if player.held_item.name == "Moldy Fish":
-						pass
-						
-				"Grilled Chicken":
-					if player.held_item.name == "Butterflies":
-						pass
-				"Butterflies":
-					if player.held_item.name == "Grilled Chicken":
-						pass
-		
-		if held_item != null and can_pickup:
-			player.pickup(held_item)
-			held_item = null
+			assembly_func()
+		elif held_item != null and can_pickup:
+				player.pickup(held_item)
+				held_item = null
+
+func get_cooking() -> void:
+	timer.start()
+	can_pickup = false
 
 func serve_func() -> void:
 	match QuestManager.current_recipe_name:
 		"Bread":	
-			if held_item.name == "Flour" and held_item.get_node("AnimatedSprite2D").frame == 3:
+			if held_item.name == "Bread":
 				QuestManager.complete_recipe()
 
 		"Vegetable Soup":
@@ -124,15 +91,158 @@ func serve_func() -> void:
 			if held_item.name == "Flutter Chicken":
 				QuestManager.complete_recipe()
 
+func assembly_func() -> void:
+	match held_item.name:
+		# VEGETABLE SOUP
+		"Cooked Vegetables":
+			if player.held_item.name == "Cooked Chicken":
+				get_cooking()
+		"Cooked Chicken":
+			if player.held_item.name == "Cooked Vegetables":
+				get_cooking()
+				
+		# MEAT PIE
+		"Sliced Meat":
+			if player.held_item.name == "Bread":
+				get_cooking()
+				
+		# FISH PIE
+		"Sliced Fish":
+			if player.held_item.name == "Bread":
+				get_cooking()
+				
+		# MOLD TOAST
+		"Moldy Fish":
+			if player.held_item.name == "Bread":
+				get_cooking()
+		
+		# FLUTTER CHICKEN
+		"Grilled Chicken":
+			if player.held_item.name == "Butterflies":
+				get_cooking()
+		"Butterflies":
+			if player.held_item.name == "Grilled Chicken":
+				get_cooking()
+				
+		# BREAD
+		"Bread":
+			if player.held_item.name in [
+				"Sliced Meat",
+				"Sliced Fish",
+				"Moldy Fish"
+			]:
+				get_cooking()
+
 func _on_timer_timeout() -> void:
 	can_pickup = true
-	if held_item.get_node("AnimatedSprite2D"):
-		match station:
-			Station.SLICING:
-				held_item.get_node("AnimatedSprite2D").frame = 1
-			Station.GRILLING:
-				held_item.get_node("AnimatedSprite2D").frame = 2
-			Station.BAKING:
-				held_item.get_node("AnimatedSprite2D").frame = 3
-			Station.ASSEMBLY:
-				held_item.get_node("AnimatedSprite2D").frame = 4
+
+	match station:
+		Station.SLICING:
+			match held_item.name:
+				"Vegetables":
+					held_item.name = "Sliced Vegetables"
+				"Chicken":
+					held_item.name = "Sliced Chicken"
+				"Rotten Meat":
+					held_item.name = "Sliced Rotten Meat"
+				"Meat":
+					held_item.name = "Sliced Meat"
+				"Fish":
+					held_item.name = "Sliced Fish"
+
+
+		Station.GRILLING:
+			match held_item.name:
+				"Sliced Vegetables":
+					held_item.name = "Cooked Vegetables"
+				"Sliced Chicken":
+					held_item.name = "Cooked Chicken"
+				"Sliced Rotten Meat":
+					held_item.name = "Cooked Rotten Meat"
+				"Chicken":
+					held_item.name = "Grilled Chicken"
+				"Spoiled Milk":
+					held_item.name = "Heated Spoiled Milk"
+				"Bread":
+					held_item.name = "Toast"
+
+
+		Station.BAKING:
+			match held_item.name:
+				"Flour":
+					held_item.name = "Bread"
+
+
+		Station.ASSEMBLY:
+			match held_item.name:
+
+				# Vegetable Soup
+				"Cooked Vegetables":
+					if player.held_item.name == "Cooked Chicken":
+						player.held_item.queue_free()
+						held_item.name = "Vegetable Soup"
+
+				"Cooked Chicken":
+					if player.held_item.name == "Cooked Vegetables":
+						player.held_item.queue_free()
+						held_item.name = "Vegetable Soup"
+
+
+				# Cream Soup
+				"Heated Spoiled Milk":
+					held_item.name = "Cream Soup"
+
+
+				# Meat Stew
+				"Cooked Rotten Meat":
+					held_item.name = "Meat Stew"
+
+
+				# Meat Pie
+				"Sliced Meat":
+					if player.held_item.name == "Bread":
+						player.held_item.queue_free()
+						held_item.name = "Meat Pie"
+
+				"Bread":
+					if player.held_item.name == "Sliced Meat":
+						player.held_item.queue_free()
+						held_item.name = "Meat Pie"
+
+
+				# Fish Pie
+				"Sliced Fish":
+					if player.held_item.name == "Bread":
+						player.held_item.queue_free()
+						held_item.name = "Fish Pie"
+
+				"Bread":
+					if player.held_item.name == "Sliced Fish":
+						player.held_item.queue_free()
+						held_item.name = "Fish Pie"
+
+
+				# Mold Toast
+				"Moldy Fish":
+					if player.held_item.name == "Bread":
+						player.held_item.queue_free()
+						held_item.name = "Mold Toast"
+
+				"Bread":
+					if player.held_item.name == "Moldy Fish":
+						player.held_item.queue_free()
+						held_item.name = "Mold Toast"
+
+
+				# Flutter Chicken
+				"Grilled Chicken":
+					if player.held_item.name == "Butterflies":
+						player.held_item.queue_free()
+						held_item.name = "Flutter Chicken"
+
+				"Butterflies":
+					if player.held_item.name == "Grilled Chicken":
+						player.held_item.queue_free()
+						held_item.name = "Flutter Chicken"
+	
+	print(held_item.name)
