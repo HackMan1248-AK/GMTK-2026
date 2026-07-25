@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bqm6ba4p2gnlb"]
+
+[ext_resource type="FontFile" uid="uid://d3g3wwuyhf5jp" path="res://assets/fonts/Commissioner/static/Commissioner-Regular.ttf" id="1_eo60u"]
+[ext_resource type="FontFile" uid="uid://dw05v88483ymi" path="res://assets/fonts/Commissioner/static/Commissioner-Medium.ttf" id="2_5bm1u"]
+[ext_resource type="Script" uid="uid://catlkyjdveqai" path="res://scripts/disclaimer_buttons.gd" id="2_eubad"]
+[ext_resource type="FontFile" uid="uid://c80qabqjmp4q7" path="res://assets/fonts/Commissioner/static/Commissioner-Bold.ttf" id="3_5bm1u"]
+
+[node name="Disclaimer Scene" type="Control" unique_id=1551770828]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=898604136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DisclaimerContinue" type="Button" parent="Panel" unique_id=1203801415]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 384.0
+offset_right = 556.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_5bm1u")
+theme_override_font_sizes/font_size = 60
+text = "Continue"
+script = ExtResource("2_eubad")
+
+[node name="DisclaimerQuit" type="Button" parent="Panel" unique_id=582336557]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 384.0
+offset_right = 1112.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_5bm1u")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=941031854]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 1132.0
+offset_bottom = 334.0
+theme_override_colors/default_color = Color(1, 0.7529412, 0.7529412, 1)
+theme_override_fonts/normal_font = ExtResource("1_eo60u")
+theme_override_fonts/bold_font = ExtResource("3_5bm1u")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "This game contains horror themes, grotesque imagery, and depictions of spoiled food and food horror. All characters, events, and content are purely fictional and intended for entertainment purposes only. Any resemblance to real-life persons, institutions, or events is purely coincidental.
+
+If you cannot tolerate or do not want to see visceral, horrific, or mildly gory imagery, you are free to press the quit button. [b][color=#ff3f3f]There is no shame in leaving here![/color][/b]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[connection signal="button_down" from="Panel/DisclaimerContinue" to="Panel/DisclaimerContinue" method="_on_disclaimer_continue_button_down"]
+[connection signal="button_down" from="Panel/DisclaimerQuit" to="Panel/DisclaimerContinue" method="_on_disclaimer_quit_button_down"]

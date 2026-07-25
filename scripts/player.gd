@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var flash_light: PointLight2D = $FlashLight
 var can_flash_light = true
 var flashlight_on = false
-
+var paused = false
 @export var speed : float = 300.0
 @export var movement_locked : float = false
 var interactable = null
@@ -31,7 +31,14 @@ func _unhandled_input(event):
 		else:
 			cooldown_timer.start()
 			can_flash_light = false
-
+	
+	if event.is_action_pressed("Pause"):
+		Engine.time_scale = 1 if Engine.time_scale == 0 else 0
+		paused = !paused
+	if event.is_action_pressed("Quit"):
+		get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
+	if event.is_action_pressed("Show Settings"):
+		get_node("../Settings Layer").visible = !get_node("../Settings Layer").visible
 func _physics_process(_delta: float):
 	if movement_locked:
 		velocity = Vector2.ZERO

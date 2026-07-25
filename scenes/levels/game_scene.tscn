@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b67qq8kbs6v6j" path="res://scenes/player.tscn" id="1_iuucx"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
+[ext_resource type="FontFile" uid="uid://dw05v88483ymi" path="res://assets/fonts/Commissioner/static/Commissioner-Medium.ttf" id="6_jqklm"]
+[ext_resource type="Script" uid="uid://basgksegmpa02" path="res://scripts/settings.gd" id="7_rbt26"]
 [ext_resource type="Texture2D" uid="uid://bv6su4klu7odh" path="res://assets/sprites/floor game.png" id="9_jstec"]
 [ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/ingredient.tscn" id="10_301yp"]
 [ext_resource type="PackedScene" uid="uid://bs6xgblmybm0t" path="res://scenes/environment/station.tscn" id="11_dsjjn"]
@@ -82,3 +84,31 @@ should_lock = true
 
 [node name="Ingredient" parent="." unique_id=350272053 instance=ExtResource("10_301yp")]
 position = Vector2(1211, 406)
+
+[node name="Settings Layer" type="CanvasLayer" parent="." unique_id=1881701690]
+
+[node name="PausedOverlay" type="Label" parent="Settings Layer" unique_id=699321733]
+offset_left = 639.0
+offset_right = 1153.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("6_jqklm")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 2
+script = ExtResource("7_rbt26")
+
+[node name="Controls" type="Label" parent="Settings Layer" unique_id=1817835366]
+custom_maximum_size = Vector2(1152, -1)
+offset_left = 864.0
+offset_top = 485.0
+offset_right = 1135.0
+offset_bottom = 627.0
+scale = Vector2(1, 0.99538743)
+theme_override_fonts/font = ExtResource("6_jqklm")
+theme_override_font_sizes/font_size = 20
+text = "Press WASD to move 
+E to interact 
+Left-Click to toggle flashlight 
+Esc to pause/unpause 
+Shift-Q to quit "
+horizontal_alignment = 2
+autowrap_mode = 3
