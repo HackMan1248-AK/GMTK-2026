@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wgk1q5gmmkhp" path="res://scenes/ui/recipe_ui.tscn" id="1_64sd5"]
 [ext_resource type="PackedScene" uid="uid://b67qq8kbs6v6j" path="res://scenes/player.tscn" id="1_iuucx"]
+[ext_resource type="Script" uid="uid://bdsxsax2xmnso" path="res://scenes/levels/green_particles.gd" id="2_hynbt"]
 [ext_resource type="PackedScene" uid="uid://caupeuy2cu45u" path="res://scenes/knife.tscn" id="2_jstec"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
 [ext_resource type="PackedScene" uid="uid://3vclq56rchn" path="res://scenes/environment/stations/assmebly.tscn" id="6_64sd5"]
@@ -20,9 +21,82 @@
 [ext_resource type="PackedScene" uid="uid://b5tmlthxrlyo7" path="res://scenes/npc/creature.tscn" id="17_creature"]
 [ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/environment/stations/fridge.tscn" id="17_kg0xf"]
 [ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
+[ext_resource type="PackedScene" uid="uid://drrwsr0etcfqx" path="res://scenes/food/ingredients/flour.tscn" id="20_r5ukb"]
+[ext_resource type="Script" uid="uid://dsmqsycgcbyae" path="res://scenes/levels/camera_2d.gd" id="22_64sd5"]
+
+[sub_resource type="Gradient" id="Gradient_71p02"]
+colors = PackedColorArray(0.3456658, 0.29586723, 0.1651687, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qw8md"]
+gradient = SubResource("Gradient_71p02")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_klbdp"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(20, 1, 1)
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+color = Color(0.24705882, 1, 0.3372549, 1)
+color_ramp = SubResource("GradientTexture1D_qw8md")
+
+[sub_resource type="Gradient" id="Gradient_6x6cd"]
+colors = PackedColorArray(0.8272086, 0.4319296, 0.48602295, 1, 1, 0.6473159, 0.5399136, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_64sd5"]
+gradient = SubResource("Gradient_6x6cd")
+
+[sub_resource type="Curve" id="Curve_6x6cd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_64sd5"]
+curve = SubResource("Curve_6x6cd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tuu3e"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(-1, -1, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 70.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_64sd5")
+color = Color(0.71681815, 0.7168182, 0.71681815, 1)
+color_ramp = SubResource("GradientTexture1D_64sd5")
+
+[sub_resource type="Gradient" id="Gradient_rjjgs"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hynbt"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_71p02"]
+noise = SubResource("FastNoiseLite_hynbt")
+color_ramp = SubResource("Gradient_rjjgs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rjjgs"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 300, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 2, 0)
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 y_sort_enabled = true
+
+[node name="GreenParticles" type="GPUParticles2D" parent="." unique_id=242651682]
+position = Vector2(802, 118)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_klbdp")
+script = ExtResource("2_hynbt")
 
 [node name="Recipe UI" parent="." unique_id=1514744875 instance=ExtResource("1_64sd5")]
 
@@ -35,7 +109,11 @@ position = Vector2(544, 221)
 knife_scene = ExtResource("2_jstec")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1913881635]
-offset = Vector2(0, -85)
+script = ExtResource("22_64sd5")
+
+[node name="WalkingTrail" type="GPUParticles2D" parent="Player" unique_id=1970555342]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_tuu3e")
 
 [node name="Floor" type="Node" parent="." unique_id=2051741560]
 
@@ -248,3 +326,23 @@ position = Vector2(360, 250)
 [node name="Creature" parent="NPC" unique_id=362074548 instance=ExtResource("17_creature")]
 y_sort_enabled = true
 position = Vector2(560, 80)
+
+[node name="Flour" parent="." unique_id=350272053 instance=ExtResource("20_r5ukb")]
+z_index = -4
+position = Vector2(1482, 863)
+item_id = "Flour"
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1564831974]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(-15, -5)
+
+[node name="Fog" type="Sprite2D" parent="Parallax2D" unique_id=271257730]
+modulate = Color(1, 1, 1, 0.36862746)
+z_index = 10
+position = Vector2(790, 295)
+texture = SubResource("NoiseTexture2D_71p02")
+
+[node name="Ambience" type="GPUParticles2D" parent="Parallax2D" unique_id=909118413]
+position = Vector2(543, 141)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_rjjgs")
