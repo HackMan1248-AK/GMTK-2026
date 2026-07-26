@@ -3,12 +3,7 @@
 [ext_resource type="Script" path="res://scripts/countdown_manager.gd" id="1_countdown_manager"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_timer"]
-bg_color = Color(0.0509804, 0.0352941, 0.0352941, 0.86)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.8, 0.0705882, 0.0705882, 1)
+bg_color = Color(1, 1, 1, 0)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -31,18 +26,17 @@ layer = 18
 script = ExtResource("1_countdown_manager")
 
 [node name="TimerLabel" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -170.0
+offset_left = 890.0
 offset_top = 24.0
-offset_right = 170.0
-offset_bottom = 76.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 0.92549, 0.776471, 1)
-theme_override_font_sizes/font_size = 34
+offset_right = 1030.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.0666667, 0.0156863, 0.0156863, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.92549, 0.752941, 0.65)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_timer")
-text = "COUNTDOWN  01:00"
+text = "01:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 

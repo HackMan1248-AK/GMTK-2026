@@ -10,6 +10,10 @@ signal time_added(seconds: float)
 @export var game_scene_name: String = "GameScene"
 @export var main_menu_path: String = "res://scenes/levels/main_menu.tscn"
 @export var game_scene_path: String = "res://scenes/levels/game_scene.tscn"
+@export var creature_path: NodePath = ^"NPC/Creature"
+@export var creature_countdown_label_path: NodePath = ^"BellyCountdownLabel"
+@export var creature_belly_offset: Vector2 = Vector2(0.0, 28.0)
+@export var fallback_screen_position: Vector2 = Vector2(960.0, 48.0)
 
 @onready var timer_label: Label = $TimerLabel
 @onready var added_time_label: Label = $AddedTimeLabel
@@ -39,6 +43,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Autoload watches for the gameplay scene so menus do not show the timer.
 	_update_scene_state()
+	_position_timer_on_creature()
 
 	if not countdown_running or game_over:
 		return
@@ -102,8 +107,13 @@ func _update_scene_state() -> void:
 
 func _connect_recipe_signal() -> void:
 	# QuestManager owns recipe completion; countdown only listens to that event.
-	if not QuestManager.recipe_completed.is_connected(_on_recipe_completed):
-		QuestManager.recipe_completed.connect(_on_recipe_completed)
+	var quest_manager: Node = get_node_or_null("/root/QuestManager")
+	if quest_manager == null or not quest_manager.has_signal("recipe_completed"):
+		return
+
+	var callback := Callable(self, "_on_recipe_completed")
+	if not quest_manager.is_connected("recipe_completed", callback):
+		quest_manager.connect("recipe_completed", callback)
 
 
 func _setup_buttons() -> void:
@@ -146,9 +156,48 @@ func _update_timer_label() -> void:
 		return
 
 	var total_seconds: int = ceili(time_left)
-	var minutes: int = floori(float(total_seconds) / 60.0)
-	var seconds: int = total_seconds % 60
-	timer_label.text = "COUNTDOWN  %02d:%02d" % [minutes, seconds]
+	var countdown_text: String = str(total_seconds)
+	timer_label.text = countdown_text
+
+	var belly_label: Label = _get_creature_countdown_label()
+	if belly_label != null:
+		belly_label.text = countdown_text
+
+
+func _position_timer_on_creature() -> void:
+	# Keep the timer on the creature's belly/white area instead of at the top of the screen.
+	if timer_label == null:
+		return
+
+	var center_position: Vector2 = fallback_screen_position
+	var current_scene: Node = get_tree().current_scene
+	if current_scene != null and current_scene.name == game_scene_name:
+		var creature: Node2D = current_scene.get_node_or_null(creature_path)
+		if creature != null:
+			center_position = creature.get_global_transform_with_canvas().origin + creature_belly_offset
+			var belly_label: Label = creature.get_node_or_null(creature_countdown_label_path)
+			if belly_label != null:
+				timer_label.visible = false
+			else:
+				timer_label.visible = true
+	else:
+		timer_label.visible = true
+
+	timer_label.position = center_position - (timer_label.size * 0.5)
+	if added_time_label != null:
+		added_time_label.position.x = center_position.x - (added_time_label.size.x * 0.5)
+
+
+func _get_creature_countdown_label() -> Label:
+	var current_scene: Node = get_tree().current_scene
+	if current_scene == null or current_scene.name != game_scene_name:
+		return null
+
+	var creature: Node = current_scene.get_node_or_null(creature_path)
+	if creature == null:
+		return null
+
+	return creature.get_node_or_null(creature_countdown_label_path)
 
 
 func _show_added_time(seconds: float) -> void:
@@ -161,12 +210,12 @@ func _show_added_time(seconds: float) -> void:
 	added_time_label.text = "+%d SECONDS" % int(seconds)
 	added_time_label.visible = true
 	added_time_label.modulate.a = 1.0
-	added_time_label.position.y = 78.0
+	added_time_label.position.y = timer_label.position.y - 34.0
 
 	added_time_tween = create_tween()
 	added_time_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	added_time_tween.set_parallel(true)
 	added_time_tween.tween_property(added_time_label, "modulate:a", 0.0, 1.2)
-	added_time_tween.tween_property(added_time_label, "position:y", 54.0, 1.2)
+	added_time_tween.tween_property(added_time_label, "position:y", timer_label.position.y - 58.0, 1.2)
 	await added_time_tween.finished
 	added_time_label.visible = false

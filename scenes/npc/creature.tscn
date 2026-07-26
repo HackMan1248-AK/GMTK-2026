@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b5tmlthxrlyo7"]
+[gd_scene load_steps=5 format=3 uid="uid://b5tmlthxrlyo7"]
 
 [ext_resource type="Script" uid="uid://dh4gty5j76wf3" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
 [ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="4_icon"]
@@ -6,22 +6,53 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
 radius = 96.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_creature"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_icon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_icon")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
 [node name="Creature" type="Node2D" unique_id=1564037910]
 script = ExtResource("1_npc_dialogue")
 first_dialogue_file = "res://dialogues/creature.json"
 repeat_dialogue_file = "res://dialogues/creature_repeat.json"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1737028132]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1737028132]
 modulate = Color(0.505882, 0.0588235, 0.0588235, 1)
 y_sort_enabled = true
-scale = Vector2(0.34, 0.34)
-texture = ExtResource("4_icon")
+scale = Vector2(1.55, 1.55)
+sprite_frames = SubResource("SpriteFrames_creature")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="BellyCountdownLabel" type="Label" parent="."]
+z_index = 10
+offset_left = -54.0
+offset_top = 8.0
+offset_right = 54.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.055, 0.015, 0.015, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.93, 0.72, 0.85)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 38
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NameLabel" type="Label" parent="." unique_id=135943284]
-offset_left = -64.0
-offset_top = -100.0
-offset_right = 64.0
-offset_bottom = -77.0
+offset_left = -96.0
+offset_top = -150.0
+offset_right = 96.0
+offset_bottom = -127.0
 text = "Creature"
 horizontal_alignment = 1
 
