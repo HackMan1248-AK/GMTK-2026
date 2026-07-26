@@ -245,4 +245,4 @@ func _on_timer_timeout() -> void:
 						player.held_item.queue_free()
 						held_item.name = "Flutter Chicken"
 	
-	print(held_item.name)
+	held_item.item_id = held_item.name

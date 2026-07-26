@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://e0wvuacojj7u"
+path="res://.godot/imported/Sizzel (Girlling).mp3-b3bc30d0389b78f2599eba8281184023.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/Sizzel (Girlling).mp3"
+dest_files=["res://.godot/imported/Sizzel (Girlling).mp3-b3bc30d0389b78f2599eba8281184023.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

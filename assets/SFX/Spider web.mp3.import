@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kr4ymdcupne4"
+path="res://.godot/imported/Spider web.mp3-ad09f7af66f9cebede8625ea8047d640.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/Spider web.mp3"
+dest_files=["res://.godot/imported/Spider web.mp3-ad09f7af66f9cebede8625ea8047d640.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

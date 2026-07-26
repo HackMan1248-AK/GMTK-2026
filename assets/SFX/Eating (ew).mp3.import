@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dm4j2ccb5dgf2"
+path="res://.godot/imported/Eating (ew).mp3-708d0f37f5dd04ee8bd391839ff88df6.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/Eating (ew).mp3"
+dest_files=["res://.godot/imported/Eating (ew).mp3-708d0f37f5dd04ee8bd391839ff88df6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://iku8tra0xbcd"
+path="res://.godot/imported/Flash Light Dies.mp3-c7200e6cdc70e48d542aae4a6173d355.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/Flash Light Dies.mp3"
+dest_files=["res://.godot/imported/Flash Light Dies.mp3-c7200e6cdc70e48d542aae4a6173d355.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://b5tmlthxrlyo7" path="res://scenes/npc/creature.tscn" id="17_creature"]
 [ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/environment/stations/fridge.tscn" id="17_kg0xf"]
 [ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
-[ext_resource type="PackedScene" uid="uid://drrwsr0etcfqx" path="res://scenes/food/ingredients/flour.tscn" id="20_r5ukb"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 y_sort_enabled = true
@@ -249,8 +248,3 @@ position = Vector2(360, 250)
 [node name="Creature" parent="NPC" unique_id=362074548 instance=ExtResource("17_creature")]
 y_sort_enabled = true
 position = Vector2(560, 80)
-
-[node name="Flour" parent="." unique_id=350272053 instance=ExtResource("20_r5ukb")]
-z_index = -4
-position = Vector2(1482, 863)
-item_id = "Flour"
