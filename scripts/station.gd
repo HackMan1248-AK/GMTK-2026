@@ -17,6 +17,7 @@ enum Station {
 
 @export var station: Station
 @export var should_lock: bool
+@export var marker: Marker2D
 
 func _ready() -> void:
 	super()
@@ -24,12 +25,12 @@ func _ready() -> void:
 
 func interact() -> void:
 	if player.held_item != null:
-		print(player.held_item)
 		held_item = player.held_item
 		held_item.reparent(self)
 		
-		held_item.position = Vector2.ZERO
+		held_item.position = marker.position
 		held_item.rotation = 0
+		held_item.scale = Vector2(0.145, 0.145)
 		player.held_item = null
 		
 		match station:
@@ -90,6 +91,9 @@ func serve_func() -> void:
 		"Flutter Chicken":
 			if held_item.name == "Flutter Chicken":
 				QuestManager.complete_recipe()
+	
+	held_item.eat()
+	held_item = null
 
 func assembly_func() -> void:
 	match held_item.name:
@@ -112,7 +116,7 @@ func assembly_func() -> void:
 				get_cooking()
 				
 		# MOLD TOAST
-		"Moldy Fish":
+		"Moldy Cheese":
 			if player.held_item.name == "Bread":
 				get_cooking()
 		
@@ -129,11 +133,14 @@ func assembly_func() -> void:
 			if player.held_item.name in [
 				"Sliced Meat",
 				"Sliced Fish",
-				"Moldy Fish"
+				"Moldy Cheese"
 			]:
 				get_cooking()
 
 func _on_timer_timeout() -> void:
+	if held_item == null:
+		push_error("held_item is NULL")
+		return
 	can_pickup = true
 
 	match station:
@@ -223,13 +230,13 @@ func _on_timer_timeout() -> void:
 
 
 				# Mold Toast
-				"Moldy Fish":
+				"Moldy Cheese":
 					if player.held_item.name == "Bread":
 						player.held_item.queue_free()
 						held_item.name = "Mold Toast"
 
 				"Bread":
-					if player.held_item.name == "Moldy Fish":
+					if player.held_item.name == "Moldy Cheese":
 						player.held_item.queue_free()
 						held_item.name = "Mold Toast"
 

@@ -1,31 +1,48 @@
 [gd_scene format=3 uid="uid://6cx0e1yr8eym"]
 
 [ext_resource type="Script" uid="uid://dh4gty5j76wf3" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="4_icon"]
+[ext_resource type="Texture2D" uid="uid://hr7lbs80omg5" path="res://assets/sprites/farmer idle/1_Transparent.png" id="2_ghudu"]
+[ext_resource type="Texture2D" uid="uid://d2ker6mq1otu4" path="res://assets/sprites/farmer idle/2.png" id="3_ontdn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
-radius = 72.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ghudu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ontdn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_orua6"]
+radius = 29.0
+height = 146.0
 
 [node name="Farmer" type="Node2D" unique_id=1772781990]
 script = ExtResource("1_npc_dialogue")
 first_dialogue_file = "res://dialogues/farmer.json"
 repeat_dialogue_file = "res://dialogues/farmer_repeat.json"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1283753387]
-modulate = Color(0.533333, 0.862745, 0.376471, 1)
-y_sort_enabled = true
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("4_icon")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1282630794]
+position = Vector2(0, -37)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_jpyye")
 
 [node name="NameLabel" type="Label" parent="." unique_id=73871420]
 offset_left = -64.0
-offset_top = -80.0
+offset_top = -177.0
 offset_right = 64.0
-offset_bottom = -57.0
+offset_bottom = -154.0
 text = "Farmer"
 horizontal_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1059064966]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=466161671]
-shape = SubResource("CircleShape2D_interact")
+y_sort_enabled = true
+position = Vector2(0, -75)
+shape = SubResource("CapsuleShape2D_orua6")

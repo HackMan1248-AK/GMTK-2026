@@ -20,8 +20,9 @@ size = Vector2(134, 229)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o88mx"]
 size = Vector2(136, 21)
 
-[node name="Fridge" type="StaticBody2D" unique_id=2131174890]
+[node name="Fridge" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("marker")]
 script = ExtResource("1_bysbb")
+marker = NodePath("Marker2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
 y_sort_enabled = true
@@ -40,4 +41,4 @@ position = Vector2(-3, 53.5)
 shape = SubResource("RectangleShape2D_o88mx")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
-position = Vector2(0, -74.5)
+position = Vector2(0, -280)

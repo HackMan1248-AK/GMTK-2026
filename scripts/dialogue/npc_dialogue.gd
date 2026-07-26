@@ -8,7 +8,6 @@ class_name NPCDialogue
 
 var has_spoken: bool = false
 
-
 func interact() -> void:
 	# NPCs remain normal Interactables; this method only delegates to the dialogue autoload.
 	var dialogue_manager: Node = get_node_or_null("/root/DialogueManager")

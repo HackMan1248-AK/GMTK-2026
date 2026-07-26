@@ -49,6 +49,9 @@ func _unhandled_input(event):
 func _physics_process(_delta: float):
 	if movement_locked:
 		velocity = Vector2.ZERO
+
+		anim.play("attack_up")
+
 		move_and_slide()
 		return
 	

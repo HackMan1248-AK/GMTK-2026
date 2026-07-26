@@ -7,6 +7,10 @@ extends CanvasLayer
 func _ready():
 	hide()
 
+func _process(_delta):
+	if visible:
+		update_recipe()
+
 func update_recipe():
 	var recipe = QuestManager.get_recipe()
 

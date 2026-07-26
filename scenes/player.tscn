@@ -30,17 +30,17 @@ region = Rect2(1000, 0, 1000, 1400)
 atlas = ExtResource("2_ur7pv")
 region = Rect2(2000, 0, 1000, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("3_y4r1p")
-region = Rect2(0, 0, 1000, 1400)
+region = Rect2(2000, 0, 1000, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("3_y4r1p")
 region = Rect2(1000, 0, 1000, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jc3p3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
 atlas = ExtResource("3_y4r1p")
-region = Rect2(2000, 0, 1000, 1400)
+region = Rect2(0, 0, 1000, 1400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
 atlas = ExtResource("4_d2wvv")
@@ -58,9 +58,9 @@ region = Rect2(2000, 0, 1000, 1400)
 atlas = ExtResource("4_tuyoq")
 region = Rect2(0, 1400, 1000, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dvfe"]
 atlas = ExtResource("2_dqkch")
-region = Rect2(0, 0, 1000, 1400)
+region = Rect2(4000, 0, 1000, 1400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("3_qlg0r")
@@ -94,25 +94,25 @@ region = Rect2(1000, 1400, 1000, 1400)
 atlas = ExtResource("4_tuyoq")
 region = Rect2(2000, 1400, 1000, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
-atlas = ExtResource("2_dqkch")
-region = Rect2(0, 0, 1000, 1400)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
-atlas = ExtResource("2_dqkch")
-region = Rect2(1000, 0, 1000, 1400)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
-atlas = ExtResource("2_dqkch")
-region = Rect2(2000, 0, 1000, 1400)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
-atlas = ExtResource("2_dqkch")
-region = Rect2(3000, 0, 1000, 1400)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("2_dqkch")
 region = Rect2(4000, 0, 1000, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(3000, 0, 1000, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(2000, 0, 1000, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc3p3"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(1000, 0, 1000, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giy8y"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 1000, 1400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("3_qlg0r")
@@ -180,13 +180,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_md1ol")
+"texture": SubResource("AtlasTexture_ur7pv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bj30b")
+"texture": SubResource("AtlasTexture_y4r1p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jc3p3")
+"texture": SubResource("AtlasTexture_d2wvv")
 }],
 "loop": 0,
 "name": &"attack_right",
@@ -216,7 +216,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tuyoq")
+"texture": SubResource("AtlasTexture_2dvfe")
 }],
 "loop": 1,
 "name": &"idle_left",
@@ -263,19 +263,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_smehm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ur7pv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4r1p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d2wvv")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md1ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc3p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giy8y")
 }],
 "loop": 1,
 "name": &"walk_left",
@@ -346,7 +346,7 @@ texture_filter = 4
 position = Vector2(0, -82.81824)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_jpyye")
-animation = &"attack_up"
+animation = &"attack_right"
 
 [node name="FlashLight" type="PointLight2D" parent="." unique_id=2096508176]
 position = Vector2(0, -82.81824)

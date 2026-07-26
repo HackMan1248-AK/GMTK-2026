@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://bn5mmaug7pbid"]
 
 [ext_resource type="Script" uid="uid://bp7gyq07wm82d" path="res://scripts/station.gd" id="1_h8lpi"]
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="2_cfeju"]
+[ext_resource type="Texture2D" uid="uid://danbffx7d5acu" path="res://assets/sprites/stations/Oven + grill + induction station + baking 2.png" id="2_kv4vx"]
+[ext_resource type="Texture2D" uid="uid://bgsv8eicws0rc" path="res://assets/sprites/stations/Grill on 2.png" id="3_hxmbe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hq5bx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cfeju")
+"texture": ExtResource("2_kv4vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hxmbe")
 }],
 "loop": 1,
 "name": &"default",
@@ -15,32 +19,34 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1vqp"]
-size = Vector2(87, 105)
+size = Vector2(259.5, 131.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_438cx"]
+size = Vector2(260, 18)
 
-[node name="Grilling" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer")]
+[node name="Grilling" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer", "marker")]
 script = ExtResource("1_h8lpi")
 timer = NodePath("Timer")
 station = 4
+marker = NodePath("Marker2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_hq5bx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20947008]
-position = Vector2(0.5, -0.5)
+position = Vector2(-0.75, -82.75)
 shape = SubResource("RectangleShape2D_q1vqp")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=469228049]
 position = Vector2(1, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538359782]
-position = Vector2(-0.5, 53.5)
+position = Vector2(-1, -21)
 shape = SubResource("RectangleShape2D_438cx")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
-position = Vector2(0, 72)
+position = Vector2(3, -82)
 
 [node name="Timer" type="Timer" parent="." unique_id=1565943667]
 wait_time = 5.0

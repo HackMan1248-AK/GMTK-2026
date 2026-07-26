@@ -1,48 +1,58 @@
 [gd_scene format=3 uid="uid://dkf0v3ll1xwcp"]
 
 [ext_resource type="Script" uid="uid://bp7gyq07wm82d" path="res://scripts/station.gd" id="1_ve5xs"]
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="2_a0pnt"]
+[ext_resource type="Texture2D" uid="uid://drdqu02tx0ljs" path="res://assets/sprites/stations/Oven + grill + induction station + baking 1.png" id="2_0gdce"]
+[ext_resource type="Texture2D" uid="uid://dgmjrvujgfjcl" path="res://assets/sprites/stations/Oven on 1.png" id="3_ekyjr"]
+[ext_resource type="Texture2D" uid="uid://cgqf4r8bm7tos" path="res://assets/sprites/stations/Induction on 1.png" id="4_h2186"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hq5bx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0gbj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_a0pnt")
+"texture": ExtResource("2_0gdce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ekyjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h2186")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1vqp"]
-size = Vector2(87, 105)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgjpa"]
+size = Vector2(403, 131)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_438cx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivdfq"]
+size = Vector2(404, 17)
 
-[node name="Baking" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer")]
+[node name="Induction" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer", "marker")]
 script = ExtResource("1_ve5xs")
 timer = NodePath("Timer")
 station = 3
+marker = NodePath("Marker2D")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1040710809]
 y_sort_enabled = true
-sprite_frames = SubResource("SpriteFrames_hq5bx")
+sprite_frames = SubResource("SpriteFrames_v0gbj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20947008]
-position = Vector2(0.5, -0.5)
-shape = SubResource("RectangleShape2D_q1vqp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1827619876]
+position = Vector2(0.5, -82.5)
+shape = SubResource("RectangleShape2D_jgjpa")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=469228049]
+[node name="Area2D" type="Area2D" parent="." unique_id=1597032182]
 position = Vector2(1, 13)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538359782]
-position = Vector2(-0.5, 53.5)
-shape = SubResource("RectangleShape2D_438cx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2052168045]
+position = Vector2(-1, -21.5)
+shape = SubResource("RectangleShape2D_ivdfq")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
-position = Vector2(0, 72)
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1834312090]
+position = Vector2(-109, 86)
 
-[node name="Timer" type="Timer" parent="." unique_id=1565943667]
+[node name="Timer" type="Timer" parent="." unique_id=2030474095]
 wait_time = 5.0
 one_shot = true
 

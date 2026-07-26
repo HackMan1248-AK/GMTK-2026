@@ -9,37 +9,38 @@ const ITEM_FRAMES := {
 	"Flour": 0,
 	"Bread": 1,
 
-	"Sliced Vegetables": 2,
-	"Cooked Vegetables": 3,
+	"Vegetables": 2,
+	"Sliced Vegetables": 3,
+	"Cooked Vegetables": 4,
 
-	"Chicken": 4,
-	"Sliced Chicken": 5,
-	"Cooked Chicken": 6,
-	"Grilled Chicken": 7,
+	"Chicken": 5,
+	"Sliced Chicken": 6,
+	"Cooked Chicken": 7,
+	"Grilled Chicken": 8,
 
-	"Spoiled Milk": 8,
-	"Heated Spoiled Milk": 9,
+	"Spoiled Milk": 9,
+	"Heated Spoiled Milk": 10,
 
-	"Rotten Meat": 10,
-	"Sliced Rotten Meat": 11,
-	"Cooked Rotten Meat": 12,
+	"Rotten Meat": 11,
+	"Sliced Rotten Meat": 12,
+	"Cooked Rotten Meat": 13,
 
-	"Meat": 13,
-	"Sliced Meat": 14,
+	"Meat": 14,
+	"Sliced Meat": 15,
 
-	"Fish": 15,
-	"Sliced Fish": 16,
+	"Fish": 16,
+	"Sliced Fish": 17,
 
-	"Moldy Fish": 17,
-	"Butterflies": 18,
+	"Moldy Cheese": 18,
+	"Butterflies": 19,
 
-	"Vegetable Soup": 19,
-	"Cream Soup": 20,
-	"Meat Stew": 21,
-	"Meat Pie": 22,
-	"Fish Pie": 23,
-	"Mold Toast": 24,
-	"Flutter Chicken": 25
+	"Vegetable Soup": 20,
+	"Cream Soup": 21,
+	"Meat Stew": 22,
+	"Meat Pie": 23,
+	"Fish Pie": 24,
+	"Mold Toast": 25,
+	"Flutter Chicken": 26
 }
 
 func _ready() -> void:
@@ -70,3 +71,6 @@ func interact():
 	if player:
 		$Area2D/CollisionShape2D.disabled = true
 		player.pickup(self)
+
+func eat():
+	queue_free()

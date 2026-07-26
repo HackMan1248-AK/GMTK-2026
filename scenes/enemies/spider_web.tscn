@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cicnjem8k77g6"]
 
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="1_0dcxe"]
 [ext_resource type="Script" uid="uid://busko75rj6djy" path="res://scripts/spider_web.gd" id="1_ibsbs"]
+[ext_resource type="Texture2D" uid="uid://knynlp0i43iv" path="res://assets/sprites/webs.png" id="2_ibsbs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0dcxe")
+"texture": ExtResource("2_ibsbs")
 }],
 "loop": 1,
 "name": &"default",
@@ -24,6 +24,8 @@ size = Vector2(126, 128)
 script = ExtResource("1_ibsbs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2090434599]
+position = Vector2(-9.000001, 24)
+scale = Vector2(0.495, 0.495)
 sprite_frames = SubResource("SpriteFrames_jpyye")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=332510386]

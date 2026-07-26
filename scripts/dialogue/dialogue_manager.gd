@@ -184,7 +184,6 @@ func _show_current_line() -> void:
 
 
 func _normalize_dialogue(dialogue_data: Variant) -> Array[Dictionary]:
-	# Accept JSON dictionaries, arrays of dictionaries, and legacy DialogueResource-like resources.
 	var normalized: Array[Dictionary] = []
 
 	if dialogue_data == null:
@@ -199,37 +198,47 @@ func _normalize_dialogue(dialogue_data: Variant) -> Array[Dictionary]:
 	if dialogue_data is Array:
 		for entry: Variant in dialogue_data:
 			if entry is Dictionary:
-				normalized.append_array(_normalize_dialogue_dictionary(entry))
+				normalized.append({
+					"speaker": str(entry.get("speaker", "")),
+					"text": str(entry.get("text", entry.get("line", "")))
+				})
+
+		return normalized
 
 	return normalized
 
 
 func _normalize_dialogue_dictionary(data: Dictionary) -> Array[Dictionary]:
-	# Supported JSON: {"speaker":"Farmer","lines":["Line"]} or {"lines":[{"speaker":"A","text":"Line"}]}.
 	var normalized: Array[Dictionary] = []
-	var default_speaker: String = str(data.get("speaker", ""))
-	var lines: Variant = data.get("lines", [])
 
-	if lines is Array:
-		for line_entry: Variant in lines:
-			if line_entry is Dictionary:
-				normalized.append({
-					"speaker": str(line_entry.get("speaker", default_speaker)),
-					"text": str(line_entry.get("text", line_entry.get("line", "")))
-				})
-			else:
-				normalized.append({
-					"speaker": default_speaker,
-					"text": str(line_entry)
-				})
+	var default_speaker: String = str(data.get("speaker", ""))
+
+	# Handle {"speaker":"Farmer","lines":[...]}
+	if data.has("lines"):
+		var lines: Variant = data["lines"]
+
+		if lines is Array:
+			for line_entry: Variant in lines:
+				if line_entry is Dictionary:
+					normalized.append({
+						"speaker": str(line_entry.get("speaker", default_speaker)),
+						"text": str(line_entry.get("text", line_entry.get("line", "")))
+					})
+				else:
+					normalized.append({
+						"speaker": default_speaker,
+						"text": str(line_entry)
+					})
+
 		return normalized
 
+	# Handle {"speaker":"Farmer","text":"Hello"}
 	normalized.append({
 		"speaker": default_speaker,
 		"text": str(data.get("text", data.get("line", "")))
 	})
-	return normalized
 
+	return normalized
 
 func _open_panel() -> void:
 	# Smoothly reveal the dialogue box.

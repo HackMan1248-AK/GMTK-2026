@@ -1,25 +1,37 @@
 [gd_scene format=3 uid="uid://v7cxxm5obmn7"]
 
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="1_51ysa"]
+[ext_resource type="Texture2D" uid="uid://b0xn127ng8khj" path="res://assets/sprites/wall liners.png" id="1_gwhjf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcqdt"]
-size = Vector2(128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yimtk"]
+atlas = ExtResource("1_gwhjf")
+region = Rect2(0, 466, 1000, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvnxd"]
+atlas = ExtResource("1_gwhjf")
+region = Rect2(0, 233, 1000, 233)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iuucx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_51ysa")
+"texture": SubResource("AtlasTexture_yimtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvnxd")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcqdt"]
+size = Vector2(807, 48)
+
 [node name="Wall" type="StaticBody2D" unique_id=204888445]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212845050]
+position = Vector2(64, 9)
+sprite_frames = SubResource("SpriteFrames_iuucx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466557837]
 shape = SubResource("RectangleShape2D_tcqdt")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212845050]
-sprite_frames = SubResource("SpriteFrames_iuucx")

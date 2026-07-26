@@ -1,59 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://dialoguemanagerdropin"]
+[gd_scene format=3 uid="uid://fkqbfarpmvbt"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_manager.gd" id="1_dialogue_manager"]
+[ext_resource type="Script" uid="uid://bx3ajfv4gfid8" path="res://scripts/dialogue/dialogue_manager.gd" id="1_dialogue_manager"]
+[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="2_yophu"]
 
-[node name="DialogueManager" type="CanvasLayer"]
-script = ExtResource("1_dialogue_manager")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpyye"]
+texture = ExtResource("2_yophu")
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=117043922]
 layer = 20
+script = ExtResource("1_dialogue_manager")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=387395567]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
-offset_top = -176.0
+offset_top = -290.0
 offset_right = -32.0
-offset_bottom = -24.0
+offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="SpeakerName" type="Label" parent="Panel"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = -20.0
-offset_bottom = 42.0
-grow_horizontal = 2
-text = "Speaker"
-
-[node name="DialogueText" type="RichTextLabel" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1589812361]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 48.0
-offset_right = -20.0
-offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
-bbcode_enabled = true
-fit_content = false
-scroll_active = false
-text = "Dialogue text"
 
-[node name="ContinueLabel" type="Label" parent="Panel"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -112.0
-offset_top = -32.0
-offset_right = -20.0
-offset_bottom = -10.0
-grow_horizontal = 0
-grow_vertical = 0
-horizontal_alignment = 2
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer" unique_id=758149398]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jpyye")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=1627246631]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="SpeakerName" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=925210975]
+layout_mode = 2
+text = "Speaker"
+
+[node name="DialogueText" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer" unique_id=981792618]
+layout_mode = 2
+bbcode_enabled = true
+text = "Dialogue text"
+scroll_active = false
+
+[node name="ContinueLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=906260203]
+layout_mode = 2
 text = "Space"
+horizontal_alignment = 2

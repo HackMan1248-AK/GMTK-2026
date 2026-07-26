@@ -20,11 +20,12 @@ size = Vector2(441, 111)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bysbb"]
 size = Vector2(441, 20)
 
-[node name="Slicing" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer")]
+[node name="Slicing" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer", "marker")]
 script = ExtResource("1_hq5bx")
 timer = NodePath("Timer")
 station = 5
 should_lock = true
+marker = NodePath("Marker2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
 y_sort_enabled = true
@@ -42,7 +43,7 @@ position = Vector2(-2.5, 5)
 shape = SubResource("RectangleShape2D_bysbb")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
-position = Vector2(0, 72)
+position = Vector2(-135, -48)
 
 [node name="Timer" type="Timer" parent="." unique_id=1967370289]
 wait_time = 5.0

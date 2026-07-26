@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b5tmlthxrlyo7" path="res://scenes/npc/creature.tscn" id="17_creature"]
 [ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/environment/stations/fridge.tscn" id="17_kg0xf"]
 [ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
+[ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/food.tscn" id="21_6x6cd"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 y_sort_enabled = true
@@ -155,14 +156,14 @@ texture = ExtResource("9_jstec")
 
 [node name="Wall1" parent="Walls" unique_id=204888445 instance=ExtResource("2_tcqdt")]
 y_sort_enabled = true
-position = Vector2(1168, 1964)
-scale = Vector2(19, 1)
+position = Vector2(182, 1964)
 
 [node name="Wall2" parent="Walls" unique_id=16656805 instance=ExtResource("2_tcqdt")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(2321, 1000)
-scale = Vector2(1, 15.84)
+rotation = 1.5707964
+scale = Vector2(15, 1)
 
 [node name="Wall3" parent="Walls" unique_id=1536169966 instance=ExtResource("2_tcqdt")]
 z_index = -1
@@ -174,16 +175,30 @@ scale = Vector2(19.166065, 0.967628)
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-1, 986.00006)
-scale = Vector2(1.154571, 15.452568)
+rotation = 1.5707964
+scale = Vector2(19, 1)
+
+[node name="Wall5" parent="Walls" unique_id=1761776581 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(986, 1964)
+
+[node name="Wall6" parent="Walls" unique_id=148483315 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(1790, 1964)
+
+[node name="Wall7" parent="Walls" unique_id=556057682 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(2596, 1964)
 
 [node name="Light" type="Node" parent="." unique_id=969600844]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
+visible = false
 blend_mode = 1
 
 [node name="SpiderWeb" parent="." unique_id=955119012 node_paths=PackedStringArray("target") instance=ExtResource("8_301yp")]
 z_index = -3
-position = Vector2(1039, 1408)
+position = Vector2(997, 1666)
 target = NodePath("../Player")
 
 [node name="Stations" type="Node2D" parent="." unique_id=1168927782]
@@ -192,17 +207,17 @@ y_sort_enabled = true
 [node name="Fridge" parent="Stations" unique_id=826703763 instance=ExtResource("17_kg0xf")]
 y_sort_enabled = true
 position = Vector2(1891, 953)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 
 [node name="Assembly" parent="Stations" unique_id=2131174890 instance=ExtResource("6_64sd5")]
 y_sort_enabled = true
-position = Vector2(951, 1051)
-scale = Vector2(0.8, 0.8)
+position = Vector2(1552, 1293)
+scale = Vector2(0.6, 0.6)
 
 [node name="Baking" parent="Stations" unique_id=593331674 instance=ExtResource("7_tuu3e")]
 y_sort_enabled = true
-position = Vector2(257, 1036)
-scale = Vector2(0.8, 0.8)
+position = Vector2(569, 1267)
+scale = Vector2(0.6, 0.6)
 
 [node name="Slicing" parent="Stations" unique_id=2079055382 instance=ExtResource("10_rjjgs")]
 y_sort_enabled = true
@@ -212,15 +227,15 @@ scale = Vector2(0.8, 0.8)
 [node name="Pantry" parent="Stations" unique_id=359336463 instance=ExtResource("11_hynbt")]
 y_sort_enabled = true
 position = Vector2(2077, 1032)
-scale = Vector2(0.8, 0.8)
-
-[node name="Grilling" parent="Stations" unique_id=552771028 instance=ExtResource("12_71p02")]
-y_sort_enabled = true
-position = Vector2(1142, 1042)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.6, 0.6)
 
 [node name="Serving" parent="Stations" unique_id=1866209913 instance=ExtResource("14_6x6cd")]
 position = Vector2(1251, 741)
+scale = Vector2(0.6, 0.6)
+
+[node name="Grilling" parent="Stations" unique_id=661973229 instance=ExtResource("12_71p02")]
+position = Vector2(768, 1267)
+scale = Vector2(0.6, 0.6)
 
 [node name="NPC" type="Node2D" parent="." unique_id=743004268]
 y_sort_enabled = true
@@ -248,3 +263,11 @@ position = Vector2(360, 250)
 [node name="Creature" parent="NPC" unique_id=362074548 instance=ExtResource("17_creature")]
 y_sort_enabled = true
 position = Vector2(560, 80)
+
+[node name="Vegetables" parent="." unique_id=350272053 instance=ExtResource("21_6x6cd")]
+position = Vector2(1328.2, 430.52)
+item_id = "Sliced Vegetables"
+
+[node name="Flour" parent="." unique_id=1052340152 instance=ExtResource("21_6x6cd")]
+position = Vector2(1160, 376)
+item_id = "Flour"

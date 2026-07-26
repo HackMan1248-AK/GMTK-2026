@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://3vclq56rchn"]
 
 [ext_resource type="Script" uid="uid://bp7gyq07wm82d" path="res://scripts/station.gd" id="1_jx23s"]
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="2_d8pvd"]
+[ext_resource type="Texture2D" uid="uid://ncsb4e7a8mwb" path="res://assets/sprites/stations/Assembly station.png" id="2_jhc0n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hq5bx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_d8pvd")
+"texture": ExtResource("2_jhc0n")
 }],
 "loop": 1,
 "name": &"default",
@@ -15,33 +15,35 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1vqp"]
-size = Vector2(87, 105)
+size = Vector2(662, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_438cx"]
+size = Vector2(664, 20)
 
-[node name="Assembly" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer")]
+[node name="Assembly" type="StaticBody2D" unique_id=2131174890 node_paths=PackedStringArray("timer", "marker")]
 script = ExtResource("1_jx23s")
 timer = NodePath("Timer")
 station = 2
 should_lock = true
+marker = NodePath("Marker2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468559315]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_hq5bx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=20947008]
-position = Vector2(0.5, -0.5)
+position = Vector2(1, -83)
 shape = SubResource("RectangleShape2D_q1vqp")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=469228049]
 position = Vector2(1, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538359782]
-position = Vector2(-0.5, 53.5)
+position = Vector2(0, -21)
 shape = SubResource("RectangleShape2D_438cx")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1631464036]
-position = Vector2(0, 72)
+position = Vector2(0, -82)
 
 [node name="Timer" type="Timer" parent="." unique_id=1565943667]
 wait_time = 5.0
