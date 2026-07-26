@@ -13,6 +13,7 @@ signal dialogue_queue_empty
 @onready var speaker_name: Label = $Panel/SpeakerName
 @onready var dialogue_text: RichTextLabel = $Panel/DialogueText
 @onready var continue_label: Label = $Panel/ContinueLabel
+@onready var dialogue_box: TextureRect = $BG
 @onready var default_headshot: CanvasItem = $"Default Godot"
 
 @onready var headshots := {
@@ -150,6 +151,8 @@ func hide_dialogue_immediately() -> void:
 
 	for portrait in headshots.values():
 		portrait.visible = false
+		
+	dialogue_box.visible = false
 	
 	if active_tween != null:
 		active_tween.kill()
@@ -204,6 +207,8 @@ func _show_current_line() -> void:
 	var text: String = str(line.get("text", ""))
 	
 	_show_headshot(speaker)
+
+	dialogue_box.visible = true
 
 	speaker_name.text = speaker
 	dialogue_text.text = text
@@ -300,6 +305,7 @@ func _close_panel() -> void:
 	default_headshot.visible = false
 	for portrait in headshots.values():
 		portrait.visible = false
+	dialogue_box.visible = false
 	speaker_name.text = ""
 	dialogue_text.text = ""
 	continue_label.text = "Space - Next"

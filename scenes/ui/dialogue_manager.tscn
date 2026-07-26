@@ -1,16 +1,26 @@
 [gd_scene format=3 uid="uid://fkqbfarpmvbt"]
 
-[ext_resource type="Script" uid="uid://bx3ajfv4gfid8" path="res://scripts/dialogue/dialogue_manager.gd" id="1_dialogue_manager"]
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="2_yophu"]
-[ext_resource type="Texture2D" uid="uid://15kdnqqux4pj" path="res://assets/sprites/Butcher headshot.png" id="3_exhwt"]
-[ext_resource type="Texture2D" uid="uid://cxorfpp5l8lbc" path="res://assets/sprites/Dairy farmer headshot.png" id="4_vupfr"]
-[ext_resource type="Texture2D" uid="uid://bj5aop1b5l76n" path="res://assets/sprites/farmer headshot (1).png" id="5_f8p4w"]
-[ext_resource type="Texture2D" uid="uid://ur28wfsecxxg" path="res://assets/sprites/Fisherman headshot.png" id="6_n4xmj"]
-[ext_resource type="Texture2D" uid="uid://rn31e35pbt5e" path="res://assets/sprites/Insect farmer headshot.png" id="7_mpnnp"]
+[ext_resource type="Script" uid="uid://bx3ajfv4gfid8" path="res://scripts/dialogue/dialogue_manager.gd" id="1_yhfqa"]
+[ext_resource type="Texture2D" uid="uid://b2bppf5bbj1hm" path="res://assets/sprites/Dialogue BG.png" id="2_n62gq"]
+[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="3_xyod8"]
+[ext_resource type="Texture2D" uid="uid://15kdnqqux4pj" path="res://assets/sprites/Butcher headshot.png" id="4_35u3c"]
+[ext_resource type="Texture2D" uid="uid://cxorfpp5l8lbc" path="res://assets/sprites/Dairy farmer headshot.png" id="5_7rp53"]
+[ext_resource type="Texture2D" uid="uid://bj5aop1b5l76n" path="res://assets/sprites/farmer headshot (1).png" id="6_cr1t5"]
+[ext_resource type="Texture2D" uid="uid://ur28wfsecxxg" path="res://assets/sprites/Fisherman headshot.png" id="7_vu176"]
+[ext_resource type="Texture2D" uid="uid://rn31e35pbt5e" path="res://assets/sprites/Insect farmer headshot.png" id="8_yuu1i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jpyye"]
 
 [node name="DialogueManager" type="CanvasLayer" unique_id=972691513]
 layer = 20
-script = ExtResource("1_dialogue_manager")
+script = ExtResource("1_yhfqa")
+
+[node name="BG" type="TextureRect" parent="." unique_id=475680196]
+offset_left = 306.0
+offset_top = 706.0
+offset_right = 1920.0
+offset_bottom = 1036.0
+texture = ExtResource("2_n62gq")
 
 [node name="Panel" type="Panel" parent="." unique_id=665257078]
 anchors_preset = 12
@@ -23,25 +33,29 @@ offset_right = -32.0
 offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jpyye")
 
 [node name="SpeakerName" type="Label" parent="Panel" unique_id=141059231]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = -20.0
-offset_bottom = 42.0
+offset_left = 382.0
+offset_top = -4.0
+offset_right = -127.0
+offset_bottom = 38.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
 text = "Speaker"
 
 [node name="DialogueText" type="RichTextLabel" parent="Panel" unique_id=531032030]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 48.0
-offset_right = -20.0
-offset_bottom = -38.0
+offset_left = 387.0
+offset_top = 50.0
+offset_right = -117.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -49,14 +63,15 @@ text = "Dialogue text"
 scroll_active = false
 
 [node name="ContinueLabel" type="Label" parent="Panel" unique_id=1865289586]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -112.0
-offset_top = -32.0
-offset_right = -20.0
+offset_left = -219.0
+offset_top = -33.0
+offset_right = -127.0
 offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -67,69 +82,69 @@ horizontal_alignment = 2
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 93.0
+offset_left = 463.0
 offset_top = -320.0
-offset_right = 304.0
+offset_right = 674.0
 offset_bottom = -109.0
 grow_vertical = 0
-texture = ExtResource("2_yophu")
+texture = ExtResource("3_xyod8")
 
 [node name="Butcher" type="TextureRect" parent="." unique_id=1682244362]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 95.0
+offset_left = 464.99997
 offset_top = -319.0
-offset_right = 652.0
+offset_right = 1022.0
 offset_bottom = 238.0
 grow_vertical = 0
 scale = Vector2(0.3699113, 0.3699113)
-texture = ExtResource("3_exhwt")
+texture = ExtResource("4_35u3c")
 
 [node name="Dairy Farmer" type="TextureRect" parent="." unique_id=1900321462]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
+offset_left = 362.0
 offset_top = -522.0
-offset_right = 1579.0
+offset_right = 1949.0
 offset_bottom = 1723.0
 grow_vertical = 0
 scale = Vector2(0.26849848, 0.27533844)
-texture = ExtResource("4_vupfr")
+texture = ExtResource("5_7rp53")
 
 [node name="Farmer" type="TextureRect" parent="." unique_id=1387200684]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
+offset_left = 350.0
 offset_top = -503.0
-offset_right = 1567.0
+offset_right = 1937.0
 offset_bottom = 1742.0
 grow_vertical = 0
 scale = Vector2(0.28056586, 0.28056586)
-texture = ExtResource("5_f8p4w")
+texture = ExtResource("6_cr1t5")
 
 [node name="Fisherman" type="TextureRect" parent="." unique_id=1367670449]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -24.0
+offset_left = 346.0
 offset_top = -480.0
-offset_right = 1563.0
+offset_right = 1933.0
 offset_bottom = 1765.0
 grow_vertical = 0
 scale = Vector2(0.2671981, 0.2671981)
-texture = ExtResource("6_n4xmj")
+texture = ExtResource("7_vu176")
 
 [node name="Insect & Poultry Keeper" type="TextureRect" parent="." unique_id=68758532]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 18.0
+offset_left = 387.99997
 offset_top = -491.99994
-offset_right = 1605.0
+offset_right = 1975.0
 offset_bottom = 1753.0
 grow_vertical = 0
 scale = Vector2(0.2512555, 0.2512555)
-texture = ExtResource("7_mpnnp")
+texture = ExtResource("8_yuu1i")

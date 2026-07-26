@@ -5,6 +5,9 @@ extends Node2D
 
 var direction: Vector2 = Vector2.RIGHT
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("default")
+
 func _process(delta: float) -> void:
 	position += direction.normalized() * speed * delta
 

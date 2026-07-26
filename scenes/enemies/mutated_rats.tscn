@@ -1,13 +1,38 @@
 [gd_scene format=3 uid="uid://dwuu51onydw6h"]
 
 [ext_resource type="Script" uid="uid://bbxchnwfex164" path="res://scripts/mutated_rats.gd" id="1_dmqw1"]
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="2_k2ejd"]
+[ext_resource type="Texture2D" uid="uid://c8epnxgu2vjs" path="res://assets/sprites/rat walk/1_Transparent.png" id="2_4xq06"]
+[ext_resource type="Texture2D" uid="uid://c6u6pm3qoesdq" path="res://assets/sprites/rat bite/1_Transparent.png" id="2_5gfuo"]
+[ext_resource type="Texture2D" uid="uid://rj7yf5r6gcyi" path="res://assets/sprites/rat bite/2_Transparent.png" id="3_51w4j"]
+[ext_resource type="Texture2D" uid="uid://cf3xrx6b7g51b" path="res://assets/sprites/rat walk/2_Transparent.png" id="3_rra05"]
+[ext_resource type="Texture2D" uid="uid://gymqfhlth46c" path="res://assets/sprites/rat bite/3_Transparent.png" id="4_jmlv7"]
+[ext_resource type="Texture2D" uid="uid://c1g5mlqvolfak" path="res://assets/sprites/rat walk/3_Transparent.png" id="4_q5dpv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_k2ejd")
+"texture": ExtResource("2_5gfuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_51w4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jmlv7")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4xq06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rra05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q5dpv")
 }],
 "loop": 1,
 "name": &"default",
@@ -24,7 +49,11 @@ size = Vector2(127, 127)
 script = ExtResource("1_dmqw1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1034725754]
+position = Vector2(13, 126)
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_jpyye")
+animation = &"attack"
+frame_progress = 0.93512136
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=400322279]
 position = Vector2(-0.5, -0.5)
