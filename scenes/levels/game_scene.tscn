@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b5tmlthxrlyo7" path="res://scenes/npc/creature.tscn" id="17_creature"]
 [ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/environment/stations/fridge.tscn" id="17_kg0xf"]
 [ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
-[ext_resource type="PackedScene" uid="uid://drrwsr0etcfqx" path="res://scenes/food/ingredients/flour.tscn" id="20_r5ukb"]
+[ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/food.tscn" id="21_6x6cd"]
 [ext_resource type="Script" uid="uid://dsmqsycgcbyae" path="res://scenes/levels/camera_2d.gd" id="22_64sd5"]
 
 [sub_resource type="Gradient" id="Gradient_71p02"]
@@ -88,7 +88,6 @@ spread = 20.0
 initial_velocity_min = 20.0
 initial_velocity_max = 80.0
 gravity = Vector3(0, 2, 0)
-[ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/food.tscn" id="21_6x6cd"]
 
 [node name="GameScene" type="Node2D" unique_id=461632664]
 y_sort_enabled = true
@@ -341,7 +340,7 @@ position = Vector2(360, 250)
 y_sort_enabled = true
 position = Vector2(560, 80)
 
-[node name="Flour" parent="." unique_id=350272053 instance=ExtResource("20_r5ukb")]
+[node name="Flour" parent="." unique_id=350272053]
 z_index = -4
 position = Vector2(1482, 863)
 item_id = "Flour"
@@ -361,10 +360,10 @@ position = Vector2(543, 141)
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_rjjgs")
 
-[node name="Vegetables" parent="." unique_id=350272053 instance=ExtResource("21_6x6cd")]
+[node name="Vegetables" parent="." unique_id=1588997929 instance=ExtResource("21_6x6cd")]
 position = Vector2(1328.2, 430.52)
-item_id = "Sliced Vegetables"
+item_id = "Vegetables"
 
-[node name="Flour" parent="." unique_id=1052340152 instance=ExtResource("21_6x6cd")]
+[node name="Flour2" parent="." unique_id=1052340152 instance=ExtResource("21_6x6cd")]
 position = Vector2(1160, 376)
 item_id = "Flour"
