@@ -3,6 +3,7 @@ class_name DialogueEventTrigger
 
 @export var play_intro_on_ready: bool = true
 @export var queue_tutorial_after_intro: bool = true
+@export var queue_recipe_guide_after_tutorial: bool = true
 @export var player_group_name: StringName = &"player"
 
 
@@ -23,3 +24,6 @@ func _ready() -> void:
 
 	if queue_tutorial_after_intro:
 		events.call("queue_tutorial", player)
+
+	if queue_recipe_guide_after_tutorial:
+		events.call("queue_recipe_guide", player)

@@ -1,0 +1,56 @@
+{
+  "lines": [
+    {
+      "speaker": "Recipe Guide",
+      "text": "Ingredient sources: Farmer gives crops, grains, vegetables, and flour. Fisherman gives fish."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Dairy Farmer gives milk, butter, cheese, spoiled milk, and other dairy nightmares."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Butcher gives livestock, meat, chicken, and rotten meat. Charming fellow. Very knife-forward."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Insect & Poultry Keeper gives insects and small poultry ingredients, excluding chickens."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Bread: collect flour from the Farmer, then bake it at the Baking station."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Vegetable Soup: collect vegetables from the Farmer and chicken from the Butcher. Slice both, grill them, then assemble."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Cream Soup: collect spoiled milk from the Dairy Farmer, heat it at the Grilling station, then assemble."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Meat Stew: collect rotten meat from the Butcher, slice it, grill it, then assemble."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Meat Pie: collect meat from the Butcher and flour from the Farmer. Slice the meat, bake, then assemble."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Fish Pie: collect fish from the Fisherman and flour from the Farmer. Slice the fish, bake, then assemble."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Mold Toast: collect flour from the Farmer, bake bread, collect moldy cheese from the Dairy Farmer, then toast at the Grilling station."
+    },
+    {
+      "speaker": "Recipe Guide",
+      "text": "Flutter Chicken: collect chicken from the Butcher and butterflies from the Insect & Poultry Keeper. Grill chicken, then assemble."
+    },
+    {
+      "speaker": "Creature",
+      "text": "Now cook. The countdown dislikes students."
+    }
+  ]
+}
