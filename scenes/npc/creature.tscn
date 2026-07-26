@@ -1,7 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5tmlthxrlyo7"]
+[gd_scene load_steps=13 format=3 uid="uid://b5tmlthxrlyo7"]
 
 [ext_resource type="Script" uid="uid://dh4gty5j76wf3" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="4_icon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/1.png" id="2_idle_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/2.png" id="3_idle_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/3.png" id="4_idle_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/4.png" id="5_idle_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/5.png" id="6_idle_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/16.png" id="7_eat_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/17.png" id="8_eat_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/18.png" id="9_eat_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/19.png" id="10_eat_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/20.png" id="11_eat_5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
 radius = 96.0
@@ -10,14 +19,43 @@ radius = 96.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_icon")
+"texture": ExtResource("7_eat_1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_icon")
+"texture": ExtResource("8_eat_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eat_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eat_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eat_5")
+}],
+"loop": true,
+"name": &"eating",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idle_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idle_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_idle_5")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 2.0
+"speed": 4.0
 }]
 
 [node name="Creature" type="Node2D" unique_id=1564037910]
@@ -26,33 +64,33 @@ first_dialogue_file = "res://dialogues/creature.json"
 repeat_dialogue_file = "res://dialogues/creature_repeat.json"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1737028132]
-modulate = Color(0.505882, 0.0588235, 0.0588235, 1)
 y_sort_enabled = true
-scale = Vector2(1.55, 1.55)
+position = Vector2(0, -150)
+scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_creature")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="BellyCountdownLabel" type="Label" parent="."]
 z_index = 10
-offset_left = -54.0
-offset_top = 8.0
-offset_right = 54.0
-offset_bottom = 58.0
+offset_left = -82.0
+offset_top = -35.0
+offset_right = 82.0
+offset_bottom = 22.0
 theme_override_colors/font_color = Color(0.055, 0.015, 0.015, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.93, 0.72, 0.85)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_font_sizes/font_size = 38
+theme_override_font_sizes/font_size = 42
 text = "60"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NameLabel" type="Label" parent="." unique_id=135943284]
 offset_left = -96.0
-offset_top = -150.0
+offset_top = -360.0
 offset_right = 96.0
-offset_bottom = -127.0
+offset_bottom = -337.0
 text = "Creature"
 horizontal_alignment = 1
 
