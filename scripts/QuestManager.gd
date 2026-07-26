@@ -1,6 +1,8 @@
 extends Node
 
 signal recipe_completed(recipe_name: String)
+signal recipe_progress(item_name: String)
+signal recipe_changed(recipe_name: String)
 
 var current_recipe_index = 0
 var current_recipe_name = ""
@@ -14,6 +16,7 @@ func assign_recipe():
 		return
 
 	current_recipe_name = RecipeDatabase.recipe_order[current_recipe_index]
+	recipe_changed.emit(current_recipe_name)
 
 func complete_recipe():
 	recipe_completed.emit(current_recipe_name)
@@ -22,3 +25,6 @@ func complete_recipe():
 
 func get_recipe():
 	return RecipeDatabase.recipes[current_recipe_name]
+
+func update_recipe_progress(item_name: String):
+	recipe_progress.emit(item_name)

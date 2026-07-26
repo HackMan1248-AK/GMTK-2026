@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://cg6u605xxbesf"]
 
-[ext_resource type="Texture2D" uid="uid://c62cs0p6r37b0" path="res://icon.svg" id="1_0sju5"]
 [ext_resource type="Script" uid="uid://dbyanma566ndc" path="res://scripts/fly_swarm.gd" id="1_eiuqx"]
+[ext_resource type="Texture2D" uid="uid://bvg1jg3qfhx5r" path="res://assets/sprites/Flies/1_Transparent.png" id="2_mf1ac"]
+[ext_resource type="Texture2D" uid="uid://k3ssuorxmmah" path="res://assets/sprites/Flies/2_Transparent.png" id="3_qjyul"]
+[ext_resource type="Texture2D" uid="uid://bnx76gtam8qnq" path="res://assets/sprites/Flies/3.png" id="4_7knim"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0sju5")
+"texture": ExtResource("2_mf1ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qjyul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7knim")
 }],
 "loop": 1,
 "name": &"default",
@@ -37,6 +45,8 @@ range = 110.0
 speed = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=902060995]
+position = Vector2(-78, 282)
+scale = Vector2(1.385, 1.385)
 sprite_frames = SubResource("SpriteFrames_jpyye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=835854246]

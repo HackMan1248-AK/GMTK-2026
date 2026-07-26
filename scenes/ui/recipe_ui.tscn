@@ -1,42 +1,156 @@
 [gd_scene format=3 uid="uid://wgk1q5gmmkhp"]
 
 [ext_resource type="Script" uid="uid://1b7nd1dnqksd" path="res://scripts/recipe_ui.gd" id="1_844ki"]
+[ext_resource type="Texture2D" uid="uid://c5ursakytyceg" path="res://assets/sprites/All recipes UI/Bread 1.png" id="2_aispx"]
+[ext_resource type="Texture2D" uid="uid://dt6fpvf6gt3w1" path="res://assets/sprites/All recipes UI/Bread 2.png" id="3_fsmob"]
+[ext_resource type="Texture2D" uid="uid://c0oynkydtmfy" path="res://assets/sprites/All recipes UI/Vegetable Soup 1.png" id="4_vj8rn"]
+[ext_resource type="Texture2D" uid="uid://b4puo7m62idnt" path="res://assets/sprites/All recipes UI/Vegetable Soup 2.png" id="5_vjpkw"]
+[ext_resource type="Texture2D" uid="uid://cgt7h30hdo0qb" path="res://assets/sprites/All recipes UI/Vegetable Soup 3.png" id="6_65bgf"]
+[ext_resource type="Texture2D" uid="uid://chknp0y0g11f7" path="res://assets/sprites/All recipes UI/Vegetable Soup 4.png" id="7_qe8vk"]
+[ext_resource type="Texture2D" uid="uid://bpl0c0rxtkhk7" path="res://assets/sprites/All recipes UI/Cream Soup 1.png" id="8_2a8ou"]
+[ext_resource type="Texture2D" uid="uid://g1v8kbc26s1i" path="res://assets/sprites/All recipes UI/Cream Soup 2.png" id="9_tdw8b"]
+[ext_resource type="Texture2D" uid="uid://dy58031763tlp" path="res://assets/sprites/All recipes UI/Cream Soup 3.png" id="10_lv7ce"]
+[ext_resource type="Texture2D" uid="uid://b8s0ia38ts4ec" path="res://assets/sprites/All recipes UI/Cream Soup 4.png" id="11_36fpm"]
+[ext_resource type="Texture2D" uid="uid://2bhek2eutxll" path="res://assets/sprites/All recipes UI/Meat Stew 1.png" id="12_qvrmp"]
+[ext_resource type="Texture2D" uid="uid://bx3fuxobaa5j6" path="res://assets/sprites/All recipes UI/Meat Stew 2.png" id="13_n7mt2"]
+[ext_resource type="Texture2D" uid="uid://esg48vvf6e0x" path="res://assets/sprites/All recipes UI/Meat Stew 3.png" id="14_43mmh"]
+[ext_resource type="Texture2D" uid="uid://dbrj0t88uhel4" path="res://assets/sprites/All recipes UI/Meat Stew 4.png" id="15_gg2gh"]
+[ext_resource type="Texture2D" uid="uid://d4a4koljiqj2d" path="res://assets/sprites/All recipes UI/Meat Stew 5.png" id="16_5kcbx"]
+[ext_resource type="Texture2D" uid="uid://clah1d00hqu0m" path="res://assets/sprites/All recipes UI/Meat Pie 1.png" id="17_llltv"]
+[ext_resource type="Texture2D" uid="uid://bmgx5n33hkmbx" path="res://assets/sprites/All recipes UI/Meat Pie 2.png" id="18_2qy12"]
+[ext_resource type="Texture2D" uid="uid://bv188tmhj1bas" path="res://assets/sprites/All recipes UI/Meat Pie 3.png" id="19_yjwi0"]
+[ext_resource type="Texture2D" uid="uid://cxrwipfxygijg" path="res://assets/sprites/All recipes UI/Meat Pie 4.png" id="20_ej12n"]
+[ext_resource type="Texture2D" uid="uid://dbwja3bw6f1qm" path="res://assets/sprites/All recipes UI/Fish Pie 1.png" id="21_cxfip"]
+[ext_resource type="Texture2D" uid="uid://c640gc2sywtxh" path="res://assets/sprites/All recipes UI/Meat Pie 5.png" id="21_fsmob"]
+[ext_resource type="Texture2D" uid="uid://b4rsyl8nedpcr" path="res://assets/sprites/All recipes UI/Fish Pie 2.png" id="22_6vyft"]
+[ext_resource type="Texture2D" uid="uid://bkffve7nmu8qs" path="res://assets/sprites/All recipes UI/Fish Pie 3.png" id="23_fp2vi"]
+[ext_resource type="Texture2D" uid="uid://hketqwj81qwk" path="res://assets/sprites/All recipes UI/Fish Pie 4.png" id="24_43qrm"]
+[ext_resource type="Texture2D" uid="uid://58xkp5iptw8u" path="res://assets/sprites/All recipes UI/Fish Pie 5.png" id="25_3l7ri"]
+[ext_resource type="Texture2D" uid="uid://dm7msrbjgm5fe" path="res://assets/sprites/All recipes UI/Mold Toast 1.png" id="26_3hm42"]
+[ext_resource type="Texture2D" uid="uid://b3xpeueum7mqq" path="res://assets/sprites/All recipes UI/Mold Toast 2.png" id="27_t0pn7"]
+[ext_resource type="Texture2D" uid="uid://h4b0i58naw13" path="res://assets/sprites/All recipes UI/Mold Toast 3.png" id="28_0ol2j"]
+[ext_resource type="Texture2D" uid="uid://cjxxjuajodgrd" path="res://assets/sprites/All recipes UI/Mold Toast 4.png" id="29_diy2y"]
+[ext_resource type="Texture2D" uid="uid://bj3cuh7neymhi" path="res://assets/sprites/All recipes UI/Mold Toast 5.png" id="30_uew7q"]
+[ext_resource type="Texture2D" uid="uid://dda353irwmuen" path="res://assets/sprites/All recipes UI/Flutter Chicken 1.png" id="31_vjv0a"]
+[ext_resource type="Texture2D" uid="uid://dbmkkcfbcsogy" path="res://assets/sprites/All recipes UI/Flutter Chicken 2.png" id="32_wxta7"]
+[ext_resource type="Texture2D" uid="uid://dg8btyydt7aj2" path="res://assets/sprites/All recipes UI/Flutter Chicken 3.png" id="33_ftmxm"]
+[ext_resource type="Texture2D" uid="uid://cusya8s0h0dnj" path="res://assets/sprites/All recipes UI/Flutter Chicken 4.png" id="34_pcrw4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpyye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aispx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fsmob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vj8rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vjpkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_65bgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qe8vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2a8ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tdw8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lv7ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_36fpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qvrmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n7mt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_43mmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gg2gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5kcbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_llltv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2qy12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yjwi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ej12n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fsmob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_cxfip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6vyft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_fp2vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_43qrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3l7ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3hm42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_t0pn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0ol2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_diy2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_uew7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_vjv0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wxta7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ftmxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_pcrw4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Recipe UI" type="CanvasLayer" unique_id=1514744875]
 script = ExtResource("1_844ki")
 
-[node name="Panel" type="Panel" parent="." unique_id=1815861499]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -254.0
-offset_bottom = 433.0
-grow_horizontal = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1996389991]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=803555251]
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[node name="RecipeName" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=998824994]
-layout_mode = 2
-text = "RECIPE"
-
-[node name="Ingredients" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1415671102]
-layout_mode = 2
-text = "INGREDIENTS"
-
-[node name="Steps" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=20336283]
-layout_mode = 2
-text = "STEPS"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1107356755]
+position = Vector2(1767, 556)
+scale = Vector2(0.5023962, 0.5023962)
+sprite_frames = SubResource("SpriteFrames_jpyye")
+frame = 33

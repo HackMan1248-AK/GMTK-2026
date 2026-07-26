@@ -253,3 +253,4 @@ func _on_timer_timeout() -> void:
 						held_item.name = "Flutter Chicken"
 	
 	held_item.item_id = held_item.name
+	QuestManager.update_recipe_progress(held_item.name)
