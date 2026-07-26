@@ -164,7 +164,7 @@ func hide_dialogue_immediately() -> void:
 	if dialogue_text != null:
 		dialogue_text.text = ""
 	if continue_label != null:
-		continue_label.text = "Space"
+		continue_label.text = "Space - Next"
 
 func _show_headshot(speaker: String) -> void:
 	# Hide every portrait first.
@@ -207,7 +207,7 @@ func _show_current_line() -> void:
 
 	speaker_name.text = speaker
 	dialogue_text.text = text
-	continue_label.text = "Space"
+	continue_label.text = "Space - Next"
 
 	line_changed.emit(speaker, text, current_line_index)
 
@@ -302,7 +302,7 @@ func _close_panel() -> void:
 		portrait.visible = false
 	speaker_name.text = ""
 	dialogue_text.text = ""
-	continue_label.text = "Space"
+	continue_label.text = "Space - Next"
 
 
 func _lock_player(player: Node = null) -> void:

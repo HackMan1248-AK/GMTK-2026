@@ -1,24 +1,36 @@
 {
   "lines": [
     {
-      "speaker": "Controls",
-      "text": "Use WASD to move."
+      "speaker": "Guide",
+      "text": "Quick survival lesson. Read fast, cook faster, and try not to become garnish."
     },
     {
       "speaker": "Controls",
-      "text": "Press E to interact with villagers, ingredients, and stations."
+      "text": "Move with W, A, S, and D."
     },
     {
       "speaker": "Controls",
-      "text": "Press Space to continue dialogue."
+      "text": "Press E to talk to villagers, pick up ingredients, and use cooking stations."
+    },
+    {
+      "speaker": "Controls",
+      "text": "Press Space to continue these guide popups."
+    },
+    {
+      "speaker": "Controls",
+      "text": "Left Click toggles your flashlight. Useful for seeing trouble before it sees you."
+    },
+    {
+      "speaker": "Controls",
+      "text": "Escape pauses the game."
     },
     {
       "speaker": "Objective",
-      "text": "Talk to villagers, collect ingredients, cook at stations, and serve the creature before the countdown ends."
+      "text": "Talk to villagers, collect the requested ingredients, cook at the correct stations, then serve the creature before the countdown reaches zero."
     },
     {
-      "speaker": "Butcher",
-      "text": "If you freeze, the creature gets a chilled appetizer."
+      "speaker": "Warning",
+      "text": "Correct dishes buy time. Wrong dishes buy awkward silence, then possibly chewing."
     }
   ]
 }

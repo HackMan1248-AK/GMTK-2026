@@ -3,6 +3,11 @@ extends CharacterBody2D
 @onready var active_timer: Timer = $ActiveTimer
 @onready var cooldown_timer: Timer = $CooldownTimer
 @onready var flash_light: PointLight2D = $FlashLight
+
+#walking particle variable
+@onready var dust = $WalkingTrail
+
+
 var can_flash_light = true
 var flashlight_on = false
 
@@ -47,6 +52,8 @@ func _unhandled_input(event):
 		attack()
 
 func _physics_process(_delta: float):
+	
+	
 	if movement_locked:
 		velocity = Vector2.ZERO
 
@@ -64,6 +71,9 @@ func _physics_process(_delta: float):
 			flash_light.enabled = true
 
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
+	
+	#DUST PARTICLES
+	dust.emitting = direction!= Vector2.ZERO
 	
 	if direction != Vector2.ZERO:
 		last_direction = direction.normalized()
@@ -155,3 +165,6 @@ func _on_active_timer_timeout() -> void:
 
 func _on_cooldown_timer_timeout() -> void:
 	can_flash_light = true
+	
+
+	
