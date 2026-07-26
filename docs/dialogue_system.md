@@ -16,6 +16,7 @@ res://
 		success.json
 		failure.json
 		game_over.json
+		recipe_guide.json
 		victory.json
 		timer_low.json
 	scenes/dialogue/
@@ -64,6 +65,19 @@ The panel is anchored to the bottom of the screen and opens/closes with a short 
 `DialogueNext` is mapped to Space.
 
 The manager also accepts `ui_accept` and a direct Space fallback.
+
+Current player-facing controls from `project.godot`:
+
+```text
+W = Up
+A = Left
+S = Down
+D = Right
+E = Interact
+Space = Next dialogue popup
+Left Click = Flashlight
+Escape = Pause
+```
 
 ## JSON Format
 
@@ -139,9 +153,18 @@ On level start it calls:
 ```gdscript
 DialogueEvents.play_intro(player)
 DialogueEvents.queue_tutorial(player)
+DialogueEvents.queue_recipe_guide(player)
 ```
 
-Gameplay movement is locked during the intro/tutorial queue and restored afterward.
+Gameplay movement is locked during the intro/tutorial/recipe-guide queue and restored afterward. The player advances each guide popup with Space.
+
+Startup guide order:
+
+```text
+1. intro.json
+2. tutorial.json
+3. recipe_guide.json
+```
 
 ## Event Dialogue API
 
@@ -157,6 +180,31 @@ DialogueEvents.play_victory(player)
 ```
 
 These are ready for the cooking, timer, and win/loss systems to connect without changing the dialogue manager.
+
+## Recipe Guide Content
+
+`res://dialogues/recipe_guide.json` explains:
+
+```text
+Ingredient sources:
+Farmer = crops, grains, vegetables, flour
+Fisherman = fish
+Dairy Farmer = milk, butter, cheese, spoiled milk, moldy cheese
+Butcher = livestock, meat, chicken, rotten meat
+Insect & Poultry Keeper = insects and small poultry ingredients
+
+Recipes:
+Bread
+Vegetable Soup
+Cream Soup
+Meat Stew
+Meat Pie
+Fish Pie
+Mold Toast
+Flutter Chicken
+```
+
+Creators can edit the wording directly in the JSON file without touching scripts.
 
 ## Signals
 

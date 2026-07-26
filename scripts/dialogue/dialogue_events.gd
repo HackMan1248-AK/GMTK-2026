@@ -8,6 +8,7 @@ const FAILURE: String = "res://dialogues/failure.json"
 const GAME_OVER: String = "res://dialogues/game_over.json"
 const VICTORY: String = "res://dialogues/victory.json"
 const TIMER_LOW: String = "res://dialogues/timer_low.json"
+const RECIPE_GUIDE: String = "res://dialogues/recipe_guide.json"
 
 
 func play_intro(player: Node = null) -> void:
@@ -22,6 +23,13 @@ func queue_tutorial(player: Node = null) -> void:
 	var manager: Node = _dialogue_manager()
 	if manager != null:
 		manager.call("queue_dialogue_file", TUTORIAL, player)
+
+
+func queue_recipe_guide(player: Node = null) -> void:
+	# Queues recipe guidance after the basic controls tutorial.
+	var manager: Node = _dialogue_manager()
+	if manager != null:
+		manager.call("queue_dialogue_file", RECIPE_GUIDE, player)
 
 
 func play_creature_request(player: Node = null) -> void:
