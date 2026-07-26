@@ -340,11 +340,6 @@ position = Vector2(360, 250)
 y_sort_enabled = true
 position = Vector2(560, 80)
 
-[node name="Flour" parent="." unique_id=350272053]
-z_index = -4
-position = Vector2(1482, 863)
-item_id = "Flour"
-
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1564831974]
 repeat_size = Vector2(512, 512)
 autoscroll = Vector2(-15, -5)
@@ -364,6 +359,6 @@ process_material = SubResource("ParticleProcessMaterial_rjjgs")
 position = Vector2(1328.2, 430.52)
 item_id = "Vegetables"
 
-[node name="Flour2" parent="." unique_id=1052340152 instance=ExtResource("21_6x6cd")]
+[node name="Flour" parent="." unique_id=1052340152 instance=ExtResource("21_6x6cd")]
 position = Vector2(1160, 376)
 item_id = "Flour"
