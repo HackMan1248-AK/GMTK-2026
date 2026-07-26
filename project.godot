@@ -21,7 +21,6 @@ DialogueManager="*res://scenes/dialogue/dialogue_manager.tscn"
 DialogueEvents="*res://scripts/dialogue/dialogue_events.gd"
 RecipeDatabase="*uid://b2pdfv5sfscll"
 QuestManager="*uid://fboq21iu01dp"
-CountdownManager="*res://scenes/ui/countdown_manager.tscn"
 
 [display]
 
