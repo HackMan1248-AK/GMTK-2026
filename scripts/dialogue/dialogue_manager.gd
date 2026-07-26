@@ -13,6 +13,16 @@ signal dialogue_queue_empty
 @onready var speaker_name: Label = $Panel/SpeakerName
 @onready var dialogue_text: RichTextLabel = $Panel/DialogueText
 @onready var continue_label: Label = $Panel/ContinueLabel
+@onready var default_headshot: CanvasItem = $"Default Godot"
+
+@onready var headshots := {
+	"Butcher": $Butcher,
+	"Dairy Farmer": $"Dairy Farmer",
+	"Farmer": $Farmer,
+	"Fisherman": $Fisherman,
+	"Insect Keeper": $"Insect & Poultry Keeper",
+	#"Creature": $Creature
+}
 
 var is_dialogue_active: bool = false
 var current_line_index: int = 0
@@ -136,6 +146,11 @@ func load_dialogue_file(dialogue_path: String) -> Array[Dictionary]:
 
 func hide_dialogue_immediately() -> void:
 	# Reset the UI without animation, used only during startup.
+	default_headshot.visible = false
+
+	for portrait in headshots.values():
+		portrait.visible = false
+	
 	if active_tween != null:
 		active_tween.kill()
 		active_tween = null
@@ -151,6 +166,18 @@ func hide_dialogue_immediately() -> void:
 	if continue_label != null:
 		continue_label.text = "Space"
 
+func _show_headshot(speaker: String) -> void:
+	# Hide every portrait first.
+	default_headshot.visible = false
+
+	for portrait in headshots.values():
+		portrait.visible = false
+
+	# Show matching portrait or the default.
+	if headshots.has(speaker):
+		headshots[speaker].visible = true
+	else:
+		default_headshot.visible = true
 
 func _begin_dialogue(lines: Array[Dictionary], player: Node = null, keep_existing_lock: bool = false) -> void:
 	# Initialize a block of dialogue and lock movement once for the whole queue.
@@ -175,6 +202,8 @@ func _show_current_line() -> void:
 	var line: Dictionary = current_dialogue[current_line_index]
 	var speaker: String = str(line.get("speaker", ""))
 	var text: String = str(line.get("text", ""))
+	
+	_show_headshot(speaker)
 
 	speaker_name.text = speaker
 	dialogue_text.text = text
@@ -268,6 +297,9 @@ func _close_panel() -> void:
 	await active_tween.finished
 
 	panel.visible = false
+	default_headshot.visible = false
+	for portrait in headshots.values():
+		portrait.visible = false
 	speaker_name.text = ""
 	dialogue_text.text = ""
 	continue_label.text = "Space"

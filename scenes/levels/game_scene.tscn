@@ -193,7 +193,6 @@ position = Vector2(2596, 1964)
 [node name="Light" type="Node" parent="." unique_id=969600844]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
-visible = false
 blend_mode = 1
 
 [node name="SpiderWeb" parent="." unique_id=955119012 node_paths=PackedStringArray("target") instance=ExtResource("8_301yp")]
