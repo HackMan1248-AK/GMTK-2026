@@ -25,6 +25,8 @@ signal dialogue_queue_empty
 	#"Creature": $Creature
 }
 
+const INGREDIENT_SCENE : PackedScene = preload("res://scenes/food.tscn")
+
 var is_dialogue_active: bool = false
 var current_line_index: int = 0
 var current_dialogue: Array[Dictionary] = []
@@ -32,7 +34,8 @@ var dialogue_queue: Array[Dictionary] = []
 var locked_player: Node = null
 var previous_player_lock_state: Variant = false
 var active_tween: Tween = null
-
+var reward_item: String = ""
+var reward_spawn: Marker2D = null
 
 func _ready() -> void:
 	# The autoload exists from the first frame, but dialogue should stay hidden.
@@ -112,6 +115,7 @@ func finish_dialogue() -> void:
 	current_line_index = 0
 
 	await _close_panel()
+	_spawn_reward()
 	dialogue_finished.emit()
 
 	if not dialogue_queue.is_empty():
@@ -124,6 +128,22 @@ func finish_dialogue() -> void:
 	_unlock_player()
 	dialogue_queue_empty.emit()
 
+func _spawn_reward():
+	if reward_item.is_empty():
+		return
+
+	if reward_spawn == null:
+		return
+
+	var ingredient = INGREDIENT_SCENE.instantiate()
+
+	get_tree().current_scene.add_child(ingredient)
+
+	ingredient.global_position = reward_spawn.global_position
+	ingredient.set_item(reward_item)
+
+	reward_item = ""
+	reward_spawn = null
 
 func clear_dialogue_queue() -> void:
 	# Let scene changes or game-over states discard any pending conversation safely.

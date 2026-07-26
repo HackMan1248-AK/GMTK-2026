@@ -26,6 +26,8 @@ height = 152.0
 script = ExtResource("1_npc_dialogue")
 first_dialogue_file = "res://dialogues/insect_keeper.json"
 repeat_dialogue_file = "res://dialogues/insect_keeper_repeat.json"
+reward_items = Array[String](["Butterflies"])
+reward_spawn = NodePath("Marker2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=78453763]
 position = Vector2(0, -42)
@@ -45,3 +47,6 @@ horizontal_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=229489986]
 position = Vector2(0, -77)
 shape = SubResource("CapsuleShape2D_orua6")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=206666596]
+position = Vector2(74, -80)

@@ -38,7 +38,7 @@ animations = [{
 size = Vector2(130, 126)
 
 [node name="Knife" type="Node2D" unique_id=1081167617]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2.25, 2.25)
 script = ExtResource("1_syuqf")
 speed = 1000.0
 

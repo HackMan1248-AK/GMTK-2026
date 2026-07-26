@@ -26,6 +26,8 @@ height = 146.0
 script = ExtResource("1_npc_dialogue")
 first_dialogue_file = "res://dialogues/farmer.json"
 repeat_dialogue_file = "res://dialogues/farmer_repeat.json"
+reward_items = Array[String](["Flour", "Vegetables"])
+reward_spawn = NodePath("Marker2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1282630794]
 position = Vector2(0, -37)
@@ -46,3 +48,6 @@ horizontal_alignment = 1
 y_sort_enabled = true
 position = Vector2(0, -75)
 shape = SubResource("CapsuleShape2D_orua6")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1866003190]
+position = Vector2(-67, -82)

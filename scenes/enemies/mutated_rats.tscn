@@ -58,7 +58,6 @@ frame_progress = 0.93512136
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=400322279]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_jpyye")
-disabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=634969761]
 

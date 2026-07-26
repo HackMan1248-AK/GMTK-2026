@@ -51,7 +51,10 @@ func _ready() -> void:
 	update_sprite()
 
 func _process(delta: float) -> void:
-	item_id = self.name
+	var regex = RegEx.new()
+	regex.compile("\\d+$")
+
+	var item_id = regex.sub(self.name, "", true)
 	update_sprite()
 
 func update_sprite():
