@@ -54,6 +54,18 @@ region = Rect2(1000, 0, 1000, 1400)
 atlas = ExtResource("4_d2wvv")
 region = Rect2(2000, 0, 1000, 1400)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
+atlas = ExtResource("4_d2wvv")
+region = Rect2(0, 0, 1000, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhpqf"]
+atlas = ExtResource("4_d2wvv")
+region = Rect2(1000, 0, 1000, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5jhy"]
+atlas = ExtResource("4_d2wvv")
+region = Rect2(2000, 0, 1000, 1400)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
 atlas = ExtResource("4_tuyoq")
 region = Rect2(0, 1400, 1000, 1400)
@@ -208,6 +220,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fdfoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhpqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5jhy")
+}],
+"loop": 1,
+"name": &"cook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dt7fs")
 }],
 "loop": 1,
@@ -346,7 +372,7 @@ texture_filter = 4
 position = Vector2(0, -82.81824)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_jpyye")
-animation = &"attack_right"
+animation = &"cook"
 
 [node name="FlashLight" type="PointLight2D" parent="." unique_id=2096508176]
 position = Vector2(0, -82.81824)

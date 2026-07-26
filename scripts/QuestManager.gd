@@ -3,6 +3,7 @@ extends Node
 signal recipe_completed(recipe_name: String)
 signal recipe_progress(item_name: String)
 signal recipe_changed(recipe_name: String)
+signal game_won
 
 var current_recipe_index = 0
 var current_recipe_name = ""
@@ -12,7 +13,7 @@ func _ready():
 
 func assign_recipe():
 	if current_recipe_index >= RecipeDatabase.recipe_order.size():
-		print("All recipes complete!")
+		game_won_func()
 		return
 
 	current_recipe_name = RecipeDatabase.recipe_order[current_recipe_index]
@@ -28,3 +29,6 @@ func get_recipe():
 
 func update_recipe_progress(item_name: String):
 	recipe_progress.emit(item_name)
+	
+func game_won_func():
+	game_won.emit()

@@ -233,43 +233,431 @@ texture = ExtResource("9_jstec")
 
 [node name="Wall1" parent="Walls" unique_id=204888445 instance=ExtResource("2_tcqdt")]
 y_sort_enabled = true
-position = Vector2(182, 1964)
-
-[node name="Wall2" parent="Walls" unique_id=16656805 instance=ExtResource("2_tcqdt")]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(2321, 1000)
+position = Vector2(4229, -7)
 rotation = 1.5707964
-scale = Vector2(15, 1)
 
-[node name="Wall3" parent="Walls" unique_id=1536169966 instance=ExtResource("2_tcqdt")]
-z_index = -1
+[node name="Wall2" parent="Walls" unique_id=2057169690 instance=ExtResource("2_tcqdt")]
 y_sort_enabled = true
-position = Vector2(1162.0001, 7)
-scale = Vector2(19.166065, 0.967628)
-
-[node name="Wall4" parent="Walls" unique_id=1678134774 instance=ExtResource("2_tcqdt")]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(-1, 986.00006)
+position = Vector2(4229, 799)
 rotation = 1.5707964
-scale = Vector2(19, 1)
 
-[node name="Wall5" parent="Walls" unique_id=1761776581 instance=ExtResource("2_tcqdt")]
+[node name="Wall3" parent="Walls" unique_id=1821712539 instance=ExtResource("2_tcqdt")]
 y_sort_enabled = true
-position = Vector2(986, 1964)
+position = Vector2(4229, 1600)
+rotation = 1.5707964
 
-[node name="Wall6" parent="Walls" unique_id=148483315 instance=ExtResource("2_tcqdt")]
+[node name="Wall5" parent="Walls" unique_id=383880140 instance=ExtResource("2_tcqdt")]
 y_sort_enabled = true
-position = Vector2(1790, 1964)
+position = Vector2(4229, -7)
 
-[node name="Wall7" parent="Walls" unique_id=556057682 instance=ExtResource("2_tcqdt")]
+[node name="Wall6" parent="Walls" unique_id=788835837 instance=ExtResource("2_tcqdt")]
 y_sort_enabled = true
-position = Vector2(2596, 1964)
+position = Vector2(5035, -7)
+
+[node name="Wall7" parent="Walls" unique_id=259473814 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(5841, -7)
+rotation = 3.1415927
+
+[node name="Wall8" parent="Walls" unique_id=751988420 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(6644, -7)
+
+[node name="Wall9" parent="Walls" unique_id=1302774021 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(7025.0005, -386)
+rotation = -1.5799468
+
+[node name="Wall10" parent="Walls" unique_id=1349574380 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(6644, -772)
+
+[node name="Wall11" parent="Walls" unique_id=1852772594 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(6256.0005, -1150)
+rotation = -1.5799468
+
+[node name="Wall12" parent="Walls" unique_id=1543359032 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(6252.0005, -1952.0001)
+rotation = -1.5799468
+
+[node name="Wall13" parent="Walls" unique_id=703737094 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(6644, -2334)
+
+[node name="Wall14" parent="Walls" unique_id=774282886 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(7033, -2065)
+rotation = -1.5799468
+scale = Vector2(0.71090853, 1.0165333)
+
+[node name="Wall15" parent="Walls" unique_id=692239957 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(7413, -1799)
+
+[node name="Wall16" parent="Walls" unique_id=999783071 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(7814, -2178)
+rotation = -1.5799468
+
+[node name="Wall17" parent="Walls" unique_id=1986720655 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(7806.0005, -2976.0002)
+rotation = -1.5799468
+
+[node name="Wall18" parent="Walls" unique_id=470760536 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(7798, -3766.0002)
+rotation = -1.5799468
+
+[node name="Wall19" parent="Walls" unique_id=1089817804 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(8173, -4147)
+
+[node name="Wall20" parent="Walls" unique_id=1219859349 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(8983, -4147)
+
+[node name="Wall21" parent="Walls" unique_id=1460340801 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(9785, -4147)
+
+[node name="Wall22" parent="Walls" unique_id=1041039854 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(10595, -4147)
+
+[node name="Wall23" parent="Walls" unique_id=1929761422 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(10981, -3766.0002)
+rotation = -1.5799468
+
+[node name="Wall24" parent="Walls" unique_id=521341260 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(10595, -3383)
+
+[node name="Wall25" parent="Walls" unique_id=322467065 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(10212.001, -2997.0002)
+rotation = -1.5799468
+
+[node name="Wall26" parent="Walls" unique_id=2135106335 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(10595, -2610)
+
+[node name="Wall27" parent="Walls" unique_id=1108332572 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(11389, -2610)
+
+[node name="Wall28" parent="Walls" unique_id=1261374459 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(11770, -2224.0002)
+rotation = -1.5799468
+
+[node name="Wall29" parent="Walls" unique_id=1668162957 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(11389, -1825)
+
+[node name="Wall30" parent="Walls" unique_id=1661431490 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(10591, -1825)
+
+[node name="Wall31" parent="Walls" unique_id=436417462 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(9789, -1825)
+
+[node name="Wall32" parent="Walls" unique_id=281138654 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(9415.001, -1446)
+rotation = -1.5799468
+
+[node name="Wall33" parent="Walls" unique_id=731118389 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(9421, -807)
+rotation = -1.5799468
+scale = Vector2(0.6050083, 1.0630867)
+
+[node name="Wall34" parent="Walls" unique_id=332066305 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(9426.001, -290)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall35" parent="Walls" unique_id=45221422 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(9804, -7)
+
+[node name="Wall36" parent="Walls" unique_id=373250439 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(10607, -7)
+
+[node name="Wall37" parent="Walls" unique_id=716223966 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(11409, -7)
+
+[node name="Wall38" parent="Walls" unique_id=1723456233 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(12208, -7)
+
+[node name="Wall39" parent="Walls" unique_id=2133392541 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(13011, -7)
+
+[node name="Wall40" parent="Walls" unique_id=1217544114 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(13389.001, -273)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall41" parent="Walls" unique_id=1448978425 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(13383.001, -848)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall42" parent="Walls" unique_id=2025574189 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(13763, -1120)
+
+[node name="Wall43" parent="Walls" unique_id=378478622 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(14572, -1120)
+
+[node name="Wall44" parent="Walls" unique_id=2092245585 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(15376, -1120)
+
+[node name="Wall45" parent="Walls" unique_id=1343717807 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(16177, -1120)
+
+[node name="Wall46" parent="Walls" unique_id=1546968373 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(16976, -1120)
+
+[node name="Wall47" parent="Walls" unique_id=1637180281 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(17779, -1120)
+
+[node name="Wall48" parent="Walls" unique_id=146793077 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(18160.002, -848)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall49" parent="Walls" unique_id=1966604370 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(18160.002, -285)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall50" parent="Walls" unique_id=1979523591 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(18540, -13)
+
+[node name="Wall51" parent="Walls" unique_id=489480512 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(19339, -13)
+
+[node name="Wall52" parent="Walls" unique_id=1701408832 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(20144, -13)
+
+[node name="Wall53" parent="Walls" unique_id=65933064 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(20944, -13)
+
+[node name="Wall54" parent="Walls" unique_id=1387609777 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(21748, -13)
+
+[node name="Wall55" parent="Walls" unique_id=1673715314 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(22550, -13)
+
+[node name="Wall56" parent="Walls" unique_id=1097255691 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(22936.002, -285)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall57" parent="Walls" unique_id=609169869 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(22931.002, -861.00006)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall58" parent="Walls" unique_id=1277132057 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(22550, -1134)
+
+[node name="Wall59" parent="Walls" unique_id=827988645 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(21775.998, -1247)
+rotation = 0.281448
+
+[node name="Wall60" parent="Walls" unique_id=960162384 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(21130, -1644.999)
+rotation = 0.8213211
+
+[node name="Wall61" parent="Walls" unique_id=1140439842 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(20472, -1932)
+
+[node name="Wall62" parent="Walls" unique_id=1397781133 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(20087, -2198.0002)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall63" parent="Walls" unique_id=2018954464 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(20461, -2504)
+
+[node name="Wall64" parent="Walls" unique_id=1737836802 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(20840.004, -2769)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall65" parent="Walls" unique_id=1701303779 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(20836.002, -3344)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall66" parent="Walls" unique_id=1919610870 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(21212, -3620)
+
+[node name="Wall67" parent="Walls" unique_id=1262042073 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(22011, -3620)
+
+[node name="Wall68" parent="Walls" unique_id=1553598444 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(22810, -3621)
+
+[node name="Wall69" parent="Walls" unique_id=1295884311 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(23610, -3620)
+
+[node name="Wall70" parent="Walls" unique_id=3443535 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24410, -3620)
+
+[node name="Wall71" parent="Walls" unique_id=1377679289 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(25209, -3620)
+
+[node name="Wall72" parent="Walls" unique_id=1817807325 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(25595.002, -3344)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall73" parent="Walls" unique_id=1818823478 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(25217, -3032)
+
+[node name="Wall74" parent="Walls" unique_id=1109069353 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24837, -2763)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall75" parent="Walls" unique_id=2026496121 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24084.002, -2219)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall76" parent="Walls" unique_id=2009141834 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24453, -2500)
+
+[node name="Wall77" parent="Walls" unique_id=1007256281 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24090.002, -1644.9999)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall78" parent="Walls" unique_id=978463489 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24094, -1070)
+rotation = -1.5799468
+scale = Vector2(0.7186331, 1.0176538)
+
+[node name="Wall79" parent="Walls" unique_id=441771746 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24097, -615)
+rotation = -1.5799468
+scale = Vector2(0.41680095, 1.0719001)
+
+[node name="Wall80" parent="Walls" unique_id=338169773 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24100.002, -225.99998)
+rotation = -1.5799468
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall81" parent="Walls" unique_id=264632133 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24346.002, -29)
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall82" parent="Walls" unique_id=594342832 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(24791, -29)
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall83" parent="Walls" unique_id=701093533 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(25241.002, -29)
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall84" parent="Walls" unique_id=1514406841 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(25687.002, -29)
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall85" parent="Walls" unique_id=1855233629 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(26135.002, -30)
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall86" parent="Walls" unique_id=518274264 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(26335.002, -225.99998)
+rotation = -1.5799468
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall87" parent="Walls" unique_id=2119502080 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(26330.002, -669.99994)
+rotation = -1.5799468
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall88" parent="Walls" unique_id=2029001689 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(26325.004, -1114)
+rotation = -1.5799468
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall89" parent="Walls" unique_id=687416710 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(26519, -1314)
+scale = Vector2(0.55699164, 1.1388347)
+
+[node name="Wall90" parent="Walls" unique_id=802608196 instance=ExtResource("2_tcqdt")]
+y_sort_enabled = true
+position = Vector2(26963.002, -1314)
+scale = Vector2(0.55699164, 1.1388347)
 
 [node name="Light" type="Node" parent="." unique_id=969600844]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light" unique_id=592109750]
+visible = false
 blend_mode = 1
 
 [node name="SpiderWeb" parent="." unique_id=955119012 node_paths=PackedStringArray("target") instance=ExtResource("8_301yp")]
@@ -338,9 +726,10 @@ position = Vector2(360, 250)
 
 [node name="Creature" parent="NPC" unique_id=362074548 instance=ExtResource("17_creature")]
 y_sort_enabled = true
-position = Vector2(560, 80)
+position = Vector2(589, 101)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1564831974]
+visible = false
 repeat_size = Vector2(512, 512)
 autoscroll = Vector2(-15, -5)
 

@@ -47,6 +47,7 @@ func interact() -> void:
 				
 		if should_lock:
 			player.lock_movement(timer.time_left)
+			player.is_cooking = true
 	else:
 		if station == Station.ASSEMBLY:
 			assembly_func()
@@ -138,6 +139,7 @@ func assembly_func() -> void:
 				get_cooking()
 
 func _on_timer_timeout() -> void:
+	player.is_cooking = false
 	if held_item == null:
 		push_error("held_item is NULL")
 		return

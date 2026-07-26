@@ -13,6 +13,7 @@ var flashlight_on = false
 
 @export var speed : float = 300.0
 @export var movement_locked : float = false
+var is_cooking := false
 @export var knockback_friction := 1800.0
 var interactable = null
 var current_speed : float
@@ -57,7 +58,11 @@ func _physics_process(_delta: float):
 	if movement_locked:
 		velocity = Vector2.ZERO
 
-		anim.play("attack_up")
+		if is_cooking:
+			anim.play("cook")
+		else:
+			var dir_name = get_direction_name(last_direction)
+			anim.play("idle_" + dir_name)
 
 		move_and_slide()
 		return

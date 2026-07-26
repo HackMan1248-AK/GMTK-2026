@@ -143,7 +143,7 @@
   "Mold Toast": {
 	"ingredients": [
 	  { "item": "Flour", "source": "Farmer" },
-	  { "item": "Moldy Fish", "source": "Dairy Farmer" }
+	  { "item": "Moldy Cheese", "source": "Dairy Farmer" }
 	],
 	"steps": [
 	  {
@@ -154,7 +154,7 @@
 	  },
 	  {
 		"action": "Toast",
-		"inputs": ["Bread", "Moldy Fish"],
+		"inputs": ["Bread", "Moldy Cheese"],
 		"outputs": ["Mold Toast"],
 		"station": "Assembling Station"
 	  }

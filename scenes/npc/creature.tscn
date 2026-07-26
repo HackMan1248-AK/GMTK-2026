@@ -1,19 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5tmlthxrlyo7"]
+[gd_scene format=3 uid="uid://b5tmlthxrlyo7"]
 
 [ext_resource type="Script" uid="uid://dh4gty5j76wf3" path="res://scripts/dialogue/npc_dialogue.gd" id="1_npc_dialogue"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/1.png" id="2_idle_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/2.png" id="3_idle_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/3.png" id="4_idle_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/4.png" id="5_idle_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/breathing_idle/5.png" id="6_idle_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/16.png" id="7_eat_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/17.png" id="8_eat_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/18.png" id="9_eat_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/19.png" id="10_eat_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/monster/eating/20.png" id="11_eat_5"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
-radius = 96.0
+[ext_resource type="Texture2D" uid="uid://dv7kohlaukvyp" path="res://assets/sprites/monster/breathing_idle/1.png" id="2_idle_1"]
+[ext_resource type="Texture2D" uid="uid://fukyop3w6kwl" path="res://assets/sprites/monster/breathing_idle/2.png" id="3_idle_2"]
+[ext_resource type="Texture2D" uid="uid://dkdg2cc2eob7f" path="res://assets/sprites/monster/breathing_idle/3.png" id="4_idle_3"]
+[ext_resource type="Texture2D" uid="uid://dxxehjqdvrkqc" path="res://assets/sprites/monster/breathing_idle/4.png" id="5_idle_4"]
+[ext_resource type="Texture2D" uid="uid://dlffb1d087bfl" path="res://assets/sprites/monster/breathing_idle/5.png" id="6_idle_5"]
+[ext_resource type="Texture2D" uid="uid://drt6ypgtvqws5" path="res://assets/sprites/monster/eating/16.png" id="7_eat_1"]
+[ext_resource type="Texture2D" uid="uid://dbwwv2tp5plof" path="res://assets/sprites/monster/eating/17.png" id="8_eat_2"]
+[ext_resource type="Texture2D" uid="uid://bavnginm8myp3" path="res://assets/sprites/monster/eating/18.png" id="9_eat_3"]
+[ext_resource type="Texture2D" uid="uid://dcttjqbubioah" path="res://assets/sprites/monster/eating/19.png" id="10_eat_4"]
+[ext_resource type="Texture2D" uid="uid://vk3jiitsfj31" path="res://assets/sprites/monster/eating/20.png" id="11_eat_5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_creature"]
 animations = [{
@@ -33,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_eat_5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"eating",
 "speed": 6.0
 }, {
@@ -53,30 +50,43 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_idle_5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 4.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 96.0
+
+[sub_resource type="Gradient" id="Gradient_ka82o"]
+offsets = PackedFloat32Array(0, 0.58433735)
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jpyye"]
+gradient = SubResource("Gradient_ka82o")
+fill = 1
+fill_from = Vector2(0.49565217, 0.5478261)
+
 [node name="Creature" type="Node2D" unique_id=1564037910]
+scale = Vector2(0.56190467, 0.56190467)
 script = ExtResource("1_npc_dialogue")
 first_dialogue_file = "res://dialogues/creature.json"
 repeat_dialogue_file = "res://dialogues/creature_repeat.json"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1737028132]
 y_sort_enabled = true
-position = Vector2(0, -150)
-scale = Vector2(0.18, 0.18)
+position = Vector2(35.999996, -21.352844)
+scale = Vector2(1.5203983, 1.5203983)
 sprite_frames = SubResource("SpriteFrames_creature")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="BellyCountdownLabel" type="Label" parent="."]
+[node name="BellyCountdownLabel" type="Label" parent="." unique_id=1664553486]
 z_index = 10
 offset_left = -82.0
-offset_top = -35.0
+offset_top = -570.3529
 offset_right = 82.0
-offset_bottom = 22.0
+offset_bottom = -512.3529
 theme_override_colors/font_color = Color(0.055, 0.015, 0.015, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.93, 0.72, 0.85)
 theme_override_constants/shadow_offset_x = 2
@@ -87,14 +97,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NameLabel" type="Label" parent="." unique_id=135943284]
-offset_left = -96.0
-offset_top = -360.0
-offset_right = 96.0
-offset_bottom = -337.0
+offset_left = -48.0
+offset_top = -43.0
+offset_right = 144.0
+offset_bottom = -20.0
 text = "Creature"
 horizontal_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1129124850]
+position = Vector2(0, -535.3529)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1118273066]
 shape = SubResource("CircleShape2D_interact")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1270831911]
+position = Vector2(3, -539)
+scale = Vector2(22.355448, 22.355448)
+texture = SubResource("GradientTexture2D_jpyye")

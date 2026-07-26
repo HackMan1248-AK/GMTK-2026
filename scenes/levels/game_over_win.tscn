@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cljaht5pl0p2f"]
+
+[ext_resource type="Script" uid="uid://2tmetsbcx72i" path="res://scripts/game_over_win.gd" id="1_4c0jk"]
+[ext_resource type="VideoStream" uid="uid://bqsk8p00nyn57" path="res://assets/GAME-OVER.ogv" id="2_thive"]
+[ext_resource type="Texture2D" uid="uid://cgxpgc82ihewr" path="res://assets/sprites/Play, Quit, Settings text w select color/Play.png" id="3_dp67h"]
+[ext_resource type="Texture2D" uid="uid://du24knlq4gjpg" path="res://assets/sprites/Play, Quit, Settings text w select color/Play_hover.png" id="4_02ips"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1225403689]
+script = ExtResource("1_4c0jk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1602201948]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=96474264]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_thive")
+expand = true
+
+[node name="Button" type="TextureButton" parent="." unique_id=773915923]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_dp67h")
+texture_hover = ExtResource("4_02ips")
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
