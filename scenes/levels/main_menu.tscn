@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bwaay2uprgy6l" path="res://assets/sprites/Play, Quit, Settings text w select color/Quit.png" id="5_keln3"]
 [ext_resource type="Texture2D" uid="uid://bwyue0v5tf7g5" path="res://assets/sprites/Play, Quit, Settings text w select color/Quit_hover.png" id="6_crctu"]
 [ext_resource type="Texture2D" uid="uid://bwwxjx0sj4aea" path="res://assets/sprites/Main menu text.png" id="7_crctu"]
+[ext_resource type="AudioStream" uid="uid://wpgpv0iix4sl" path="res://sfx/Music/Main Menu.mp3" id="8_sn5u3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpyye"]
 bg_color = Color(1, 1, 1, 1)
@@ -71,6 +72,10 @@ texture_hover = ExtResource("6_crctu")
 [node name="MainMenuText" type="Sprite2D" parent="." unique_id=1059453189]
 position = Vector2(933, 784)
 texture = ExtResource("7_crctu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1292690866]
+stream = ExtResource("8_sn5u3")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

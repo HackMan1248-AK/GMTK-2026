@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjkbic7ga18ps"
+path="res://.godot/imported/Main game.mp3-0dccde26056a6657e47d0eb46154a928.mp3str"
+
+[deps]
+
+source_file="res://sfx/Music/Main game.mp3"
+dest_files=["res://.godot/imported/Main game.mp3-0dccde26056a6657e47d0eb46154a928.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

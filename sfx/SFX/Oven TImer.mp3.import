@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://m3yyx8a45a5s"
+path="res://.godot/imported/Oven TImer.mp3-625a2ce31bc772d0caed0b1a7552f159.mp3str"
+
+[deps]
+
+source_file="res://sfx/SFX/Oven TImer.mp3"
+dest_files=["res://.godot/imported/Oven TImer.mp3-625a2ce31bc772d0caed0b1a7552f159.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
