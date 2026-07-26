@@ -1,16 +1,16 @@
 {
   "lines": [
-    {
-      "speaker": "Creature",
-      "text": "Enough."
-    },
-    {
-      "speaker": "Creature",
-      "text": "You have fed the hunger and insulted the prophecy."
-    },
-    {
-      "speaker": "Farmer",
-      "text": "Nobody wins the pact. But you just made it blink."
-    }
+	{
+	  "speaker": "Creature",
+	  "text": "Enough."
+	},
+	{
+	  "speaker": "Creature",
+	  "text": "You have fed the hunger and insulted the prophecy."
+	},
+	{
+	  "speaker": "Farmer",
+	  "text": "Nobody wins the pact. But you just made it blink."
+	}
   ]
 }

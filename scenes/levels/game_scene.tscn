@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wgk1q5gmmkhp" path="res://scenes/ui/recipe_ui.tscn" id="1_64sd5"]
 [ext_resource type="PackedScene" uid="uid://b67qq8kbs6v6j" path="res://scenes/player.tscn" id="1_iuucx"]
-[ext_resource type="Script" uid="uid://bdsxsax2xmnso" path="res://scenes/levels/green_particles.gd" id="2_hynbt"]
+[ext_resource type="Script" uid="uid://bdsxsax2xmnso" path="res://scripts/green_particles.gd" id="2_hynbt"]
 [ext_resource type="PackedScene" uid="uid://caupeuy2cu45u" path="res://scenes/knife.tscn" id="2_jstec"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
 [ext_resource type="PackedScene" uid="uid://3vclq56rchn" path="res://scenes/environment/stations/assmebly.tscn" id="6_64sd5"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/environment/stations/fridge.tscn" id="17_kg0xf"]
 [ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
 [ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/food.tscn" id="21_6x6cd"]
-[ext_resource type="Script" uid="uid://dsmqsycgcbyae" path="res://scenes/levels/camera_2d.gd" id="22_64sd5"]
+[ext_resource type="Script" uid="uid://dsmqsycgcbyae" path="res://scripts/camera_2d.gd" id="22_64sd5"]
 
 [sub_resource type="Gradient" id="Gradient_71p02"]
 colors = PackedColorArray(0.3456658, 0.29586723, 0.1651687, 1, 1, 1, 1, 1)
