@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c385tnnc0u7pd"
+path="res://.godot/imported/Rat Bite.mp3-0a053127d701eabac1e3f80c3fdf879a.mp3str"
+
+[deps]
+
+source_file="res://sfx/SFX/Rat Bite.mp3"
+dest_files=["res://.godot/imported/Rat Bite.mp3-0a053127d701eabac1e3f80c3fdf879a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

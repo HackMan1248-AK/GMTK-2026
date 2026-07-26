@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpsxuu0jr6u4d"
+path="res://.godot/imported/Pause Menu v2.mp3-007261330084e3569bfba83e0a420a3e.mp3str"
+
+[deps]
+
+source_file="res://sfx/Music/Pause Menu v2.mp3"
+dest_files=["res://.godot/imported/Pause Menu v2.mp3-007261330084e3569bfba83e0a420a3e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dh25lp0ag8yhc"
+path="res://.godot/imported/Fly Swarm.mp3-f3048e9a4dece6c11525453c9b94d045.mp3str"
+
+[deps]
+
+source_file="res://sfx/SFX/Fly Swarm.mp3"
+dest_files=["res://.godot/imported/Fly Swarm.mp3-f3048e9a4dece6c11525453c9b94d045.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

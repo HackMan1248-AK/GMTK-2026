@@ -6,25 +6,30 @@
 [ext_resource type="PackedScene" uid="uid://caupeuy2cu45u" path="res://scenes/knife.tscn" id="2_jstec"]
 [ext_resource type="PackedScene" uid="uid://v7cxxm5obmn7" path="res://scenes/environment/wall.tscn" id="2_tcqdt"]
 [ext_resource type="PackedScene" uid="uid://3vclq56rchn" path="res://scenes/environment/stations/assmebly.tscn" id="6_64sd5"]
+[ext_resource type="AudioStream" uid="uid://c1e4nsuoxmhj0" path="res://sfx/SFX/Walking.mp3" id="7_hynbt"]
 [ext_resource type="PackedScene" uid="uid://dkf0v3ll1xwcp" path="res://scenes/environment/stations/baking.tscn" id="7_tuu3e"]
 [ext_resource type="PackedScene" uid="uid://cicnjem8k77g6" path="res://scenes/enemies/spider_web.tscn" id="8_301yp"]
 [ext_resource type="Texture2D" uid="uid://bv6su4klu7odh" path="res://assets/sprites/floor game.png" id="9_jstec"]
 [ext_resource type="PackedScene" uid="uid://w3m4yq4ik88d" path="res://scenes/environment/stations/slicing.tscn" id="10_rjjgs"]
 [ext_resource type="PackedScene" uid="uid://cqrcx66xmgmle" path="res://scenes/environment/stations/pantry.tscn" id="11_hynbt"]
+[ext_resource type="AudioStream" uid="uid://pvdhrbyuhspd" path="res://sfx/SFX/Spider Web (Walk).mp3" id="11_klbdp"]
 [ext_resource type="PackedScene" uid="uid://bn5mmaug7pbid" path="res://scenes/environment/stations/grilling.tscn" id="12_71p02"]
 [ext_resource type="PackedScene" uid="uid://6cx0e1yr8eym" path="res://scenes/npc/farmer.tscn" id="12_farmer"]
 [ext_resource type="PackedScene" uid="uid://b70b4wplgftdk" path="res://scenes/npc/fisherman.tscn" id="13_fisherman"]
+[ext_resource type="AudioStream" uid="uid://c81guobkhy2iq" path="res://sfx/SFX/Freezing.mp3" id="13_uyamu"]
 [ext_resource type="PackedScene" uid="uid://d2r5bmtysup4d" path="res://scenes/environment/stations/serving.tscn" id="14_6x6cd"]
 [ext_resource type="PackedScene" uid="uid://ye534hr6bgdo" path="res://scenes/npc/dairy_farmer.tscn" id="14_dairy_farmer"]
 [ext_resource type="PackedScene" uid="uid://bvqjv57x8stii" path="res://scenes/npc/butcher.tscn" id="15_butcher"]
 [ext_resource type="PackedScene" uid="uid://dnjoxattsibkm" path="res://scenes/npc/insect_keeper.tscn" id="16_insect_keeper"]
 [ext_resource type="PackedScene" uid="uid://b5tmlthxrlyo7" path="res://scenes/npc/creature.tscn" id="17_creature"]
 [ext_resource type="PackedScene" uid="uid://dlkai4xebd50d" path="res://scenes/environment/stations/fridge.tscn" id="17_kg0xf"]
+[ext_resource type="AudioStream" uid="uid://vc2h2r3frtx6" path="res://sfx/SFX/Slicing.mp3" id="17_m20kh"]
 [ext_resource type="Script" uid="uid://jjwso26tttpy" path="res://scripts/dialogue/dialogue_event_trigger.gd" id="18_dialogue_event_trigger"]
 [ext_resource type="PackedScene" uid="uid://jbkjx13ypy4s" path="res://scenes/food.tscn" id="21_6x6cd"]
 [ext_resource type="Script" uid="uid://dsmqsycgcbyae" path="res://scripts/camera_2d.gd" id="22_64sd5"]
 [ext_resource type="PackedScene" uid="uid://dwuu51onydw6h" path="res://scenes/enemies/mutated_rats.tscn" id="24_hynbt"]
 [ext_resource type="PackedScene" uid="uid://cg6u605xxbesf" path="res://scenes/enemies/fly_swarm.tscn" id="24_rjjgs"]
+[ext_resource type="AudioStream" uid="uid://cjkbic7ga18ps" path="res://sfx/Music/Main game.mp3" id="24_rjjgs"]
 
 [sub_resource type="Gradient" id="Gradient_71p02"]
 colors = PackedColorArray(0.3456658, 0.29586723, 0.1651687, 1, 1, 1, 1, 1)
@@ -118,6 +123,9 @@ script = ExtResource("22_64sd5")
 [node name="WalkingTrail" type="GPUParticles2D" parent="Player" unique_id=1970555342]
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_tuu3e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" unique_id=14730969]
+stream = ExtResource("7_hynbt")
 
 [node name="Floor" type="Node" parent="." unique_id=2051741560]
 
@@ -6152,6 +6160,14 @@ rotation = -0.059084047
 visible = false
 blend_mode = 1
 
+[node name="SpiderWeb" parent="." unique_id=955119012 node_paths=PackedStringArray("target") instance=ExtResource("8_301yp")]
+z_index = -3
+position = Vector2(997, 1666)
+target = NodePath("../Player")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SpiderWeb" unique_id=1769244160]
+stream = ExtResource("11_klbdp")
+
 [node name="Stations" type="Node2D" parent="." unique_id=1168927782]
 y_sort_enabled = true
 position = Vector2(-505, -619)
@@ -6160,6 +6176,9 @@ position = Vector2(-505, -619)
 y_sort_enabled = true
 position = Vector2(3104, 1289)
 scale = Vector2(2.5186734, 2.5186734)
+
+[node name="Freeze" type="AudioStreamPlayer2D" parent="Stations/Fridge" unique_id=654448730]
+stream = ExtResource("13_uyamu")
 
 [node name="Assembly" parent="Stations" unique_id=2131174890 instance=ExtResource("6_64sd5")]
 y_sort_enabled = true
@@ -6175,6 +6194,9 @@ scale = Vector2(1.5746667, 1.5746667)
 y_sort_enabled = true
 position = Vector2(706, 751)
 scale = Vector2(2.4199328, 2.4199328)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Stations/Slicing" unique_id=2000632624]
+stream = ExtResource("17_m20kh")
 
 [node name="Pantry" parent="Stations" unique_id=359336463 instance=ExtResource("11_hynbt")]
 y_sort_enabled = true
@@ -7182,3 +7204,10 @@ position = Vector2(10607, -2623)
 z_index = -3
 position = Vector2(8120, -1846)
 target = NodePath("../../Player")
+[node name="Flour" parent="." unique_id=1052340152 instance=ExtResource("21_6x6cd")]
+position = Vector2(1160, 376)
+item_id = "Flour"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1303783587]
+stream = ExtResource("24_rjjgs")
+autoplay = true

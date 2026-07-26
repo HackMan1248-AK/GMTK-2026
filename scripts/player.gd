@@ -4,6 +4,10 @@ extends CharacterBody2D
 @onready var cooldown_timer: Timer = $CooldownTimer
 @onready var flash_light: PointLight2D = $FlashLight
 
+#audio walk
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
 #walking particle variable
 @onready var dust = $WalkingTrail
 
@@ -81,15 +85,21 @@ func _physics_process(_delta: float):
 	dust.emitting = direction!= Vector2.ZERO
 	
 	if direction != Vector2.ZERO:
+		
 		last_direction = direction.normalized()
 	
 	if !is_attacking:
 		var dir_name = get_direction_name(last_direction)
+		
+		
 
 		if direction == Vector2.ZERO:
 			anim.play("idle_" + dir_name)
 		else:
 			anim.play("walk_" + dir_name)
+			audio_stream_player_2d.play()
+			
+			
 	
 	velocity = direction * current_speed
 

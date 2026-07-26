@@ -5,6 +5,10 @@ var held_item = null
 var can_pickup = false
 var player: CharacterBody2D
 
+@onready var freeze: AudioStreamPlayer2D = $Freeze
+
+
+
 enum Station {
 	FRIDGE,
 	PANTRY,
@@ -57,6 +61,7 @@ func interact() -> void:
 
 func get_cooking() -> void:
 	timer.start()
+	
 	can_pickup = false
 
 func serve_func() -> void:
